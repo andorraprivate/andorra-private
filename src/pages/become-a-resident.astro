@@ -1,0 +1,317 @@
+---
+// Andorra Private – Become a Resident
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    
+    <title>Become a Resident in Andorra | Andorra Private</title>
+    <meta name="description" content="Learn how to become a resident of Andorra. Guidance on residency options, requirements, and trusted advisors." />
+    
+    <meta property="og:title" content="Become a Resident in Andorra | Andorra Private" />
+    <meta property="og:description" content="Guidance on residency options, requirements, and trusted advisors in Andorra." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://privateandorra.com/become-a-resident" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <style>
+      :root {
+        --forest: #1A2F23;
+        --stone: #E8E0D5;
+        --offwhite: #F7F4EF;
+        --charcoal: #1C1C1C;
+        --brass: #B08D57;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        background: var(--offwhite);
+        color: var(--charcoal);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1, h2, h3 {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-weight: 500;
+        line-height: 1.15;
+      }
+
+      nav {
+        padding: 2rem 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: var(--forest);
+      }
+
+      .logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.35rem;
+        letter-spacing: 0.04em;
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-links a {
+        color: rgba(255,255,255,0.88);
+        text-decoration: none;
+        font-size: 0.82rem;
+        margin-left: 2.2rem;
+        letter-spacing: 0.05em;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: white;
+      }
+
+      .page-header {
+        padding: 6rem 7% 4rem;
+        background: var(--offwhite);
+      }
+
+      .page-header h1 {
+        font-size: clamp(2.6rem, 5vw, 3.8rem);
+        color: var(--forest);
+        margin-bottom: 1.2rem;
+      }
+
+      .page-header p {
+        font-size: 1.1rem;
+        color: #555;
+        font-weight: 300;
+        max-width: 560px;
+        line-height: 1.7;
+      }
+
+      .content {
+        padding: 0 7% 6rem;
+        max-width: 800px;
+      }
+
+      .content h2 {
+        font-size: 1.8rem;
+        color: var(--forest);
+        margin: 3rem 0 1.2rem;
+      }
+
+      .content p {
+        font-size: 1.05rem;
+        color: #555;
+        font-weight: 300;
+        line-height: 1.75;
+        margin-bottom: 1.4rem;
+      }
+
+      .interest {
+        background: #f0ebe3;
+        padding: 6rem 7%;
+        text-align: center;
+      }
+
+      .interest h2 {
+        font-size: clamp(2rem, 3.5vw, 2.6rem);
+        color: var(--forest);
+        margin-bottom: 1rem;
+      }
+
+      .interest p {
+        font-size: 1.05rem;
+        color: #555;
+        font-weight: 300;
+        max-width: 480px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.7;
+      }
+
+      .interest-form {
+        display: flex;
+        gap: 1rem;
+        max-width: 480px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .interest-form input {
+        flex: 1;
+        min-width: 220px;
+        padding: 0.95rem 1.2rem;
+        border: 1px solid #d9d3c9;
+        background: white;
+        font-size: 0.95rem;
+        font-family: inherit;
+      }
+
+      .interest-form button {
+        padding: 0.95rem 1.8rem;
+        background: var(--forest);
+        color: white;
+        border: none;
+        font-size: 0.82rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .interest-form button:hover {
+        background: #243d2e;
+      }
+
+      footer {
+        background: var(--forest);
+        color: rgba(255,255,255,0.85);
+        padding: 4.5rem 7% 3rem;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 3rem;
+        margin-bottom: 3.5rem;
+      }
+
+      .footer-brand {
+        max-width: 280px;
+      }
+
+      .footer-brand .logo {
+        color: white;
+        font-size: 1.4rem;
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .footer-brand p {
+        font-size: 0.9rem;
+        font-weight: 300;
+        line-height: 1.6;
+        opacity: 0.8;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 4rem;
+      }
+
+      .footer-col h4 {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 1.2rem;
+        opacity: 0.7;
+        font-weight: 500;
+      }
+
+      .footer-col a {
+        display: block;
+        color: rgba(255,255,255,0.85);
+        text-decoration: none;
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+        transition: color 0.2s;
+      }
+
+      .footer-col a:hover {
+        color: white;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255,255,255,0.12);
+        padding-top: 1.8rem;
+        font-size: 0.8rem;
+        opacity: 0.6;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <a href="/" class="logo">Andorra Private</a>
+      <div class="nav-links">
+        <a href="/#lifestyle">Lifestyle</a>
+        <a href="/#living">Living Here</a>
+        <a href="/become-a-resident">Become a Resident</a>
+        <a href="/properties">Properties</a>
+      </div>
+    </nav>
+
+    <section class="page-header">
+      <h1>Become a Resident</h1>
+      <p>Andorra offers attractive residency options for those seeking a high quality of life, political stability, and a favourable tax framework in the heart of the Pyrenees.</p>
+    </section>
+
+    <section class="content">
+      <h2>Residency in Andorra</h2>
+      <p>Andorra provides several pathways to residency, including passive residency options designed for individuals who wish to live in the principality without carrying out local economic activity.</p>
+      <p>The process typically involves meeting investment or financial requirements, providing documentation, and demonstrating a genuine intention to reside in the country.</p>
+
+      <h2>What we can help with</h2>
+      <p>We are building a network of trusted advisors who specialise in Andorran residency matters — including legal, tax, and practical relocation support.</p>
+      <p>If you are considering residency in Andorra, you can register your interest below and we will be in touch as suitable guidance and partners become available.</p>
+    </section>
+
+    <section class="interest" id="interest">
+      <h2>Register your interest</h2>
+      <p>Leave your details and we’ll be in touch regarding residency options and trusted advisors.</p>
+      
+      <form class="interest-form" action="https://formspree.io/f/xkjwaqan" method="POST">
+        <input type="email" name="email" placeholder="Your email address" required />
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="/" class="logo">Andorra Private</a>
+          <p>A refined introduction to life in Europe’s most private high-altitude principality.</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <a href="/#lifestyle">Why Andorra</a>
+            <a href="/#living">Life Here</a>
+            <a href="/become-a-resident">Become a Resident</a>
+            <a href="/properties">Properties</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <a href="mailto:hello@privateandorra.com">hello@privateandorra.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Andorra Private</span>
+        <span>Privateandorra.com</span>
+      </div>
+    </footer>
+  </body>
+</html>
