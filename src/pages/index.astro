@@ -1,5 +1,5 @@
 ---
-// Andorra Private - Homepage
+// Andorra Private – Homepage
 ---
 
 <html lang="en">
@@ -7,11 +7,9 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
     <title>Andorra Private | Europe’s most private high-altitude address</title>
     <meta name="description" content="A refined mountain principality for those who value discretion, space, and a quieter form of luxury." />
-    
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -33,7 +31,7 @@
 
       body {
         font-family: 'Inter', system-ui, sans-serif;
-        background-color: var(--offwhite);
+        background: var(--offwhite);
         color: var(--charcoal);
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
@@ -45,57 +43,91 @@
         line-height: 1.15;
       }
 
+      /* Navigation */
+      nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 2rem 7%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 20;
+      }
+
+      .logo {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.35rem;
+        letter-spacing: 0.04em;
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-links a {
+        color: rgba(255,255,255,0.88);
+        text-decoration: none;
+        font-size: 0.82rem;
+        margin-left: 2.4rem;
+        letter-spacing: 0.05em;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: white;
+      }
+
       /* Hero */
       .hero {
         min-height: 100vh;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 8%;
-        background: linear-gradient(to bottom, rgba(26, 47, 35, 0.55), rgba(26, 47, 35, 0.75)),
-                    url('https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=80&w=2670&auto=format&fit=crop') center/cover no-repeat;
+        align-items: center;
+        padding: 0 7%;
+        background: 
+          linear-gradient(to bottom, rgba(20, 32, 26, 0.45), rgba(20, 32, 26, 0.72)),
+          url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2670&auto=format&fit=crop') center/cover no-repeat;
         color: white;
         position: relative;
       }
 
       .hero-content {
-        max-width: 720px;
+        max-width: 680px;
+        padding-top: 4rem;
       }
 
       .hero-label {
-        font-size: 0.75rem;
-        letter-spacing: 0.25em;
+        font-size: 0.72rem;
+        letter-spacing: 0.28em;
         text-transform: uppercase;
         opacity: 0.85;
-        margin-bottom: 1.5rem;
-        font-weight: 400;
+        margin-bottom: 1.6rem;
       }
 
       .hero h1 {
-        font-size: clamp(2.8rem, 6vw, 4.8rem);
-        margin-bottom: 1.5rem;
+        font-size: clamp(2.9rem, 5.8vw, 4.6rem);
+        margin-bottom: 1.4rem;
         font-weight: 500;
       }
 
       .hero p {
-        font-size: 1.15rem;
+        font-size: 1.12rem;
         font-weight: 300;
-        max-width: 520px;
-        opacity: 0.9;
-        margin-bottom: 2.5rem;
-        line-height: 1.7;
+        max-width: 480px;
+        opacity: 0.92;
+        margin-bottom: 2.6rem;
+        line-height: 1.75;
       }
 
       .hero-cta {
         display: inline-block;
-        padding: 0.9rem 2rem;
-        border: 1px solid rgba(255,255,255,0.5);
+        padding: 0.95rem 2.1rem;
+        border: 1px solid rgba(255,255,255,0.55);
         color: white;
         text-decoration: none;
-        font-size: 0.85rem;
-        letter-spacing: 0.12em;
+        font-size: 0.8rem;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        transition: all 0.3s ease;
+        transition: all 0.25s ease;
       }
 
       .hero-cta:hover {
@@ -103,38 +135,60 @@
         color: var(--forest);
       }
 
-      /* Simple top nav */
-      nav {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 2rem 8%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 10;
+      /* Why Andorra Section */
+      .why {
+        padding: 7rem 7%;
+        background: var(--offwhite);
       }
 
-      .logo {
+      .why-header {
+        max-width: 620px;
+        margin-bottom: 4.5rem;
+      }
+
+      .why-header h2 {
+        font-size: clamp(2.1rem, 3.5vw, 2.8rem);
+        margin-bottom: 1.2rem;
+        color: var(--forest);
+      }
+
+      .why-header p {
+        font-size: 1.05rem;
+        color: #555;
+        font-weight: 300;
+        line-height: 1.7;
+      }
+
+      .pillars {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .pillar {
+        background: white;
+        padding: 2.4rem 2rem;
+        border: 1px solid #eae6df;
+      }
+
+      .pillar-number {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 1.4rem;
-        letter-spacing: 0.05em;
-        color: white;
-        text-decoration: none;
+        font-size: 1.6rem;
+        color: var(--brass);
+        margin-bottom: 1.1rem;
       }
 
-      .nav-links a {
-        color: rgba(255,255,255,0.85);
-        text-decoration: none;
-        font-size: 0.85rem;
-        margin-left: 2.5rem;
-        letter-spacing: 0.04em;
-        transition: color 0.2s;
+      .pillar h3 {
+        font-size: 1.35rem;
+        margin-bottom: 0.9rem;
+        color: var(--forest);
       }
 
-      .nav-links a:hover {
-        color: white;
+      .pillar p {
+        font-size: 0.95rem;
+        color: #555;
+        font-weight: 300;
+        line-height: 1.65;
       }
     </style>
   </head>
@@ -155,6 +209,36 @@
         <h1>Europe’s most private<br>high-altitude address</h1>
         <p>A refined mountain principality for those who value discretion, space, and a quieter form of luxury.</p>
         <a href="#residencies" class="hero-cta">Explore Residencies</a>
+      </div>
+    </section>
+
+    <section class="why" id="lifestyle">
+      <div class="why-header">
+        <h2>Why Andorra</h2>
+        <p>Not another alpine resort town. A sovereign principality with genuine privacy, remarkable quality of life, and a scale that still feels human.</p>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-number">01</div>
+          <h3>True Privacy</h3>
+          <p>One of Europe’s most discreet jurisdictions. A place where wealth does not need to announce itself.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-number">02</div>
+          <h3>Mountain Living</h3>
+          <p>Dramatic Pyrenean landscape with exceptional air quality, outdoor access, and a slower daily rhythm.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-number">03</div>
+          <h3>Favourable Framework</h3>
+          <p>Attractive tax residency options, political stability, and a clear path for long-term living.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-number">04</div>
+          <h3>Human Scale</h3>
+          <p>Small enough to feel personal, sophisticated enough to feel complete. No crowds, no noise.</p>
+        </div>
       </div>
     </section>
   </body>
