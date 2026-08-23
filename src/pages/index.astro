@@ -139,7 +139,7 @@
         color: var(--forest);
       }
 
-      /* Why Andorra Section */
+      /* Why Andorra */
       .why {
         padding: 7rem 7%;
         background: var(--offwhite);
@@ -194,6 +194,63 @@
         font-weight: 300;
         line-height: 1.65;
       }
+
+      /* Life in the Principality */
+      .life {
+        padding: 7rem 7%;
+        background: #f0ebe3;
+      }
+
+      .life-header {
+        max-width: 620px;
+        margin-bottom: 4rem;
+      }
+
+      .life-header h2 {
+        font-size: clamp(2.1rem, 3.5vw, 2.8rem);
+        margin-bottom: 1.2rem;
+        color: var(--forest);
+      }
+
+      .life-header p {
+        font-size: 1.05rem;
+        color: #555;
+        font-weight: 300;
+        line-height: 1.7;
+      }
+
+      .life-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .life-card {
+        background: white;
+        padding: 2.6rem 2.2rem;
+        border: 1px solid #e5dfd6;
+      }
+
+      .life-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--brass);
+        margin-bottom: 1.1rem;
+      }
+
+      .life-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        color: var(--forest);
+      }
+
+      .life-card p {
+        font-size: 0.95rem;
+        color: #555;
+        font-weight: 300;
+        line-height: 1.65;
+      }
     </style>
   </head>
 
@@ -242,6 +299,31 @@
           <div class="pillar-number">04</div>
           <h3>Human Scale</h3>
           <p>Small enough to feel personal, sophisticated enough to feel complete. No crowds, no noise.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="life" id="living">
+      <div class="life-header">
+        <h2>Life in the Principality</h2>
+        <p>Four seasons of mountain living, refined rather than extreme. A place designed for both ambition and recovery.</p>
+      </div>
+
+      <div class="life-grid">
+        <div class="life-card">
+          <div class="life-label">Winter</div>
+          <h3>Quiet slopes & sharp air</h3>
+          <p>World-class skiing without the chaos of the bigger Alpine resorts. Crisp mornings, empty runs, and long evenings by the fire.</p>
+        </div>
+        <div class="life-card">
+          <div class="life-label">Summer</div>
+          <h3>High meadows & long light</h3>
+          <p>Hiking, trail running, and quiet terraces overlooking the Pyrenees. Warm days, cool nights, and exceptional outdoor living.</p>
+        </div>
+        <div class="life-card">
+          <div class="life-label">Everyday</div>
+          <h3>Gastronomy & ease</h3>
+          <p>Excellent restaurants, strong local produce, and a pace of life that still leaves room to think. A rare combination in Europe.</p>
         </div>
       </div>
     </section>
