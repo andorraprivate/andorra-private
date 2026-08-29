@@ -57,12 +57,12 @@ const related = listingsByCategory(item.category).filter(
           <p>
             Published against{" "}
             {item.parishSlug ? (
-              <a href="/where-to-live">{item.parish}</a>
+              <a href={`/parishes/${item.parishSlug}`}>{item.parish}</a>
             ) : (
               item.parish
             )}
-            . See
-            <a href="/where-to-live">where to live</a>
+            . See the
+            <a href="/parishes">parish notes</a>
             {" "}for context.
           </p>
         </>

@@ -1,0 +1,44 @@
+---
+import Base from "../../layouts/Base.astro";
+import { parishes } from "../../data/parishes";
+---
+
+<Base
+  title="The seven parishes"
+  description="Andorra’s seven communes: Andorra la Vella, Escaldes, Encamp, Canillo, Ordino, La Massana, Sant Julià."
+  path="/parishes"
+>
+  <section class="page-header">
+    <h1>The seven parishes</h1>
+    <p>
+      Andorra is governed as seven communes. Each has its own Comú,
+      character and altitude. Choose the parish before you choose the
+      house.
+    </p>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="card-grid">
+      {
+        parishes.map((parish) => (
+          <div class="card">
+            <div class="card-label">{parish.label}</div>
+            <h3>{parish.name}</h3>
+            <p>{parish.summary}</p>
+            <a href={`/parishes/${parish.slug}`} class="text-link">
+              Read the note
+            </a>
+          </div>
+        ))
+      }
+    </div>
+    <p style="margin-top: 3rem; color: #555; font-weight: 300; max-width: 620px;">
+      For housing, see
+      <a href="/properties">properties</a>.
+      For a move, see
+      <a href="/become-a-resident">become a resident</a>
+      and the
+      <a href="/directory">directory</a>.
+    </p>
+  </section>
+</Base>

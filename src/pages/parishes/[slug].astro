@@ -1,0 +1,80 @@
+---
+import Base from "../../layouts/Base.astro";
+import { parishes, parishBySlug } from "../../data/parishes";
+import { listingsByParish } from "../../data/directory";
+
+export function getStaticPaths() {
+  return parishes.map((item) => ({ params: { slug: item.slug } }));
+}
+
+const { slug } = Astro.params;
+const parish = parishBySlug(slug!);
+if (!parish) {
+  throw new Error(`Unknown parish slug: ${slug}`);
+}
+
+const others = parishes.filter((item) => item.slug !== parish.slug);
+const localListings = listingsByParish(parish.slug);
+---
+
+<Base
+  title={`${parish.name} | Parish note | Andorra Private`}
+  description={`${parish.name}: ${parish.summary}`}
+  path={`/parishes/${parish.slug}`}
+>
+  <section class="page-header">
+    <p class="card-label">{parish.label}</p>
+    <h1>{parish.name}</h1>
+    <p>{parish.summary}</p>
+  </section>
+
+  <section class="prose">
+    {parish.body.map((para) => <p>{para}</p>)}
+
+    <h2>Official commune</h2>
+    <p>
+      Local administration is the Comú. Procedures, notices and parish
+      services are on the official site:
+      <a href={parish.officialUrl} target="_blank" rel="noopener"
+        >{parish.officialUrl}</a
+      >.
+    </p>
+
+    {
+      localListings.length > 0 && (
+        <>
+          <h2>In the directory</h2>
+          <p>
+            Organisations we already list with a published tie to this parish.
+            Confirm current details on their official sites.
+          </p>
+          <div class="official-links">
+            {localListings.map((item) => (
+              <a href={`/directory/${item.slug}`}>{item.name}</a>
+            ))}
+          </div>
+        </>
+      )
+    }
+
+    <p>
+      Looking for a home in this parish?
+      <a href="/properties">See how we list properties</a>
+      or browse
+      <a href="/directory">licensed agents</a>.
+      Planning a permit?
+      <a href="/become-a-resident">Become a resident</a>.
+    </p>
+
+    <h2>The other parishes</h2>
+    <div class="official-links">
+      {
+        others.map((item) => (
+          <a href={`/parishes/${item.slug}`}>
+            {item.name} — {item.label}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>

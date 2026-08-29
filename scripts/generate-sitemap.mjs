@@ -19,19 +19,25 @@ const priorities = {
   "/moving-to-andorra-from-the-uk": "0.85",
   "/moving-to-andorra-from-spain": "0.85",
   "/moving-to-andorra-from-france": "0.85",
+  "/opening-a-bank-account": "0.85",
   "/buying-property": "0.85",
-  "/residency-vs-tax": "0.9",
-  "/passive-residency": "0.9",
-  "/company-active-residency": "0.9",
-  "/the-file": "0.85",
-  "/where-to-live": "0.8",
-  "/shortlist": "0.6",
+  "/buying-property-in-2026": "0.6",
+  "/company-formation": "0.85",
   "/digital-nomad": "0.85",
+  "/residence-without-work": "0.85",
   "/tax-residence": "0.85",
   "/family-reunification": "0.85",
+  "/self-employed-residence": "0.85",
   "/entrepreneur-residence": "0.85",
   "/living-in-andorra": "0.8",
+  "/parishes": "0.8",
   "/directory": "0.8",
+  "/residency-vs-tax": "0.6",
+  "/passive-residency": "0.6",
+  "/company-active-residency": "0.6",
+  "/the-file": "0.6",
+  "/where-to-live": "0.6",
+  "/shortlist": "0.5",
   "/practitioner-map": "0.8",
   "/official-sources": "0.7",
   "/education": "0.7",
@@ -88,12 +94,15 @@ const pageRoutes = walkPages(join(root, "src/pages"))
     return a.localeCompare(b);
   });
 
+const parishRoutes = slugsFrom(join(root, "src/data/parishes.ts")).map(
+  (slug) => `/parishes/${slug}`,
+);
 const directoryRoutes = slugsFrom(join(root, "src/data/directory.ts")).map(
   (slug) => `/directory/${slug}`,
 );
 
 const extraStatic = ["/robots.txt"];
-const routes = [...pageRoutes, ...extraStatic, ...directoryRoutes];
+const routes = [...pageRoutes, ...extraStatic, ...parishRoutes, ...directoryRoutes];
 const unique = [...new Set(routes)];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -102,7 +111,11 @@ ${unique
   .map((path) => {
     const priority =
       priorities[path] ??
-      (path.startsWith("/directory/") ? "0.6" : "0.5");
+      (path.startsWith("/parishes/")
+        ? "0.7"
+        : path.startsWith("/directory/")
+          ? "0.6"
+          : "0.5");
     return urlEntry(path, priority);
   })
   .join("\n")}

@@ -8,8 +8,8 @@ const agents = listingsByCategory("property");
 ---
 
 <Base
-  title="Properties in Andorra | How we list homes"
-  description="How Andorra Private will list homes: parish, type and situation. No invented houses or borrowed photographs. AGIA-registered agents."
+  title="Properties"
+  description="How Andorra Private lists homes. No invented houses, prices or photographs."
   path="/properties"
 >
   <section class="page-header">
@@ -83,7 +83,7 @@ const agents = listingsByCategory("property");
       The seven parishes are not interchangeable. The capital and Escaldes
       are practical. Ordino and Canillo are higher. La Massana and Encamp
       sit on ski valleys. Sant Julià is the southern gate. Read the
-      <a href="/where-to-live">where to live</a>
+      <a href="/parishes">parish notes</a>
       before you instruct a search.
     </p>
     <div class="card-grid">
@@ -93,7 +93,7 @@ const agents = listingsByCategory("property");
             <div class="card-label">{parish.label}</div>
             <h3>{parish.name}</h3>
             <p>{parish.summary}</p>
-            <a href="/where-to-live" class="text-link">
+            <a href={`/parishes/${parish.slug}`} class="text-link">
               Parish note
             </a>
           </div>

@@ -54,7 +54,7 @@ export const listings: DirectoryListing[] = [
     category: "tax-law",
     officialUrl: "https://www.augelegalfiscal.com/en/",
     summary:
-      "Andorra la Vella firm. Its own site lists legal, tax, immigration and company work for individuals and companies.",
+      "Andorra la Vella. Legal, tax, immigration and company work.",
     parish: "Andorra la Vella",
     parishSlug: "andorra-la-vella",
     sourcedFrom: "augelegalfiscal.com",
@@ -65,7 +65,7 @@ export const listings: DirectoryListing[] = [
     category: "residency",
     officialUrl: "https://www.advantia.ad/en/",
     summary:
-      "Andorran consultancy. Its site lists company formation, tax, payroll, and immigration and residency procedures.",
+      "Andorran consultancy. Company formation, tax, payroll, immigration.",
     sourcedFrom: "advantia.ad",
   },
   {
@@ -74,7 +74,7 @@ export const listings: DirectoryListing[] = [
     category: "residency",
     officialUrl: "https://www.livinginandorra.com/index.html",
     summary:
-      "English practitioner at J W Serveis. Her site, livinginandorra.com, is an English guide to residency and daily life. Official letter codes and BOPA amounts remain the law.",
+      "English practitioner. livinginandorra.com is a guide. Official letter codes remain the law.",
     sourcedFrom: "livinginandorra.com",
     detail: [
       "She describes herself as English-born and resident in Andorra for about thirty-nine years. The index is dated 19 August 2026. Official figures on this site come from Govern.ad and the BOPA, not from her pages.",
@@ -106,7 +106,7 @@ export const listings: DirectoryListing[] = [
     category: "tax-law",
     officialUrl: "https://www.caseslacambra.com/office/andorra/",
     summary:
-      "Independent law firm with a published Andorra office. Its site describes business law, financial services and private wealth.",
+      "Independent firm with a published Andorra office. Business law, financial services, private wealth.",
     sourcedFrom: "caseslacambra.com",
   },
   {
@@ -115,7 +115,7 @@ export const listings: DirectoryListing[] = [
     category: "banks",
     officialUrl: "https://www.andbank.com/andorra/en/",
     summary:
-      "Andorra Banc Agrícol Reig, listed by the Association of Andorran Banks. Private banking group; Andorra site at andbank.com.",
+      "Andorra Banc Agrícol Reig. Listed by Andorran Banking.",
     sourcedFrom: "andbank.com and andorranbanking.ad",
   },
   {
@@ -124,7 +124,7 @@ export const listings: DirectoryListing[] = [
     category: "banks",
     officialUrl: "https://www.morabanc.ad/en/individuals",
     summary:
-      "Independent Andorran bank, listed by the Association of Andorran Banks. Retail and private banking on morabanc.ad.",
+      "Independent Andorran bank. Listed by Andorran Banking.",
     sourcedFrom: "morabanc.ad and andorranbanking.ad",
   },
   {
@@ -133,7 +133,7 @@ export const listings: DirectoryListing[] = [
     category: "banks",
     officialUrl: "https://creand.ad/",
     summary:
-      "Andorran banking group, formerly Crèdit Andorrà, listed by the Association of Andorran Banks. Personal and business banking on creand.ad.",
+      "Formerly Crèdit Andorrà. Listed by Andorran Banking.",
     sourcedFrom: "creand.ad and andorranbanking.ad",
   },
   {
@@ -143,7 +143,7 @@ export const listings: DirectoryListing[] = [
     officialUrl:
       "https://saas.ad/unitats-assistencials/hospital-nostra-senyora-meritxell",
     summary:
-      "The public hospital, run by SAAS. SAAS describes it as the country’s only hospital.",
+      "The public hospital. SAAS describes it as the country’s only hospital.",
     parish: "Escaldes-Engordany",
     parishSlug: "escaldes-engordany",
     sourcedFrom: "saas.ad",
@@ -154,7 +154,7 @@ export const listings: DirectoryListing[] = [
     category: "clinics",
     officialUrl: "https://www.cmcarlemany.com/",
     summary:
-      "Private medical centre in Escaldes-Engordany. Its site lists consulting rooms and how to book.",
+      "Private medical centre in Escaldes-Engordany.",
     parish: "Escaldes-Engordany",
     parishSlug: "escaldes-engordany",
     sourcedFrom: "cmcarlemany.com",
@@ -165,7 +165,7 @@ export const listings: DirectoryListing[] = [
     category: "property",
     officialUrl: "https://www.engelvoelkers.com/ad/en",
     summary:
-      "Residential and investment property consultancy, listed on the official AGIA register.",
+      "Residential and investment. On the AGIA register.",
     parish: "Andorra la Vella",
     parishSlug: "andorra-la-vella",
     sourcedFrom: "engelvoelkers.com and agia.ad",
@@ -176,7 +176,7 @@ export const listings: DirectoryListing[] = [
     category: "property",
     officialUrl: "https://www.andorra-sothebysrealty.com/",
     summary:
-      "Estate agency on the official AGIA register, with a published Escaldes-Engordany office.",
+      "On the AGIA register. Published Escaldes-Engordany office.",
     parish: "Escaldes-Engordany",
     parishSlug: "escaldes-engordany",
     sourcedFrom: "andorra-sothebysrealty.com and agia.ad",
@@ -187,7 +187,7 @@ export const listings: DirectoryListing[] = [
     category: "property",
     officialUrl: "https://rocpropietats.com/en/",
     summary:
-      "Sales and rentals agency on the official AGIA register. Its site covers the seven parishes.",
+      "Sales and rentals. AGIA. Covers the seven parishes.",
     sourcedFrom: "rocpropietats.com and agia.ad",
   },
   {
@@ -196,7 +196,7 @@ export const listings: DirectoryListing[] = [
     category: "property",
     officialUrl: "https://www.inmobiliariacisa.com/",
     summary:
-      "La Massana estate agency on the official AGIA register. Sales, rentals and developments on its own site.",
+      "La Massana. AGIA. Sales, rentals, developments.",
     parish: "La Massana",
     parishSlug: "la-massana",
     sourcedFrom: "inmobiliariacisa.com and agia.ad",
@@ -207,7 +207,7 @@ export const listings: DirectoryListing[] = [
     category: "schools",
     officialUrl: "https://www.britishcollegeandorra.com/en",
     summary:
-      "International school in Andorra la Vella. Its site describes British and IB programmes, taught in English.",
+      "International school. British and IB programmes, taught in English.",
     parish: "Andorra la Vella",
     parishSlug: "andorra-la-vella",
     sourcedFrom: "britishcollegeandorra.com",
@@ -218,7 +218,7 @@ export const listings: DirectoryListing[] = [
     category: "schools",
     officialUrl: "https://www.uda.ad/en/",
     summary:
-      "The public university. Its site places the campus in Sant Julià de Lòria and lists bachelor, master’s and doctoral programmes.",
+      "Public university. Campus in Sant Julià de Lòria.",
     parish: "Sant Julià de Lòria",
     parishSlug: "sant-julia-de-loria",
     sourcedFrom: "uda.ad",
@@ -229,7 +229,7 @@ export const listings: DirectoryListing[] = [
     category: "property",
     officialUrl: "https://www.hanson.ad/",
     summary:
-      "Encamp estate agency on the official AGIA register. Sales, rentals and development from Avinguda Joan Martí, on its own site.",
+      "Encamp. AGIA. Avinguda Joan Martí.",
     parish: "Encamp",
     parishSlug: "encamp",
     sourcedFrom: "hanson.ad and agia.ad",
@@ -240,7 +240,7 @@ export const listings: DirectoryListing[] = [
     category: "property",
     officialUrl: "https://immogeiser.com/",
     summary:
-      "Ordino estate agency on the official AGIA register. Its site describes sales, rentals and valuations in the parish.",
+      "Ordino. AGIA. Sales, rentals, valuations.",
     parish: "Ordino",
     parishSlug: "ordino",
     sourcedFrom: "immogeiser.com and agia.ad",
@@ -251,7 +251,7 @@ export const listings: DirectoryListing[] = [
     category: "property",
     officialUrl: "https://www.serveisandorra.com/",
     summary:
-      "Canillo estate agency on the official AGIA register. The live site is serveisandorra.com; AGIA still lists altserveis.com, which redirects there.",
+      "Canillo. AGIA. Live site serveisandorra.com.",
     parish: "Canillo",
     parishSlug: "canillo",
     sourcedFrom: "serveisandorra.com and agia.ad",
@@ -262,7 +262,7 @@ export const listings: DirectoryListing[] = [
     category: "property",
     officialUrl: "https://www.andorgest.com/",
     summary:
-      "Sant Julià de Lòria estate agency on the official AGIA register. Sales, rentals and property administration on its own site.",
+      "Sant Julià de Lòria. AGIA. Sales, rentals, administration.",
     parish: "Sant Julià de Lòria",
     parishSlug: "sant-julia-de-loria",
     sourcedFrom: "andorgest.com and agia.ad",
@@ -273,7 +273,7 @@ export const listings: DirectoryListing[] = [
     category: "tax-law",
     officialUrl: "https://www.notariabartumeu.com/",
     summary:
-      "A notary office in Andorra la Vella. Its site covers civil and company documents, powers of attorney, and foreign-investment formalities.",
+      "Notary in Andorra la Vella. Civil and company documents, foreign-investment formalities.",
     parish: "Andorra la Vella",
     parishSlug: "andorra-la-vella",
     sourcedFrom: "notariabartumeu.com",
@@ -287,7 +287,7 @@ export const listings: DirectoryListing[] = [
     category: "clinics",
     officialUrl: "https://www.cass.ad/",
     summary:
-      "The public social-security fund. Affiliation, medical vouchers and emergency cover when you travel to Spain, France or Portugal are on cass.ad.",
+      "Public social-security fund. Affiliation and travel cover on cass.ad.",
     sourcedFrom: "cass.ad",
   },
   {
@@ -296,7 +296,7 @@ export const listings: DirectoryListing[] = [
     category: "schools",
     officialUrl: "https://www.lcf-andorre.fr/",
     summary:
-      "French-system collège and lycée in Andorra la Vella. The school’s own site lists programmes for the current year.",
+      "French-system collège and lycée in Andorra la Vella.",
     parish: "Andorra la Vella",
     parishSlug: "andorra-la-vella",
     sourcedFrom: "lcf-andorre.fr",
@@ -307,7 +307,7 @@ export const listings: DirectoryListing[] = [
     category: "insurance",
     officialUrl: "https://creandvida.ad/",
     summary:
-      "Andorran life and health insurer. Its site publishes medical cover aimed at people applying for residence without work.",
+      "Life and health insurer. Medical cover used on residence-without-work files.",
     sourcedFrom: "creandvida.ad",
     detail: [
       "The Assistència Mundial page says the product is for foreigners seeking residència passiva, and cites article 3 of the 1997 passive-residence regulation in the BOPA. Current Immigration letter codes and amounts are on Govern.ad, not on that product page.",
@@ -330,7 +330,7 @@ export const listings: DirectoryListing[] = [
     category: "utilities",
     officialUrl: "https://www.andorratelecom.ad/",
     summary:
-      "The national telephone, internet and television operator. Current offers and shop locations sit on its own site.",
+      "National telephone, internet and television operator.",
     sourcedFrom: "andorratelecom.ad",
   },
 ];
