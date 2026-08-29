@@ -641,21 +641,32 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/living-in-andorra": {
       kind: "prose",
       title: "Viure a Andorra",
-      dek: "Viure a Andorra.",
+      dek: "La prova es la setmana laboral, no un dissabte a les pistes.",
       meta: "Viure a Andorra",
-      blocks: [{ p: ["Coprincipat. Catala oficial. Tres sistemes. SAAS. CASS."] }],
+      blocks: [
+        {
+          p: [
+            "La prova es la setmana laboral, no un dissabte a les pistes. Andorra es un coprincipat entre Franca i Espanya. Es recorre la vall principal en menys d'una hora. No es un suburbi de Barcelona ni de Tolosa.",
+            "El catala es la llengua oficial. El castella i el frances s'hi fan servir molt. L'angles es habitual als despatxos i menys a la botiga del poble. Les notes actuals del Govern esperen que els nous residents avencin cap al catala en la renovació. Confirmeu el nivell aleshores exigit a Govern.ad.",
+            "Andorra la Vella i Escaldes-Engordany concentren la majoria de les cites i l'hospital public. Ordino i Canillo son mes alts. La Massana i Encamp son a carreteres d'esqui. Sant Julia de Loria es la porta sud, mes a prop d'Espanya i de la universitat. Un habitatge que serveix per a un expedient de residencia no es un xalet de vacances.",
+            "Tres sistemes escolars públicats: andorrà, espanyol i frances. La universitat pública es a Sant Julia. La sanitat pública es el SAAS; l'Hospital Nostra Senyora de Meritxell es descriu com l'unic hospital del pais. La seguretat social es la CASS. La cobertura depèn de l'afiliació.",
+          ],
+        },
+      ],
     },
     "/parishes": {
       kind: "parishes",
       title: "Les set parroquies",
-      dek: "Les set parroquies.",
+      dek: "Cadascuna te el seu Comu.",
       meta: "Les set parroquies",
+      lead: ["Cadascuna te el seu Comu."],
     },
     "/properties": {
       kind: "properties",
       title: "Immobles",
-      dek: "Immobles",
+      dek: "Llista buida.",
       meta: "Immobles",
+      lead: ["No inventem cases, preus ni fotografies."],
       empty: "Llista buida.",
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
@@ -664,7 +675,11 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Mudar-se a Andorra",
       dek: "Mudar-se a Andorra.",
       meta: "Mudar-se a Andorra",
-      blocks: [{ p: ["Conveni 2001."] }],
+      blocks: [
+        {
+          p: ["Conveni 2001. Servei d'Immigració. D.3 D.1 J.1 B.1."],
+        },
+      ],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/residence-without-work": {
@@ -675,8 +690,9 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "Subtipus i art.96.",
-            "Art.96 1.000.000; 800.000 per unitat; 400.000 Fons d'Habitatge; AFA 50.000+12.000 definitives no reemborsables tret de denegacio; tarifes 3.000/1.000/500.",
+            "D.1.2 D.1.3 D.1.4. Art.96. No D.1.1. 2/2/3/10.",
+            "1.000.000 / 800.000 / 400.000 / AFA 50.000+12.000 / 3.000 1.000 500.",
+            "Ingressos 300%+100%. 90 ≠ 183 IRPF.",
           ],
         },
       ],
@@ -687,7 +703,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Nomada digital — D.3",
       dek: "Residencia nomada digital — D.3.",
       meta: "Nomada digital — D.3",
-      blocks: [],
+      blocks: [{ p: ["Mitjans no en euros."] }],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/family-reunification": {
@@ -711,7 +727,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Compte propi — J.1",
       dek: "Compte propi — J.1.",
       meta: "Compte propi — J.1",
-      blocks: [{ p: ["Quota 200. 34%."] }],
+      blocks: [{ p: ["Quota 200. 34%. AFA 50.000. Professio libéral."] }],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/entrepreneur-residence": {
@@ -725,9 +741,9 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/the-file": {
       kind: "prose",
       title: "L'expedient i el banc",
-      dek: "L'expedient i el banc.",
+      dek: "Apostilla i traduccio al catala.",
       meta: "L'expedient i el banc",
-      blocks: [],
+      blocks: [{ p: ["Apostilla i traduccio al catala."] }],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/opening-a-bank-account": {
