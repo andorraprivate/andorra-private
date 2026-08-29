@@ -69,11 +69,37 @@ const related = listingsByCategory(item.category).filter(
       )
     }
 
+    {
+      item.detail && item.detail.length > 0 && (
+        <>
+          <h2>What her site covers</h2>
+          {item.detail.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </>
+      )
+    }
+    {
+      item.furtherLinks && item.furtherLinks.length > 0 && (
+        <div class="official-links">
+          {item.furtherLinks.map((link) => (
+            <a
+              href={link.href}
+              target={link.href.startsWith("http") ? "_blank" : undefined}
+              rel={link.href.startsWith("http") ? "noopener" : undefined}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )
+    }
+
     <h2>Source</h2>
     <p>
-      Listed from {item.sourcedFrom}. No telephone number or street address is
-      repeated here unless you open the official site, so we cannot drift from
-      it.
+      Listed from {item.sourcedFrom}. No telephone number, email or street
+      address is repeated here unless you open the official site, so we cannot
+      drift from it.
     </p>
 
     {

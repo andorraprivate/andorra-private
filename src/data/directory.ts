@@ -15,6 +15,8 @@ export interface DirectoryListing {
   parish?: string;
   parishSlug?: string;
   sourcedFrom: string;
+  detail?: string[];
+  furtherLinks?: { href: string; label: string }[];
 }
 
 export const categoryLabels: Record<DirectoryCategory, string> = {
@@ -64,10 +66,33 @@ export const listings: DirectoryListing[] = [
     slug: "jane-whittaker",
     name: "Jane Whittaker — J W Serveis",
     category: "residency",
-    officialUrl: "https://www.livinginandorra.com/residency_options.html",
+    officialUrl: "https://www.livinginandorra.com/index.html",
     summary:
-      "English residency consultation published by Jane Whittaker of J W Serveis on livinginandorra.com. She describes herself as English-born and resident in Andorra for about thirty-nine years. A practitioner map — not the law.",
+      "English residency consultation published by Jane Whittaker of J W Serveis on livinginandorra.com. She describes herself as English-born and resident in Andorra for about thirty-nine years. The whole site is a practitioner map — not the law.",
     sourcedFrom: "livinginandorra.com",
+    detail: [
+      "Her index (latest update 19 August 2026) and the category, renewal, tax, bank, company, school, driving-licence and Schengen pages are the standing English resource Rob locked. We do not copy her wording or treat her euro figures as law. Official text on Govern.ad, the BOPA and the AFA still wins. A reading of that map against the official codes is on the practitioner-map page.",
+      "Services she lists, in outline: meeting arrivals; bank introductions and KYC papers; tax-adviser and lawyer meetings; assembling the Immigration pack; viewings through partnered estate agents (she names Roc Properties); insurance declarations Immigration will stamp; school introductions; removals; car import and licence exchange; connecting utilities; and post-grant administration including renewals. Those are her offers. We do not invent her fees, and we do not write to her from this site.",
+      "Cost-of-living PDFs she publishes are her estimates for 2025 and earlier years — not official prices and not ours.",
+    ],
+    furtherLinks: [
+      {
+        href: "https://www.livinginandorra.com/residency_options.html",
+        label: "Residency options 2026 — Living in Andorra",
+      },
+      {
+        href: "https://www.livinginandorra.com/residency_renewals.html",
+        label: "Renewals — Living in Andorra",
+      },
+      {
+        href: "http://www.livinginandorra.com/files/COST_2025.pdf",
+        label: "COST_2025.pdf — her cost estimates",
+      },
+      {
+        href: "/practitioner-map",
+        label: "Our reading of her map (official text wins)",
+      },
+    ],
   },
   {
     slug: "cases-lacambra",

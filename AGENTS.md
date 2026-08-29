@@ -36,8 +36,9 @@ Marketing site for https://privateandorra.com — privacy, residency, and proper
 | `/family-reunification` | `src/pages/family-reunification.astro` |
 | `/self-employed-residence` | `src/pages/self-employed-residence.astro` |
 | `/entrepreneur-residence` | `src/pages/entrepreneur-residence.astro` |
+| `/practitioner-map` | `src/pages/practitioner-map.astro` |
 
-Directory listings live in `src/data/directory.ts`. Jane Whittaker / J W Serveis (`/directory/jane-whittaker`) is a sourced practitioner map only — official letter codes and BOPA amounts remain the authority.
+Directory listings live in `src/data/directory.ts`. Jane Whittaker / J W Serveis (`/directory/jane-whittaker`) and `/practitioner-map` treat the whole livinginandorra.com site as a standing English practitioner map. Official letter codes and BOPA amounts remain the authority. Do not copy her prose or treat her euro figures as law.
 
 Shared chrome lives in `src/layouts/Base.astro`, `src/components/Header.astro` and `src/components/Footer.astro`. Directory and parish copy is in `src/data/`.
 
