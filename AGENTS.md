@@ -37,6 +37,8 @@ Marketing site for https://privateandorra.com — privacy, residency, and proper
 | `/self-employed-residence` | `src/pages/self-employed-residence.astro` |
 | `/entrepreneur-residence` | `src/pages/entrepreneur-residence.astro` |
 
+Directory listings live in `src/data/directory.ts`. Jane Whittaker / J W Serveis (`/directory/jane-whittaker`) is a sourced practitioner map only — official letter codes and BOPA amounts remain the authority.
+
 Shared chrome lives in `src/layouts/Base.astro`, `src/components/Header.astro` and `src/components/Footer.astro`. Directory and parish copy is in `src/data/`.
 
 Keep `public/sitemap.xml` as a static file (do not add `src/pages/sitemap.xml.ts` — a generated route has 500’d on Vercel). List every public route. Canonical host is `https://www.privateandorra.com`. Keep `public/robots.txt` pointing at that sitemap.

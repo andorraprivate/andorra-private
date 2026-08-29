@@ -61,6 +61,15 @@ export const listings: DirectoryListing[] = [
     sourcedFrom: "advantia.ad",
   },
   {
+    slug: "jane-whittaker",
+    name: "Jane Whittaker — J W Serveis",
+    category: "residency",
+    officialUrl: "https://www.livinginandorra.com/residency_options.html",
+    summary:
+      "English residency consultation published by Jane Whittaker of J W Serveis on livinginandorra.com. She describes herself as English-born and resident in Andorra for about thirty-nine years. A practitioner map — not the law.",
+    sourcedFrom: "livinginandorra.com",
+  },
+  {
     slug: "cases-lacambra",
     name: "Cases Lacambra",
     category: "tax-law",
