@@ -7,11 +7,15 @@ interface Props {
 const { overlay = false, current = "" } = Astro.props;
 
 const links = [
-  { href: "/living-in-andorra", label: "Living" },
-  { href: "/parishes", label: "Parishes" },
+  { href: "/residency-vs-tax", label: "Three things" },
+  { href: "/passive-residency", label: "Passive" },
+  { href: "/company-active-residency", label: "Company" },
+  { href: "/buying-property", label: "Property" },
+  { href: "/the-file", label: "The file" },
+  { href: "/where-to-live", label: "Where to live" },
+  { href: "/shortlist", label: "Shortlist" },
   { href: "/directory", label: "Directory" },
-  { href: "/become-a-resident", label: "Become a Resident" },
-  { href: "/properties", label: "Properties" },
+  { href: "/living-in-andorra", label: "Living" },
 ];
 
 function isCurrent(href: string) {

@@ -1,232 +1,155 @@
 ---
 import Base from "../layouts/Base.astro";
+import ConfirmOfficial from "../components/ConfirmOfficial.astro";
 ---
 
 <Base
-  title="Live in Andorra | Moving to Andorra"
-  description="If you want to live in Andorra or are moving to Andorra: residency, banks and housing in English, from Govern.ad and the BOPA."
+  title="Andorra, without the brochure"
+  description="A private guide to residency, companies, property and the professionals worth using in Andorra."
   path="/"
-  overlayNav={true}
 >
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-label">Andorra</div>
-      <h1>If you’re thinking of living here</h1>
-      <p>
-        A small country in the Pyrenees. If you want to live in Andorra
-        you need a permit, a bank and a place to sleep. This site puts
-        the official pages into English.
-      </p>
-      <a href="/become-a-resident" class="hero-cta">Become a Resident</a>
-      <a href="/directory" class="hero-cta secondary">The directory</a>
-    </div>
+  <section class="page-header">
+    <h1>Andorra, without the brochure</h1>
+    <p>
+      If you are deciding whether to move money and time to Andorra,
+      start here. If you want a weekend in the mountains, this is the
+      wrong site.
+    </p>
   </section>
 
-  <section class="why" id="lifestyle">
-    <div class="why-header">
-      <h2>What you’re actually choosing</h2>
-      <p>
-        Andorra is a country, not a ski resort with a tax rumour attached.
-        Catalan is official. The capital is a short drive from both borders.
-      </p>
-    </div>
+  <section class="prose">
+    <ConfirmOfficial />
+    <p>
+      Andorra is a small country that sells a simple story: ten per cent
+      tax, mountains, safety, Europe without being in the EU. The story
+      is not false. It is incomplete. The permit is not the tax position.
+      The house is not automatically the investment. The bank will not
+      open because you asked nicely. And the 2026 law raised the price of
+      arriving without working.
+    </p>
+    <p>
+      Andorra Private is a short, maintained set of pages for people who
+      are actually going to file. We keep the four decisions that cost
+      real money in one place, and we keep a private list of
+      professionals we would use. We do not list every plumber in
+      Escaldes.
+    </p>
 
-    <div class="pillars">
-      <div class="pillar">
-        <h3>A permit, not a vibe</h3>
-        <p>
-          You live here under Andorran immigration law. The letters that
-          matter are the Government’s: A.1, J.1, D.1, B.1.
-        </p>
-      </div>
-      <div class="pillar">
-        <h3>Small, on purpose</h3>
-        <p>
-          Seven parishes. One public hospital. Three banking groups. You
-          will see the same streets in winter and in August.
-        </p>
-      </div>
-      <div class="pillar">
-        <h3>Mountains, then paperwork</h3>
-        <p>
-          Ski valleys and high villages are close. So are immigration,
-          notaries and the Comú. That is the point of the place.
-        </p>
-      </div>
-      <div class="pillar">
-        <h3>Read the live text</h3>
-        <p>
-          Fees and quotas move. Start with
-          <a href="https://www.govern.ad/" target="_blank" rel="noopener"
-            >Govern.ad</a
-          >
-          and the BOPA, then talk to counsel.
-        </p>
-      </div>
-    </div>
-  </section>
+    <h2>The four decisions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Decision</th>
+          <th>The question</th>
+          <th>Read</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Permit</td>
+          <td>Can you live here, and on what terms?</td>
+          <td>
+            <a href="/residency-vs-tax">Three things people confuse</a>
+            and
+            <a href="/passive-residency">Passive residency in 2026</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Tax</td>
+          <td>Will Spain, France or the UK still treat you as theirs?</td>
+          <td>
+            <a href="/residency-vs-tax">Three things people confuse</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Company</td>
+          <td>Do you need an Andorran SL, or only a permit?</td>
+          <td>
+            <a href="/company-active-residency">Company and active residency</a>
+          </td>
+        </tr>
+        <tr>
+          <td>House and bank</td>
+          <td>Can you buy, and will a bank take you?</td>
+          <td>
+            <a href="/buying-property">Buying property</a>
+            and
+            <a href="/the-file">The file and the bank</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
-  <section class="life" id="living">
-    <div class="life-header">
-      <h2>The year, without the brochure</h2>
-      <p>
-        Winter is busy on the eastern and western ski roads. Summer is
-        quieter. Most people who stay care more about the middle of the
-        week than about a powder morning.
-      </p>
-    </div>
+    <p>
+      Most people arriving from Spain or France mix up three separate
+      things: the immigration permit, tax residency, and buying a house.
+      Mix them up and you can spend a million euros and still be tax
+      resident somewhere you were trying to leave. Read
+      <a href="/residency-vs-tax">Three things people confuse</a>
+      before you read anything else.
+    </p>
 
-    <div class="life-grid">
-      <div class="life-card">
-        <div class="life-label">Winter</div>
-        <h3>Grandvalira and Pal-Arinsal</h3>
-        <p>
-          The slopes sit next to the villages. You are not transferring
-          two hours from a city airport. Roads still ice. Plan for that.
-        </p>
-      </div>
-      <div class="life-card">
-        <div class="life-label">Summer</div>
-        <h3>Trails and a shorter street</h3>
-        <p>
-          High paths, Sorteny, Comapedrosa, the Madriu valley. Shops and
-          restaurants stay open. The capital does not empty.
-        </p>
-      </div>
-      <div class="life-card">
-        <div class="life-label">Everyday</div>
-        <h3>Appointments and errands</h3>
-        <p>
-          Banks, schools and immigration sit in the central valley. If
-          you live higher up, you drive. That is a choice, not a flaw.
-        </p>
-      </div>
-    </div>
-    <a href="/living-in-andorra" class="text-link">Daily life</a>
-  </section>
+    <h2>What changed in 2026</h2>
+    <p>
+      Llei 2/2026 (Òmnibus 2) came into force on 13 February 2026. For
+      new passive files the investment floor is generally one million
+      euros in Andorran assets, with a property unit floor of eight
+      hundred thousand if you use real estate. The AFA sum is, for new
+      files, a payment rather than a refundable bond. Foreign buyers of
+      property pay a higher investment tax than they did in 2024. Quotas
+      exist. Treat any article dated before February 2026 as a historical
+      document.
+    </p>
+    <p>
+      The BOPA text is
+      <a
+        href="https://bopadocuments.blob.core.windows.net/bopa-documents/038015/pdf/CGL_2026_02_12_10_11_12.pdf"
+        target="_blank"
+        rel="noopener">Llei 2/2026</a
+      >.
+      Immigration pages sit on
+      <a
+        href="https://www.govern.ad/ca/tematiques/immigracio/residencia"
+        target="_blank"
+        rel="noopener">Govern.ad</a
+      >.
+    </p>
 
-  <section class="section">
-    <div class="section-header">
-      <h2>Start here</h2>
-      <p>
-        Permits, named firms, the seven parishes, and how we will list
-        homes. No invented houses. No invented fees.
-      </p>
-    </div>
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-label">Residency</div>
-        <h3>Become a resident</h3>
-        <p>
-          Official permit types, Law 2/2026 figures from the BOPA, and
-          links to Govern.ad.
-        </p>
-        <a href="/become-a-resident" class="text-link">Read it</a>
-      </div>
-      <div class="card">
-        <div class="card-label">Directory</div>
-        <h3>Named firms</h3>
-        <p>
-          Banks, counsel, AGIA agents, clinics and a school. Each has
-          its own website.
-        </p>
-        <a href="/directory" class="text-link">Open the directory</a>
-      </div>
-      <div class="card">
-        <div class="card-label">Parishes</div>
-        <h3>Seven communes</h3>
-        <p>
-          Andorra la Vella to Sant Julià. Pick the parish before you
-          pick the house.
-        </p>
-        <a href="/parishes" class="text-link">The parishes</a>
-      </div>
-      <div class="card">
-        <div class="card-label">Properties</div>
-        <h3>How we list homes</h3>
-        <p>
-          A template until we have a file we have seen. AGIA-registered
-          agents in the meantime.
-        </p>
-        <a href="/properties" class="text-link">The listing rules</a>
-      </div>
-    </div>
-  </section>
+    <h2>Who this is for</h2>
+    <ul>
+      <li>You can show serious means and a clean record.</li>
+      <li>
+        You can actually spend 90 or 183 days here, not just book a flat
+        and leave.
+      </li>
+      <li>
+        You want names, numbers and the points where files fail — not a
+        mood board.
+      </li>
+    </ul>
 
-  <section class="life">
-    <div class="life-header">
-      <h2>If you are actually moving</h2>
-      <p>
-        Country of departure, a bank meeting, buying before you are
-        resident, and the Government’s own D.3 page.
-      </p>
-    </div>
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-label">Relocation</div>
-        <h3>Moving to Andorra</h3>
-        <p>UK, Spain and France. Same Andorran file, different papers.</p>
-        <a href="/moving-to-andorra" class="text-link">Start here</a>
-      </div>
-      <div class="card">
-        <div class="card-label">Banking</div>
-        <h3>Open an account</h3>
-        <p>KYC in person. AFA supervision. Three named banks.</p>
-        <a href="/opening-a-bank-account" class="text-link">The bank note</a>
-      </div>
-      <div class="card">
-        <div class="card-label">Property</div>
-        <h3>Buy as a non-resident</h3>
-        <p>Foreign-investment authorisation. Tax at 6% or 10% as published.</p>
-        <a href="/buying-property" class="text-link">The purchase rules</a>
-      </div>
-      <div class="card">
-        <div class="card-label">D.3</div>
-        <h3>Digital nomad</h3>
-        <p>Remote work, a quota, 90 days. Means “set by regulation”.</p>
-        <a href="/digital-nomad" class="text-link">Read D.3</a>
-      </div>
-    </div>
-  </section>
+    <h2>Who this is not for</h2>
+    <ul>
+      <li>
+        Anyone looking for a seven-day “golden visa” with no presence.
+      </li>
+      <li>Anyone who needs Andorra to pretend it is still 2019.</li>
+      <li>
+        Anyone who wants a complete business directory. That already
+        exists, and it is not what we are building.
+      </li>
+    </ul>
 
-  <section class="section">
-    <div class="section-header">
-      <h2>The permits people ask about</h2>
-      <p>
-        Each note follows a live Govern.ad page. The euro figures that
-        appear are from the BOPA or the tariffs table.
-      </p>
-    </div>
-    <div class="card-grid">
-      <div class="card">
-        <div class="card-label">D.1</div>
-        <h3>Residence without work</h3>
-        <p>
-          Named subtypes, 90 days on the immigration page, and the
-          million-euro investment in Law 2/2026.
-        </p>
-        <a href="/residence-without-work" class="text-link">Read D.1</a>
-      </div>
-      <div class="card">
-        <div class="card-label">B.1</div>
-        <h3>Family reunification</h3>
-        <p>Who the Government lists, and the household means test.</p>
-        <a href="/family-reunification" class="text-link">Read B.1</a>
-      </div>
-      <div class="card">
-        <div class="card-label">Tax</div>
-        <h3>Tax residence</h3>
-        <p>Article 8 of Law 5/2014. 183 days, or the centre of interests.</p>
-        <a href="/tax-residence" class="text-link">Read the tax note</a>
-      </div>
-      <div class="card">
-        <div class="card-label">J.1 / D.4</div>
-        <h3>Work on your own account</h3>
-        <p>Self-employed residence and work, and the entrepreneur programme.</p>
-        <a href="/self-employed-residence" class="text-link">Read J.1</a>
-        &nbsp;·&nbsp;
-        <a href="/entrepreneur-residence" class="text-link">Read D.4</a>
-      </div>
-    </div>
+    <h2>Next</h2>
+    <p>
+      <a href="/residency-vs-tax">Three things people confuse</a>,
+      then either
+      <a href="/passive-residency">Passive residency in 2026</a>
+      or
+      <a href="/company-active-residency">Company and active residency</a>.
+      The private shortlist is not filled yet. Official sites we have
+      already sourced sit in the
+      <a href="/directory">directory</a>.
+    </p>
   </section>
 </Base>

@@ -356,6 +356,39 @@ nav.site-nav.overlay {
   font-size: 0.98rem;
 }
 
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.4rem 0 2.4rem;
+  font-size: 0.95rem;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid #d4cdc2;
+  padding: 0.7rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+  font-weight: 300;
+  color: #444;
+}
+
+.prose th {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--forest);
+  background: #f0ebe3;
+}
+
+.prose .as-of {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 1.6rem;
+}
+
 .official-links {
   display: grid;
   gap: 0.7rem;
