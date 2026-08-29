@@ -17,7 +17,7 @@ export type ProseCopy = {
   meta: string;
   notice?: string;
   table?: { headers: string[]; rows: string[][] };
-  blocks: { h?: string; p: string[] }[];
+  blocks: { h?: string; p: string[]; ul?: string[] }[];
   formIntro?: string;
 };
 
@@ -379,16 +379,39 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/become-a-resident": {
       kind: "prose",
       title: "Hacerse residente",
-      dek: "Hacerse residente.",
-      meta: "Hacerse residente",
+      dek: "Quien busca « residencia pasiva » o « golden visa » suele hablar del D.1. No es un nombre oficial andorrano.",
+      meta: "Residencia en Andorra: letras oficiales A.1, J.1, D.1, B.1, D.3, D.4 y cifras de 2026.",
       notice:
-        "Use el procedimiento vigente en Govern.ad y Llei 2/2026.",
+        "Use el procedimiento vigente en Govern.ad y el texto 2026 de la Llei 2/2026 en el BOPA antes de actuar. Las letras de abajo son las del Gobierno.",
+      table: {
+        headers: ["", ""],
+        rows: [
+          ["A.1", "Residencia y trabajo para un empleador andorrano."],
+          ["J.1", "Residencia y trabajo por cuenta propia."],
+          ["D.1", "Residencia sin tomar empleo local."],
+          ["B.1", "Reagrupación familiar."],
+          ["C.1", "Trabajo fronterizo."],
+          ["D.3", "Nomada digital. Sigue en Govern.ad."],
+          ["D.4", "Programás para emprendedores. Sigue en Govern.ad."],
+        ],
+      },
       blocks: [
         {
           p: [
-            "A.1 J.1 D.1 B.1 C.1 D.3 D.4.",
-            "Jane Whittaker mapa A=D.1 B=D.1.2 C=D.1.3 D=J.1 se dice una vez.",
-            "Decret 75/2026 cupo 200. Art.96 1.000.000; 800.000 por unidad; 400.000 Fons d'Habitatge; AFA 50.000+12.000 definitivas no reembolsables salvo denegacion; tarifas 3.000/1.000/500.",
+            "Algunos asesores anglosajones usan un mapa privado A/B/C/D. En Jane Whittaker, A = D.1 sin trabajo, B = D.1.2, C = D.1.3, D = J.1. Ese mapa se dice una vez. No es la ley. Este sitio usa los códigos oficiales.",
+            "Residencia y trabajo: A.1 suele exigir un contrato con una sociedad andorrana real y plaza en el cupo del ano. J.1 es la primera autorización si trabaja por cuenta propia. La primera tarjeta A.1 o J.1 suele ser de un ano. Una nota del Govern describe el Decret 75/2026: cupo general de 200 autorizaciónes por cuenta propia — 150 casos de inversion extranjera, 50 profesiones libérales. Compruebe que se esta expidiendo plaza antes de planear sobre el rumor de que la vía esta « cerrada ».",
+            "Lo que dice la Llei 2/2026 para la residencia sin actividad lucrativa: Llei 2/2026 de 22 de enero, públicada en el BOPA el 12 de febrero de 2026, en vigor el 13 de febrero de 2026. Articulo 96: el titular principal de una residencia sin actividad lucrativa debe invertir, de forma permanente y efectiva, al menos 1.000.000 de euros en activos andorraños nombrados.",
+          ],
+          ul: [
+            "Inmuebles; participaciones en sociedades residentes; ciertos instrumentos de deuda o de inversion colectiva de emisores residentes durante un máximo de 36 meses antes de mover la suma; deuda de la administracion pública; productos de seguro de vida de aseguradoras residentes; o depositos AFA no remunerados.",
+            "Si la inversion es total o parcialmente inmobiliaria: más de 800.000 euros por unidad. El millon sigue siendo el total.",
+            "La inversion baja a 400.000 euros si se coloca, de forma permanente y efectiva, en el Fons d'Habitatge, « de acuerdo con la normativa aplicable ». Una posibilidad legal, no un mostrador.",
+            "Ingreso a la AFA de 50.000 euros para el principal y 12.000 euros por cada dependiente. El BOPA dice que esas sumás son definitivas y no reembolsables, salvo denegacion de la autorización inicial.",
+          ],
+        },
+        {
+          p: [
+            "Tarifas de expedicion en Govern.ad, a dia de hoy: 3.000 euros por entrega de una autorización de residencia sin trabajo, 1.000 euros por dependiente y 500 euros por esa renovación. Confirme la linea de su expediente.",
           ],
         },
       ],
@@ -470,16 +493,36 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/residence-without-work": {
       kind: "prose",
       title: "Residencia sin trabajo — D.1",
-      dek: "Fuente página D.1 Govern.ad. Renovación D.2. Art.96. Si discrepan, rige la ley.",
+      dek: "Se busca « residencia pasiva ». Oficialmente es el D.1.",
       meta: "Residencia sin trabajo — D.1",
       notice:
-        "Fuente página D.1 Govern.ad. Renovación D.2. Art.96. Si discrepan, rige la ley.",
+        "Fuente: página D.1 en Govern.ad. Renovación: D.2. El articulo 96 de la Llei 2/2026 reviso la inversion y el ingreso AFA. La página D.1 en linea puede ir detras del BOPA. Si discrepan, rige la ley.",
       blocks: [
         {
+          h: "D.1.2 — profesionales con proyeccion internacional",
           p: [
-            "D.1.2 D.1.3 D.1.4. No D.1.1. 2/2/3/10.",
-            "Inversion 1.000.000; 800.000 por unidad; Fons d'Habitatge 400.000; AFA 50.000+12.000; tarifas 3.000/1.000/500.",
-            "Ingresos 300%+100%, formula salario x12x3. 90 ≠ 183 IRPF.",
+            "Sede o base de la actividad en Andorra. Como máximo una persona con contrato laboral. Al menos el 85 % de los servicios usados fuera de Andorra. Cupo fijado por reglamento. 90 días. Viabilidad de la actividad y cualificacion.",
+          ],
+        },
+        {
+          h: "D.1.3 — interes cientifico, cultural o deportivo",
+          p: [
+            "Reconocimiento internacional del talento. El mismo cupo y 90 días. Al menos el 85 % de los servicios fuera de Andorra. Un curriculum evaluable e ingresos de esa actividad en el año anterior a la autorización.",
+          ],
+        },
+        {
+          h: "D.1.4 — centros geriatricos o medicos privados",
+          p: [
+            "Residencia en un centro geriatrico, medico o terapeutico privado al menos 90 días al ano, sin ejercer alli actividad laboral o profesional.",
+          ],
+        },
+        {
+          p: [
+            "A 29 de agosto de 2026 las rubricas no muestran un D.1.1. El expediente clasico sin actividad lucrativa sigue siendo el del articulo 96.",
+            "Autorización inicial de dos años; primera renovación dos años; segunda tres años; después diez, salvo nacionales de Estados con convenio. Confirme el ciclo en el texto vivo.",
+            "Inversion: al menos 1.000.000 de euros; más de 800.000 euros por unidad si se usa inmueble; vía Fons d'Habitatge a 400.000 euros « de acuerdo con la normativa aplicable »; ingreso AFA 50.000 + 12.000 por dependiente, definitivo salvo denegacion inicial. Tarifas de tarjeta ahora 3.000 / 1.000 / 500.",
+            "Ingresos: más del 300 % del salario mínimo anual para el titular, más el 100 % de ese indicador por cada dependiente. La página da la formula: salario base x 12 x 3. Aqui no lo convertimos a euros.",
+            "Noventa días en una página de inmigración no son ciento ochenta y tres días en la ley del IRPF.",
           ],
         },
       ],
@@ -487,12 +530,26 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     },
     "/digital-nomad": {
       kind: "prose",
-      title: "Nomada digital — D.3",
-      dek: "Residencia nomada digital — D.3.",
-      meta: "Nomada digital — D.3",
+      title: "Residencia nomada digital — D.3",
+      dek: "El Gobierno sigue públicando una página D.3. Esto es esa página, en espanol.",
+      meta: "Residencia nomada digital — D.3",
       blocks: [
         {
-          p: ["Medios no en euros. Comu en un mes."],
+          p: [
+            "El D.3 autoriza a residir durante la vigencia de la autorización. Puede pedirla un recién llegado cuyo trabajo no exija un lugar geografico fijo y use las telecomúnicaciones; que entre en el cupo entonces fijado por reglamento; y que establezca residencia principal y efectiva al menos 90 días por año civil.",
+            "Inicial dos años; primera renovación dos años; segunda tres; después diez, salvo nacionales con convenio.",
+          ],
+          ul: [
+            "Solicitud de residencia sin trabajo.",
+            "Pasaporte, o documento nacional si es UE/EEE.",
+            "Antecedentes del pais de origen, de nacionalidad y de residencia, más declaración jurada.",
+            "Resolución favorable del ministerio competente en economia que califique el trabajo como no sedentario.",
+            "Prueba de vivienda habitable, o de una compra que deba cerrarse en el año de la solicitud.",
+            "Compromiso escrito de los 90 días y de mantener el seguro.",
+            "Medios económicos suficientes segun reglamento: la página no imprime una cifra en euros.",
+            "Cobertura de enfermedad e invalidez para Andorra (cobertura solo de enfermedad para menores y mayores de sesenta, segun la página).",
+            "Alta en el Comu en el plazo de un mes desde la concesion.",
+          ],
         },
       ],
       formIntro: "Si quiere una presentacion, deje un correo.",
@@ -500,20 +557,38 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/family-reunification": {
       kind: "prose",
       title: "Reagrupación familiar — B.1",
-      dek: "Reagrupación familiar — B.1.",
+      dek: "El B.1 autoriza a la persona reagrupada a residir con un nacional andorrano, o con el titular de una autorización de residencia y trabajo, siempre que esas personas residan en el pais.",
       meta: "Reagrupación familiar — B.1",
-      blocks: [{ p: ["Medios 100%/70%."] }],
+      blocks: [
+        {
+          p: [],
+          ul: [
+            "El conyuge, o el miembro de una union estable (unio estable de parella).",
+            "Los hijos menores del solicitante, y los del conyuge sobre los que tenga la guarda.",
+            "Los hijos mayores dependientes bajo tutela o institucion analoga.",
+            "Los ascendientes dependientes de al menos 65 años o jubilados.",
+            "Otras personas bajo tutela reconocida por el derécho andorrano, cuando ambos progenitores hayan perdido la patria potestad.",
+          ],
+        },
+        {
+          p: [
+            "La página no anade hermaños, ni parejas de hécho no inscritas como unio estable.",
+            "Con un nacional andorraño cabe la duracion maxima de diez años. Con titular de residencia y trabajo: un ano, renovable tres veces por dos años; a los siete años, renovaciónes de diez, salvo nacionales con convenio.",
+            "Medios: el 100 % del salario mínimo andorraño para el solicitante. Ingresos del hogar: al menos el 100 % de ese salario por cada adulto en la vivienda, y al menos el 70 % por cada menor. Si ambos conyuges son residentes légales, Inmigración solo suma ambos ingresos si el conyuge lo acepta de forma exprèsa. Aqui no convertimos esos porcentajes a euros.",
+          ],
+        },
+      ],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/tax-residence": {
       kind: "prose",
       title: "Residencia fiscal",
-      dek: "Art.8 Llei 5/2014.",
+      dek: "Un permiso de inmigración no es, por si solo, esa prueba.",
       meta: "Residencia fiscal",
       blocks: [
         {
           p: [
-            "Art.8 Llei 5/2014. No placet de HMRC / Agencia Tributaria / DGFiP.",
+            "Un permiso de inmigración no es, por si solo, esa prueba. Se tratan como residentes fiscales, y por tanto como contribuyentes del IRPF, las personas fisicas que permanecen más de 183 días en territorio andorraño en el año civil — las ausencias esporadicas cuentan salvo prueba de residencia fiscal en otro pais — o cuyo nucleo principal de actividades o intereses económicos esta aqui. Hay también presuncion cuando el conyuge no separado y los hijos menores son residentes fiscales aqui. Las páginas D.1 y D.3 hablan de 90 días. Eso es una condicion de inmigración. El articulo 8 habla de 183 días. El pais que deja puede seguir tratandole como su residente fiscal. No tome una carta de permiso por un placet de HMRC, de la Agencia Tributaria o de la DGFiP. Esta página no cita tipos del IRPF ni convenios. No presentamos declaraciónes.",
           ],
         },
       ],
@@ -522,12 +597,12 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/self-employed-residence": {
       kind: "prose",
       title: "Cuenta propia — J.1",
-      dek: "Cupo 200. 34%.",
+      dek: "El J.1 autoriza a residir y a ejercer una actividad por cuenta propia de forma permanente.",
       meta: "Cuenta propia — J.1",
       blocks: [
         {
           p: [
-            "Cupo 200. 34%. AFA 50.000. Profesion libéral. Comu tres meses. Sin cifra de facturación.",
+            "El J.1 autoriza a residir y a ejercer una actividad por cuenta propia de forma permanente. El Decret 75/2026 se describe como un cupo general de 200: 150 casos de inversion extranjera, 50 profesiones libérales. Compruebe que se esta expidiendo plaza de verdad. Primera autorización de un ano, renovable tres veces por dos años. A los siete años, renovaciónes de diez. Inversion extranjera: más del 34 %, constitución legal, en tres meses comercio inscrito y activo. Deposito AFA: la página J.1 en linea sigue nombrando 50.000 euros; si los textos discrepan, rige el BOPA. Profesion libéral: autorización y colegiación en tres meses. Alta en el Comu en tres meses. Los papeles de renovación piden prueba de la actividad comercial. No fijan una cifra de facturación.",
           ],
         },
       ],
@@ -535,37 +610,58 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     },
     "/entrepreneur-residence": {
       kind: "prose",
-      title: "Programás emprendedores — D.4",
-      dek: "Residencia programás de emprendedores — D.4.",
-      meta: "Programás emprendedores — D.4",
-      blocks: [{ p: ["Un ano. 90 días. Medios no en euros."] }],
+      title: "Residencia programás de emprendedores — D.4",
+      dek: "No es visado general de start-up.",
+      meta: "Residencia programás de emprendedores — D.4",
+      blocks: [
+        {
+          p: [
+            "No es visado general de start-up. Puede pedirla un recién llegado cuyo trabajo no exija un lugar fijo, que use las telecomúnicaciones y las herramientas del programa para emprendedores extranjeros, y que establezca residencia principal y efectiva al menos 90 días al ano. Autorización inicial de un ano, renovable por periodos sucesivos de la misma duracion. Mas corta que D.1 / D.3. El expediente incluye resolución favorable del ministerio de economia, vivienda (o una compra a cerrar en un ano), medios segun reglamento, seguro, compromiso escrito de los 90 días y alta en el Comu en el mes de la concesion. Los medios no se imprimen en euros en la página.",
+          ],
+        },
+      ],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/the-file": {
       kind: "prose",
       title: "El expediente y el banco",
-      dek: "Apostilla y traduccion al catalan.",
+      dek: "Casí todos los retrasos no son teoria jurídica. Son una apostilla que falta, un banco que no acepta el dinero o un certificado medico del sitio equivocado.",
       meta: "El expediente y el banco",
-      blocks: [{ p: ["Apostilla y traduccion al catalan."] }],
+      blocks: [
+        {
+          p: [
+            "Casí todos los retrasos no son teoria jurídica. Son una apostilla que falta, un banco que no acepta el dinero o un certificado medico del sitio equivocado. Monte un solo paquete. Todo documento público extranjero necesita apostilla y, en general, traduccion al catalan, salvo escrito en contrario. Pasaporte valido. Antecedentes de cada pais de la última decada, apostillados y recientes. Prueba de vivienda: contrato o escritura, no reserva de hotel. Medios y origen de fondos. Cobertura sanitaria. Reconocimiento medico cuando la vía lo exija. Actas de matrimonio y nacimiento. En J.1: estatutos, plan, libro de socios, autorización de inversion extranjera. En D.1: compromiso de inversion y después prueba de que se hizo a tiempo. Los bancos andorraños son pequenos, supervisados y alergicos a la fortuna sin explicacion. Abra la conversacion bancaria en paralelo, no después de la concesion.",
+          ],
+        },
+      ],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/opening-a-bank-account": {
       kind: "prose",
       title: "Abrir una cuenta",
-      dek: "Andbank MoraBanc Creand.",
+      dek: "Un proceso de cumplimiento, no un formulario desde el Wi-Fi del hotel.",
       meta: "Abrir una cuenta",
-      blocks: [{ p: ["Andbank MoraBanc Creand. KYC. AFA."] }],
+      blocks: [
+        {
+          p: [
+            "Un proceso de cumplimiento, no un formulario desde el Wi-Fi del hotel. Se pasa por Andbank, MoraBanc o Creand. Andorran Banking trata la solicitud como un proceso de cumplimiento. Las cuentas de no residentes pueden llevar un mínimo por el coste de verificar fondos extranjeros. Cada banco fija su umbral. No inventamos esas cifras. Puede pedirla cualquier persona fisica o jurídica. Los bancos pueden rechazar a un cliente si sospechan fondos ilicitos. No se abre una cuenta directamente por internet. El KYC exige una reunion, un documento oficial con fotografia y prueba del origen de los fondos. No hay cuentas anónimas. Andorra aplica las normás internacionales de intercambio de información fiscal. Las cuentas nuevas llevan una auto-certificación de residencia fiscal. La discrecion de la banca privada no es un escudo. La supervisiónn corresponde a la AFA.",
+          ],
+        },
+      ],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/buying-property": {
       kind: "prose",
       title: "Comprar siendo no residente",
-      dek: "Comprar siendo no residente.",
-      meta: "Comprar siendo no residente",
+      dek: "Una casa no es un permiso. La nota de 2026 sitúa el impuesto extra en el 6 % o el 10 %, segun el caso.",
+      meta: "Comprar en Andorra como no residente: autorización e impuesto de inversion extranjera al 6 % o 10 %.",
       blocks: [
         {
           p: [
-            "3% a 6% primer, 5% a 10% segunda. Decret 58/2026. AGIA. Una casa no es un permiso.",
+            "Porcentajes tomados de la nota de Govern.ad del 26 de febrero de 2026 y del Decret 58/2026. Confirme el test vigente con el Gobierno, un notario y un agente AGIA.",
+            "Se describe una autorización administrativa prevía para la inversion extranjera inmobiliaria. Los casos públicados incluyen a un particular no residente que no es andorrano, y a un residente que no puede acreditar tres años de residencia efectiva y permanente en los diez años anteriores a la solicitud, con las salvedades de convenios y ausencias por estudios.",
+            "La nota del 26 de febrero de 2026 indica que el impuesto pasa del 3 % al 6 % en un primer inmueble, y del 5 % al 10 % en una segunda vivienda. Lea el reglamento vigente para exenciones y el tramo del 10 %. El notario formaliza la compraventa concluida.",
+            "Los agentes deben estar inscritos en AGIA. Este sitio no inventa casas ni precios. Las páginas de inmigración piden prueba de alojamiento; la compra puede servir una vez la escritura este en orden. El permiso sigue siendo una solicitud de inmigración.",
           ],
         },
       ],
@@ -607,16 +703,38 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/become-a-resident": {
       kind: "prose",
       title: "Esdevenir resident",
-      dek: "Esdevenir resident.",
-      meta: "Esdevenir resident",
-      notice: "Govern.ad i Llei 2/2026.",
+      dek: "Qui cerca « residencia passiva » o « golden visa » sol parlar del D.1. No es un nom oficial andorrà.",
+      meta: "Qui cerca « residencia passiva » o « golden visa » sol parlar del D.1. No es un nom oficial andorrà.",
+      notice:
+        "Feu servir el procediment vigent a Govern.ad i el text 2026 de la Llei 2/2026 al BOPA abans d'actuar. Les lletres de sota son les del Govern.",
+      table: {
+        headers: ["", ""],
+        rows: [
+          ["A.1", "Residencia i treball per a un ocupador andorrà."],
+          ["J.1", "Residencia i treball per compte propi."],
+          ["D.1", "Residencia sense prendre una feina local."],
+          ["B.1", "Reagrupament familiar."],
+          ["C.1", "Treball fronterer."],
+          ["D.3", "Nomada digital. Encara a Govern.ad."],
+          ["D.4", "Programes per a emprenedors. Encara a Govern.ad."],
+        ],
+      },
       blocks: [
         {
           p: [
-            "A.1 J.1 D.1 B.1 C.1 D.3 D.4.",
-            "Jane Whittaker mapa un cop.",
-            "Decret 75/2026 quota 200. Art.96 1.000.000; 800.000 per unitat; 400.000 Fons d'Habitatge; AFA 50.000+12.000 definitives no reemborsables tret de denegacio; tarifes 3.000/1.000/500.",
+            "Alguns assessors anglosaxons fan servir un mapa privat A/B/C/D. A Jane Whittaker, A = D.1 sense treball, B = D.1.2, C = D.1.3, D = J.1. Aquest mapa es diu un cop. No es la llei. Aquest lloc fa servir els codis oficials.",
+            "A.1 sol exigir un contracte amb una societat andorrana real i una placa en la quota de l'any. J.1 es la primera autorització si treballeu per compte propi. La primera targeta A.1 o J.1 sol ser d'un any. Una nota del Govern descriu el Decret 75/2026: quota general de 200 autoritzacións per compte propi — 150 casos d'inversio estrangera, 50 professions libérals. Comproveu que s'esta expedint placa.",
+            "Llei 2/2026 del 22 de gener, públicada al BOPA el 12 de febrer del 2026, en vigor el 13 de febrer del 2026. Article 96: el titular principal ha d'invertir, de manera permanent i efectiva, com a minim 1.000.000 d'euros en actius andorrans nomenats.",
           ],
+          ul: [
+            "Immobles; participacions; instruments de deute o inversio col·lectiva 36 mesos; deute públic; asseguranca de vida; diposits AFA no remunerats.",
+            "Si immobiliaria: mes de 800.000 euros per unitat. El milio continua sent el total.",
+            "400.000 al Fons d'Habitatge « d'acord amb la normativa aplicable ». Possibilitat legal, no un taulell.",
+            "AFA 50.000 + 12.000, definitives i no reemborsables tret de denegacio inicial.",
+          ],
+        },
+        {
+          p: ["Tarifes 3.000 / 1.000 / 500."],
         },
       ],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
@@ -673,7 +791,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/moving-to-andorra": {
       kind: "prose",
       title: "Mudar-se a Andorra",
-      dek: "Mudar-se a Andorra.",
+      dek: "Conveni 2001. Servei d'Immigració. D.3 D.1 J.1 B.1.",
       meta: "Mudar-se a Andorra",
       blocks: [
         {
@@ -685,14 +803,34 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/residence-without-work": {
       kind: "prose",
       title: "Residencia sense treball — D.1",
-      dek: "Residencia sense treball — D.1.",
+      dek: "Font página D.1 a Govern.ad. Renovació D.2. Article 96. Si discrepen, regeix la llei.",
       meta: "Residencia sense treball — D.1",
+      notice:
+        "Font página D.1 a Govern.ad. Renovació D.2. Article 96. Si discrepen, regeix la llei.",
       blocks: [
         {
+          h: "D.1.2 professionals amb projeccio internacional",
           p: [
-            "D.1.2 D.1.3 D.1.4. Art.96. No D.1.1. 2/2/3/10.",
-            "1.000.000 / 800.000 / 400.000 / AFA 50.000+12.000 / 3.000 1.000 500.",
-            "Ingressos 300%+100%. 90 ≠ 183 IRPF.",
+            "Seu a Andorra, com a maxim una persona amb contracte, 85 % serveis fora, quota, 90 dies, viabilitat i qualificacio.",
+          ],
+        },
+        {
+          h: "D.1.3 interès scientific, cultural o esportiu",
+          p: [
+            "Reconeixement internacional, mateixa quota i 90 dies, 85 % fora, curriculum i ingressos l'any anterior.",
+          ],
+        },
+        {
+          h: "D.1.4 centres geriatrics o medics privats",
+          p: ["90 dies, sense activitat professional."],
+        },
+        {
+          p: [
+            "A 29 d'agost del 2026 no hi ha D.1.1. L'expedient classic es l'article 96.",
+            "Autorització 2 / 2 / 3 / 10 tret de conveni.",
+            "Inversio 1.000.000; 800.000 per unitat; Fons d'Habitatge 400.000; AFA 50.000+12.000; tarifes 3.000/1.000/500.",
+            "Ingressos mes del 300 % del salari minim anual + 100 % per dependent. Formula salari x 12 x 3. No convertim a euros.",
+            "Noranta dies no son 183 de l'IRPF.",
           ],
         },
       ],
@@ -700,66 +838,140 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     },
     "/digital-nomad": {
       kind: "prose",
-      title: "Nomada digital — D.3",
-      dek: "Residencia nomada digital — D.3.",
-      meta: "Nomada digital — D.3",
-      blocks: [{ p: ["Mitjans no en euros."] }],
+      title: "Residencia nomada digital — D.3",
+      dek: "El D.3 autoritza a residir durant la vigenza.",
+      meta: "Residencia nomada digital — D.3",
+      blocks: [
+        {
+          p: [
+            "El D.3 autoritza a residir durant la vigenza. Nouvingut sense lloc fix, telecomúnicacions, quota, 90 dies. Inicial 2/2/3/10.",
+          ],
+          ul: [
+            "Sol·licitud.",
+            "Passaport o document UE/EEE.",
+            "Antecedents.",
+            "Resolució del ministeri.",
+            "Habitatge o compra en un any.",
+            "Compromis 90 dies i asseguranca.",
+            "Mitjans segons reglament sense xifra en euros.",
+            "Malaltia i invalidesa (nomes malaltia menors i mes de seixanta).",
+            "Alta al Comu en un mes.",
+          ],
+        },
+      ],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/family-reunification": {
       kind: "prose",
       title: "Reagrupament familiar — B.1",
-      dek: "Reagrupament familiar — B.1.",
+      dek: "Persona reagrupada amb nacional andorrà o titular de residencia i treball que resideixin al pais.",
       meta: "Reagrupament familiar — B.1",
-      blocks: [{ p: ["Formula 100%/70%."] }],
+      blocks: [
+        {
+          p: [],
+          ul: [
+            "Conuge o unio estable de parella.",
+            "Fills menors i del conuge amb guarda.",
+            "Fills grans dependents sota tutela.",
+            "Ascendents 65+ o jubilats.",
+            "Altres sota tutela si ambdos progenitors han perdut la patria potestat.",
+          ],
+        },
+        {
+          p: [
+            "Sense germans ni parelles de fet no inscrites.",
+            "Nacional: deu anys. Residencia i treball: un any, tres vegades dos, als set anys deu.",
+            "Mitjans 100 % salari minim sol·licitant; llar 100 % per adult i 70 % per menor. No convertim a euros.",
+          ],
+        },
+      ],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/tax-residence": {
       kind: "prose",
       title: "Residencia fiscal",
-      dek: "Residencia fiscal.",
+      dek: "Un permís no es aquesta prova.",
       meta: "Residencia fiscal",
-      blocks: [{ p: ["Art.8."] }],
+      blocks: [
+        {
+          p: [
+            "Un permís no es aquesta prova. IRPF si mes de 183 dies (absencies esporadiques compten tret de prova en un altre pais) o nucli principal d'interessos aqui. Presumpcio conuge no separat i fills menors. D.1 i D.3 90 dies son immigració. Article 8 son 183. El pais que deixeu pot continuar reclamant. No es un placet de HMRC, Agencia Tributaria o DGFiP. Aquesta página no cita tipus de l'IRPF. No presentem declaracións.",
+          ],
+        },
+      ],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/self-employed-residence": {
       kind: "prose",
       title: "Compte propi — J.1",
-      dek: "Compte propi — J.1.",
+      dek: "Quota Decret 75/2026 de 200: 150 / 50.",
       meta: "Compte propi — J.1",
-      blocks: [{ p: ["Quota 200. 34%. AFA 50.000. Professio libéral."] }],
+      blocks: [
+        {
+          p: [
+            "Quota Decret 75/2026 de 200: 150 / 50. Primera un any, tres vegades dos, als set anys deu. Inversio estrangera mes del 34 %, constitució, comerç actiu en tres mesos. Página J.1 encara nomena 50.000; si discrepen, BOPA. Professio libéral: autorització i col·legiació en tres mesos. Alta al Comu en tres mesos. Renovació demana activitat comercial, no facturació.",
+          ],
+        },
+      ],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/entrepreneur-residence": {
       kind: "prose",
-      title: "Programes d'emprenedors — D.4",
-      dek: "Residencia programes d'emprenedors — D.4.",
-      meta: "Programes d'emprenedors — D.4",
-      blocks: [{ p: ["Targetes d'un any."] }],
+      title: "Residencia programes d'emprenedors — D.4",
+      dek: "No visat general.",
+      meta: "Residencia programes d'emprenedors — D.4",
+      blocks: [
+        {
+          p: [
+            "No visat general. 90 dies. Un any renovable mateixa durada. Resolució ministeri, habitatge, mitjans per reglament no impresos en euros, asseguranca, compromis, Comu en un mes.",
+          ],
+        },
+      ],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/the-file": {
       kind: "prose",
       title: "L'expedient i el banc",
-      dek: "Apostilla i traduccio al catala.",
+      dek: "Apostilla que falta, banc que no accepta diners, certificat medic del lloc equivocat.",
       meta: "L'expedient i el banc",
-      blocks: [{ p: ["Apostilla i traduccio al catala."] }],
+      blocks: [
+        {
+          p: [
+            "Apostilla que falta, banc que no accepta diners, certificat medic del lloc equivocat. Un sol paquet. Apostilla i traduccio al catala tret d'escrit en contra. Passaport; antecedents 10 anys; habitatge contracte o escriptura; mitjans i origen; cobertura; reconeixement medic; actes matrimoni i naixement; J.1 estatuts pla llibre de socis autorització; D.1 compromis i prova a temps. Conversa bancaria en paral·lel, no despres.",
+          ],
+        },
+      ],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/opening-a-bank-account": {
       kind: "prose",
       title: "Obrir un compte",
-      dek: "Obrir un compte.",
+      dek: "Andbank, MoraBanc o Creand. Compliment.",
       meta: "Obrir un compte",
-      blocks: [{ p: ["Andbank MoraBanc Creand."] }],
+      blocks: [
+        {
+          p: [
+            "Andbank, MoraBanc o Creand. Compliment. Els comptes de no residents poden portar un minim. Cada banc fixa el llindar. No inventem xifres. KYC en persona. No internet. No anònims. Intercanvi d'informació. Auto-certificació. La discrecio no es un escut. Supervisión AFA.",
+          ],
+        },
+      ],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/buying-property": {
       kind: "prose",
       title: "Comprar sent no resident",
-      dek: "Comprar sent no resident.",
-      meta: "Comprar sent no resident",
-      blocks: [{ p: ["6% o 10%. Decret 58/2026."] }],
+      dek: "Una casa no es un permís. La nota del 2026 situa l'impost extra en el 6 % o el 10 %, segons el cas.",
+      meta: "Una casa no es un permís. La nota del 2026 situa l'impost extra en el 6 % o el 10 %, segons el cas.",
+      blocks: [
+        {
+          p: [
+            "Percentatges presos de la nota de Govern.ad del 26 de febrer del 2026 i del Decret 58/2026. Confirmeu el test vigent amb el Govern, un notari i un agent AGIA.",
+            "Es descriu una autorització administrativa prevía per a la inversio estrangera immobiliaria. Els casos públicats inclouen un particular no resident que no es andorrà, i un resident que no pot acreditar tres anys de residencia efectiva i permanent en els deu anys anteriors a la sol·licitud, amb les salvetats de convenis i absencies per estudis.",
+            "La nota del 26 de febrer del 2026 indica que l'impost passa del 3 % al 6 % en un primer immoble, i del 5 % al 10 % en un segon habitatge. Llegiu el reglament vigent per a exempcions i el tram del 10 %. El notari formalitza la compravenda conclosa.",
+            "Els agents han d'estar inscrits a l'AGIA. Aquest lloc no inventa cases ni preus. Les pagines d'immigració demanen prova d'allotjament; la compra pot servir un cop l'escriptura estigui en ordre. El permís continua sent una sol·licitud d'immigració.",
+          ],
+        },
+      ],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
   },
