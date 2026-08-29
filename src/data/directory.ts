@@ -3,8 +3,10 @@ export type DirectoryCategory =
   | "tax-law"
   | "property"
   | "banks"
+  | "insurance"
   | "clinics"
-  | "schools";
+  | "schools"
+  | "utilities";
 
 export interface DirectoryListing {
   slug: string;
@@ -24,8 +26,10 @@ export const categoryLabels: Record<DirectoryCategory, string> = {
   "tax-law": "Tax & law",
   property: "Property",
   banks: "Banks",
-  clinics: "Clinics & hospitals",
+  insurance: "Insurance",
+  clinics: "Health & social security",
   schools: "Schools",
+  utilities: "Phone & internet",
 };
 
 export const categoryOrder: DirectoryCategory[] = [
@@ -33,8 +37,10 @@ export const categoryOrder: DirectoryCategory[] = [
   "tax-law",
   "property",
   "banks",
+  "insurance",
   "clinics",
   "schools",
+  "utilities",
 ];
 
 /**
@@ -239,6 +245,94 @@ export const listings: DirectoryListing[] = [
     parishSlug: "ordino",
     sourcedFrom: "immogeiser.com and agia.ad",
   },
+  {
+    slug: "alt-serveis",
+    name: "Alt Serveis",
+    category: "property",
+    officialUrl: "https://www.serveisandorra.com/",
+    summary:
+      "Canillo estate agency on the official AGIA register. The live site is serveisandorra.com; AGIA still lists altserveis.com, which redirects there.",
+    parish: "Canillo",
+    parishSlug: "canillo",
+    sourcedFrom: "serveisandorra.com and agia.ad",
+  },
+  {
+    slug: "andorgest",
+    name: "Andorgest",
+    category: "property",
+    officialUrl: "https://www.andorgest.com/",
+    summary:
+      "Sant Julià de Lòria estate agency on the official AGIA register. Sales, rentals and property administration on its own site.",
+    parish: "Sant Julià de Lòria",
+    parishSlug: "sant-julia-de-loria",
+    sourcedFrom: "andorgest.com and agia.ad",
+  },
+  {
+    slug: "notaria-bartumeu",
+    name: "Notaria Bartumeu",
+    category: "tax-law",
+    officialUrl: "https://www.notariabartumeu.com/",
+    summary:
+      "A notary office in Andorra la Vella. Its site covers civil and company documents, powers of attorney, and foreign-investment formalities.",
+    parish: "Andorra la Vella",
+    parishSlug: "andorra-la-vella",
+    sourcedFrom: "notariabartumeu.com",
+    detail: [
+      "Notarial fees in Andorra are set by Government decree and published in the BOPA. They are the same for every notary. We do not copy the tariff here.",
+    ],
+  },
+  {
+    slug: "cass",
+    name: "CASS — Caixa Andorrana de Seguretat Social",
+    category: "clinics",
+    officialUrl: "https://www.cass.ad/",
+    summary:
+      "The public social-security fund. Affiliation, medical vouchers and emergency cover when you travel to Spain, France or Portugal are on cass.ad.",
+    sourcedFrom: "cass.ad",
+  },
+  {
+    slug: "lycee-comte-de-foix",
+    name: "Lycée Comte de Foix",
+    category: "schools",
+    officialUrl: "https://www.lcf-andorre.fr/",
+    summary:
+      "French-system collège and lycée in Andorra la Vella. The school’s own site lists programmes for the current year.",
+    parish: "Andorra la Vella",
+    parishSlug: "andorra-la-vella",
+    sourcedFrom: "lcf-andorre.fr",
+  },
+  {
+    slug: "creand-vida",
+    name: "Creand Vida",
+    category: "insurance",
+    officialUrl: "https://creandvida.ad/",
+    summary:
+      "Andorran life and health insurer. Its site publishes medical cover aimed at people applying for residence without work.",
+    sourcedFrom: "creandvida.ad",
+    detail: [
+      "The Assistència Mundial page says the product is for foreigners seeking residència passiva, and cites article 3 of the 1997 passive-residence regulation in the BOPA. Current Immigration letter codes and amounts are on Govern.ad, not on that product page.",
+      "We do not copy premiums or reimbursement tables. Those belong on the insurer’s site.",
+    ],
+    furtherLinks: [
+      {
+        href: "https://creandvida.ad/assistencia-sanitaria-mundial/",
+        label: "Assistència Mundial — Creand Vida",
+      },
+      {
+        href: "https://www.afa.ad/en/entitats-supervisades/assegurances/reassegurances/registre-dentitats-autoritzades/copy_of_companyies-andorranes",
+        label: "AFA — authorised Andorran insurers",
+      },
+    ],
+  },
+  {
+    slug: "andorra-telecom",
+    name: "Andorra Telecom",
+    category: "utilities",
+    officialUrl: "https://www.andorratelecom.ad/",
+    summary:
+      "The national telephone, internet and television operator. Current offers and shop locations sit on its own site.",
+    sourcedFrom: "andorratelecom.ad",
+  },
 ];
 
 export const officialRegisters = [
@@ -276,6 +370,11 @@ export const officialRegisters = [
     name: "Col·legi d’Advocats d’Andorra",
     url: "https://www.cada.ad/",
     note: "Official bar association.",
+  },
+  {
+    name: "AFA — Andorran insurers",
+    url: "https://www.afa.ad/en/entitats-supervisades/assegurances/reassegurances/registre-dentitats-autoritzades/copy_of_companyies-andorranes",
+    note: "Authorised Andorran insurance companies.",
   },
   {
     name: "CASS — social security",
