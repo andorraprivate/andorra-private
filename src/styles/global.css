@@ -35,6 +35,38 @@ a {
   color: var(--forest);
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 40;
+  background: white;
+  color: var(--forest);
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.interest-form button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
 nav.site-nav {
   padding: 2rem 7%;
   display: flex;
@@ -60,6 +92,24 @@ nav.site-nav.overlay {
   color: white;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.nav-menu {
+  margin-left: auto;
+  position: relative;
+}
+
+.nav-toggle {
+  list-style: none;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav-toggle::-webkit-details-marker {
+  display: none;
 }
 
 .nav-links {
@@ -319,6 +369,34 @@ nav.site-nav.overlay {
   font-size: 0.95rem;
 }
 
+.category-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.4rem;
+  margin: 0 0 1rem;
+}
+
+.category-jump a {
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.category-block {
+  margin-bottom: 4rem;
+  scroll-margin-top: 2rem;
+}
+
+.card-label a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-label a:hover {
+  color: var(--forest);
+}
+
 .text-link {
   display: inline-block;
   margin-top: 1.2rem;
@@ -532,13 +610,39 @@ footer.site-footer {
   gap: 1rem;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 1rem;
+    row-gap: 0.85rem;
+  }
+
+  .nav-menu[open] .nav-links {
+    display: flex;
+  }
+
   .nav-links a {
-    margin-left: 1rem;
+    margin-left: 0;
   }
 
   .hero-cta.secondary {
     display: inline-block;
     margin: 0.8rem 0 0;
+  }
+}
+
+@media (min-width: 861px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
   }
 }

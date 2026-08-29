@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { parishes, parishBySlug } from "../../data/parishes";
+import { listingsByParish } from "../../data/directory";
 
 export function getStaticPaths() {
   return parishes.map((item) => ({ params: { slug: item.slug } }));
@@ -13,6 +14,7 @@ if (!parish) {
 }
 
 const others = parishes.filter((item) => item.slug !== parish.slug);
+const localListings = listingsByParish(parish.slug);
 ---
 
 <Base
@@ -37,6 +39,23 @@ const others = parishes.filter((item) => item.slug !== parish.slug);
         >{parish.officialUrl}</a
       >.
     </p>
+
+    {
+      localListings.length > 0 && (
+        <>
+          <h2>In the directory</h2>
+          <p>
+            Organisations we already list with a published tie to this parish.
+            Confirm current details on their official sites.
+          </p>
+          <div class="official-links">
+            {localListings.map((item) => (
+              <a href={`/directory/${item.slug}`}>{item.name}</a>
+            ))}
+          </div>
+        </>
+      )
+    }
 
     <p>
       Looking for a home in this parish?

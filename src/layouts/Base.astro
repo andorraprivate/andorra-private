@@ -22,7 +22,7 @@ const {
 const canonical = `https://privateandorra.com${path === "/" ? "" : path}`;
 ---
 
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -44,7 +44,9 @@ const canonical = `https://privateandorra.com${path === "/" ? "" : path}`;
   </head>
   <body>
     <Header overlay={overlayNav} current={path} />
-    <slot />
+    <main id="main">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>

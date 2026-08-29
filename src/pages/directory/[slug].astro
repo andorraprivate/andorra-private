@@ -1,6 +1,11 @@
 ---
 import Base from "../../layouts/Base.astro";
-import { listings, listingBySlug, categoryLabels } from "../../data/directory";
+import {
+  listings,
+  listingBySlug,
+  listingsByCategory,
+  categoryLabels,
+} from "../../data/directory";
 
 export function getStaticPaths() {
   return listings.map((item) => ({ params: { slug: item.slug } }));
@@ -11,6 +16,10 @@ const item = listingBySlug(slug!);
 if (!item) {
   throw new Error(`Unknown directory slug: ${slug}`);
 }
+
+const related = listingsByCategory(item.category).filter(
+  (entry) => entry.slug !== item.slug,
+);
 ---
 
 <Base
@@ -19,7 +28,9 @@ if (!item) {
   path={`/directory/${item.slug}`}
 >
   <section class="page-header">
-    <p class="card-label">{categoryLabels[item.category]}</p>
+    <p class="card-label">
+      <a href={`/directory#${item.category}`}>{categoryLabels[item.category]}</a>
+    </p>
     <h1>{item.name}</h1>
     <p>{item.summary}</p>
   </section>
@@ -44,7 +55,13 @@ if (!item) {
         <>
           <h2>Parish</h2>
           <p>
-            Published against {item.parish}. See the
+            Published against{" "}
+            {item.parishSlug ? (
+              <a href={`/parishes/${item.parishSlug}`}>{item.parish}</a>
+            ) : (
+              item.parish
+            )}
+            . See the
             <a href="/parishes">parish notes</a>
             for context.
           </p>
@@ -58,6 +75,19 @@ if (!item) {
       repeated here unless you open the official site, so we cannot drift from
       it.
     </p>
+
+    {
+      related.length > 0 && (
+        <>
+          <h2>Also in {categoryLabels[item.category].toLowerCase()}</h2>
+          <div class="official-links">
+            {related.map((entry) => (
+              <a href={`/directory/${entry.slug}`}>{entry.name}</a>
+            ))}
+          </div>
+        </>
+      )
+    }
 
     <p>
       <a href="/directory" class="text-link">Back to the directory</a>

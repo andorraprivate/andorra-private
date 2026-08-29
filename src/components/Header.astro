@@ -13,20 +13,28 @@ const links = [
   { href: "/become-a-resident", label: "Become a Resident" },
   { href: "/properties", label: "Properties" },
 ];
+
+function isCurrent(href: string) {
+  return current === href || current.startsWith(`${href}/`);
+}
 ---
 
+<a class="skip-link" href="#main">Skip to content</a>
 <nav class:list={["site-nav", { overlay }]}>
   <a href="/" class="logo">Andorra Private</a>
-  <div class="nav-links">
-    {
-      links.map((link) => (
-        <a
-          href={link.href}
-          aria-current={current === link.href ? "page" : undefined}
-        >
-          {link.label}
-        </a>
-      ))
-    }
-  </div>
+  <details class="nav-menu">
+    <summary class="nav-toggle">Menu</summary>
+    <div class="nav-links">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            aria-current={isCurrent(link.href) ? "page" : undefined}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </details>
 </nav>

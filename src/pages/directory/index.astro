@@ -38,6 +38,15 @@ import {
         >.
       </p>
     </div>
+    <nav class="category-jump" aria-label="Directory categories">
+      {
+        categoryOrder
+          .filter((category) => listingsByCategory(category).length > 0)
+          .map((category) => (
+            <a href={`#${category}`}>{categoryLabels[category]}</a>
+          ))
+      }
+    </nav>
   </section>
 
   <section class="section" style="padding-top: 0;">
@@ -46,14 +55,20 @@ import {
         const items = listingsByCategory(category);
         if (items.length === 0) return null;
         return (
-          <div style="margin-bottom: 4rem;">
+          <div class="category-block" id={category}>
             <div class="section-header" style="margin-bottom: 2rem;">
               <h2>{categoryLabels[category]}</h2>
             </div>
             <div class="card-grid">
               {items.map((item) => (
                 <div class="card">
-                  <div class="card-label">{item.parish ?? "Andorra"}</div>
+                  <div class="card-label">
+                    {item.parishSlug ? (
+                      <a href={`/parishes/${item.parishSlug}`}>{item.parish}</a>
+                    ) : (
+                      (item.parish ?? "Andorra")
+                    )}
+                  </div>
                   <h3>{item.name}</h3>
                   <p>{item.summary}</p>
                   <a href={`/directory/${item.slug}`} class="text-link">

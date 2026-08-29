@@ -13,6 +13,7 @@ export interface DirectoryListing {
   officialUrl: string;
   summary: string;
   parish?: string;
+  parishSlug?: string;
   sourcedFrom: string;
 }
 
@@ -47,6 +48,7 @@ export const listings: DirectoryListing[] = [
     summary:
       "Andorra la Vella firm describing legal, tax, immigration and corporate advisory for individuals and companies, published on its own site.",
     parish: "Andorra la Vella",
+    parishSlug: "andorra-la-vella",
     sourcedFrom: "augelegalfiscal.com",
   },
   {
@@ -103,6 +105,7 @@ export const listings: DirectoryListing[] = [
     summary:
       "The public hospital of the Principality, operated by the Servei Andorrà d’Atenció Sanitària. SAAS describes it as the country’s only hospital.",
     parish: "Escaldes-Engordany",
+    parishSlug: "escaldes-engordany",
     sourcedFrom: "saas.ad",
   },
   {
@@ -113,6 +116,7 @@ export const listings: DirectoryListing[] = [
     summary:
       "Private medical centre in Escaldes-Engordany. Its official site lists consulting rooms and appointment contact details.",
     parish: "Escaldes-Engordany",
+    parishSlug: "escaldes-engordany",
     sourcedFrom: "cmcarlemany.com",
   },
   {
@@ -123,17 +127,19 @@ export const listings: DirectoryListing[] = [
     summary:
       "Residential and investment property consultancy listed on the official AGIA register of Andorran estate agents.",
     parish: "Andorra la Vella",
+    parishSlug: "andorra-la-vella",
     sourcedFrom: "engelvoelkers.com and agia.ad",
   },
   {
     slug: "andorra-sothebys",
     name: "Andorra Sotheby’s International Realty",
     category: "property",
-    officialUrl: "https://www.sir.ad/",
+    officialUrl: "https://www.andorra-sothebysrealty.com/",
     summary:
-      "Estate agency listed on the official AGIA register, with a published Escaldes-Engordany office and site at sir.ad.",
+      "Estate agency listed on the official AGIA register, with a published Escaldes-Engordany office on andorra-sothebysrealty.com.",
     parish: "Escaldes-Engordany",
-    sourcedFrom: "sir.ad and agia.ad",
+    parishSlug: "escaldes-engordany",
+    sourcedFrom: "andorra-sothebysrealty.com and agia.ad",
   },
   {
     slug: "roc-propietats",
@@ -148,11 +154,12 @@ export const listings: DirectoryListing[] = [
     slug: "cisa",
     name: "CISA",
     category: "property",
-    officialUrl: "https://www.cisa.ad/",
+    officialUrl: "https://www.inmobiliariacisa.com/",
     summary:
       "La Massana estate agency listed on the official AGIA register. Its site describes sales, rentals and developments in the Principality.",
     parish: "La Massana",
-    sourcedFrom: "cisa.ad and agia.ad",
+    parishSlug: "la-massana",
+    sourcedFrom: "inmobiliariacisa.com and agia.ad",
   },
   {
     slug: "british-college-andorra",
@@ -162,6 +169,7 @@ export const listings: DirectoryListing[] = [
     summary:
       "International school in Andorra la Vella. Its official site describes British and IB programmes with English-language teaching.",
     parish: "Andorra la Vella",
+    parishSlug: "andorra-la-vella",
     sourcedFrom: "britishcollegeandorra.com",
   },
 ];
@@ -216,6 +224,10 @@ export const officialRegisters = [
 
 export function listingsByCategory(category: DirectoryCategory) {
   return listings.filter((item) => item.category === category);
+}
+
+export function listingsByParish(parishSlug: string) {
+  return listings.filter((item) => item.parishSlug === parishSlug);
 }
 
 export function listingBySlug(slug: string) {
