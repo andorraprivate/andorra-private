@@ -461,8 +461,8 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       ],
       year: [
         {
-          label: "Hivern",
-          h: "Grandvalira Pal-Arinsal",
+          label: "L'any",
+          h: "Hivern",
           p: "Hivern Grandvalira Pal-Arinsal.",
         },
         {
@@ -472,7 +472,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
         },
         {
           label: "La setmana",
-          h: "Bancs, escoles, Immigració",
+          h: "Immigració",
           p: "La setmana bancs escoles Immigració a la vall central.",
         },
       ],
@@ -529,7 +529,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Immobles",
       dek: "Immobles",
       meta: "Immobles",
-      empty: "",
+      empty: "Llista buida.",
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/moving-to-andorra": {
@@ -545,7 +545,14 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Residencia sense treball — D.1",
       dek: "Residencia sense treball — D.1.",
       meta: "Residencia sense treball — D.1",
-      blocks: [{ p: ["D.1.2 D.1.3 D.1.4. Art.96."] }],
+      blocks: [
+        {
+          p: [
+            "Subtipus i art.96.",
+            "Art.96 1.000.000; 800.000 per unitat; 400.000 Fons d'Habitatge; AFA 50.000+12.000 definitives no reemborsables tret de denegacio; tarifes 3.000/1.000/500.",
+          ],
+        },
+      ],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/digital-nomad": {
@@ -561,7 +568,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Reagrupament familiar — B.1",
       dek: "Reagrupament familiar — B.1.",
       meta: "Reagrupament familiar — B.1",
-      blocks: [{ p: ["100%/70%."] }],
+      blocks: [{ p: ["Formula 100%/70%."] }],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/tax-residence": {
