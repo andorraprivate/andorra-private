@@ -35,6 +35,7 @@ export type ParishesCopy = {
   title: string;
   dek: string;
   meta: string;
+  lead?: string[];
 };
 
 export type PropertiesCopy = {
@@ -42,6 +43,7 @@ export type PropertiesCopy = {
   title: string;
   dek: string;
   meta: string;
+  lead?: string[];
   empty: string;
   formIntro?: string;
 };
@@ -125,8 +127,10 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "Le permis autorise a rester. La residence fiscale decide qui vous impose. La maison n'est qu'un actif — sauf si le permis l'exige.",
-            "90 vs 183. Llei 5/2014 art. 8.",
+            "Trois systemes.",
+            "1 permis 90 ou 183 immigration pas fiscal.",
+            "2 IRPF Llei 5/2014 art.8 183 jours ou centre d'intérêts. Permis 90 jours ne fait pas un resident fiscal.",
+            "3 acheter ne donne pas un permis. Plancher 800 000. IIEI pour non-residents et moins de 3 ans.",
           ],
         },
       ],
@@ -143,40 +147,74 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/living-in-andorra": {
       kind: "prose",
       title: "Vivre en Andorre",
-      dek: "Vivre en Andorre",
+      dek: "C'est la semaine de travail qui compte, pas un samedi sur les pistes.",
       meta: "Vivre en Andorre",
-      blocks: [],
+      blocks: [
+        {
+          p: [
+            "C'est la semaine de travail qui compte, pas un samedi sur les pistes. Andorre est une coprincipaute entre la France et l'Espagne. On traverse la vallée principale en moins d'une heure. Ce n'est pas une banlieue de Barcelone ou de Toulouse.",
+            "Le catalan est la langue officielle. L'espagnol et le francais sont largement employs. L'anglais est courant dans les bureaux et moins au magasin du village. Les notes actuelles du Gouvernement attendent des nouveaux residents un mouvement vers le catalan au renouvellement. Confirmez le niveau alors exige sur Govern.ad.",
+            "Andorra la Vella et Escaldes-Engordany tiennent la plupart des rendez-vous et l'hôpital public. Ordino et Canillo sont plus hauts. La Massana et Encamp sont sur les routes de ski. Sant Julia de Loria est la porte sud, plus pres de l'Espagne et de l'universite. Un logement qui tient pour un dossier de residence n'est pas un chalet de vacances.",
+            "Trois systemes scolaires publies: andorran, espagnol, francais. L'universite publique est a Sant Julia. La sante publique est le SAAS; l'Hôpital Nostra Senyora de Meritxell est decrit comme le seul hôpital du pays. La sécurité sociale est la CASS. La couverture depend de l'affiliation.",
+          ],
+        },
+      ],
     },
     "/parishes": {
       kind: "parishes",
       title: "Les sept paroisses",
-      dek: "Les sept paroisses",
+      dek: "Chaque paroisse a son Comu, son caractere et son altitude. Choisissez la paroisse avant la maison.",
       meta: "Les sept paroisses",
+      lead: [
+        "Chaque paroisse a son Comu, son caractere et son altitude. Choisissez la paroisse avant la maison.",
+      ],
     },
     "/properties": {
       kind: "properties",
       title: "Biens immobiliers",
-      dek: "Biens immobiliers",
+      dek: "Des logements pour des gens qui vivront ici, pas un portail racle.",
       meta: "Biens immobiliers",
-      empty: "",
+      lead: [
+        "Des logements pour des gens qui vivront ici, pas un portail racle. Tant que nous n'avons pas vu un dossier, la liste reste vide.",
+        "Nous n'inventons ni maisons, ni prix, ni photographies. Rien sur cette page n'est une offre. Acheter ou louer passe en general par un agent AGIA, un notaire, et pour les non-residents les regles d'investissement étranger en vigueur.",
+        "Paroisse, type, statut. Pas de photo empruntee. Pas de prix guess.",
+      ],
+      empty: "Selection actuelle: aucune annonce publique.",
       formIntro: "Laissez un email.",
     },
     "/moving-to-andorra": {
       kind: "prose",
       title: "S'installer en Andorre",
-      dek: "S'installer en Andorre",
+      dek: "Un depart, c'est un dossier d'immigration, un logement, une banque, et le plus souvent un conseil local.",
       meta: "S'installer en Andorre",
-      blocks: [],
-      formIntro: "Laissez un email.",
+      blocks: [
+        {
+          p: [
+            "Un depart, c'est un dossier d'immigration, un logement, une banque, et le plus souvent un conseil local. Orientation, pas un devis.",
+            "Les types de permis sont andorrans. Convention 2001 Espagne et France, plus tardive Portugal. Demandes au Servei d'Immigració. Identite, casiers apostilles, preuve de logement, etat civil, contrat pour salaries. Visite médicale. Après octroi, inscription au Comu.",
+            "D.3 D.1 J.1 société distincte B.1. Aucun n'est la residence fiscale. Nous ne sommes pas un cabinet d'avocats.",
+          ],
+        },
+      ],
+      formIntro: "Pour une introduction, laissez un courriel.",
     },
     "/residence-without-work": {
       kind: "prose",
       title: "Residence sans travail — D.1",
-      dek: "Residence sans travail — D.1",
+      dek: "Source Govern.ad. Renouvellement D.2. Art.96 Llei 2/2026. En cas de conflit, la loi l'emporte.",
       meta: "Residence sans travail — D.1",
+      notice:
+        "Source Govern.ad. Renouvellement D.2. Art.96 Llei 2/2026. En cas de conflit, la loi l'emporte.",
       blocks: [
         {
-          p: ["D.1.2 D.1.3 D.1.4. Art.96."],
+          p: [
+            "D.1.2 professionnels a projection internationale: siege en Andorre, au plus une personne sous contrat, 85% services hors Andorre, quota, 90 jours, viabilite et qualification.",
+            "D.1.3 interet scientifique culturel sportif: reconnaissance internationale, meme quota et 90 jours, 85% hors Andorre, curriculum, revenus l'année précédant.",
+            "D.1.4 centres gériatriques ou medicaux prives: 90 jours, sans activite professionnelle.",
+            "Au 29 aout 2026 pas de D.1.1. Dossier classique art.96. Initiale 2 ans; premier renouvellement 2; deuxieme 3; ensuite 10 sauf conventionnes.",
+            "Investissement 1 000 000; 800 000 par unite; Fons d'Habitatge 400 000 conformément a la règlementation; AFA 50 000+12 000 definitif sauf refus; tarifs 3 000/1 000/500.",
+            "Revenus 300% salaire minimum annuel + 100% par dépendant; calcul salaire x12x3; ne pas convertir en euros. 90 jours immigration ne sont pas 183 jours IRPF.",
+          ],
         },
       ],
       formIntro: "Laissez un email.",
@@ -184,65 +222,125 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/digital-nomad": {
       kind: "prose",
       title: "Nomade numerique — D.3",
-      dek: "Nomade numerique — D.3",
+      dek: "Residence nomade numerique — D.3. Autorise a resider pendant la duree.",
       meta: "Nomade numerique — D.3",
-      blocks: [],
+      blocks: [
+        {
+          p: [
+            "Residence nomade numerique — D.3. Autorise a resider pendant la duree. Travail sans lieu fixe, telecommúnications, quota, 90 jours. Initiale 2/2/3/10.",
+            "Dossier: formulaire residence sans travail; passeport ou CNI UE/EEE; casiers + declaration; resolution ministere économie; logement ou achat dans l'année; engagement 90 jours et assurance; moyens fixés par règlement sans montant en euros; maladie et invalidite (maladie seule mineurs et plus de 60); Comu dans le mois.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/family-reunification": {
       kind: "prose",
       title: "Regroupement familial — B.1",
-      dek: "Regroupement familial — B.1",
+      dek: "Reside avec national andorran ou titulaire residence-et-travail qui resident dans le pays.",
       meta: "Regroupement familial — B.1",
-      blocks: [],
+      blocks: [
+        {
+          p: [
+            "Reside avec national andorran ou titulaire residence-et-travail qui resident dans le pays.",
+            "Conjoint ou unio estable de parella; enfants mineurs et ceux du conjoint sous garde; enfants majeurs a charge sous tutelle; ascendants a charge 65+ ou retraites; autres sous tutelle si les deux parents ont perdu l'autorite parentale. Pas de freres/soeurs ni concubins non inscrits.",
+            "National: 10 ans. Residence-et-travail: 1 an, 3x2, après 7 ans 10.",
+            "Ressources 100% salaire minimum demandeur; menage 100% par adulte 70% par mineur; double revenu seulement si conjoint consent. Ne pas convertir en euros.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/tax-residence": {
       kind: "prose",
       title: "Residence fiscale",
-      dek: "Residence fiscale",
+      dek: "Permis n'est pas ce test.",
       meta: "Residence fiscale",
-      blocks: [{ p: ["Art. 8."] }],
+      blocks: [
+        {
+          p: [
+            "Permis n'est pas ce test. IRPF si plus de 183 jours (absences sporadiques comptent sauf preuve ailleurs) ou noyau principal d'intérêts ici. Presomption conjoint non separe et enfants mineurs.",
+            "D.1 et D.3 90 jours = immigration. Art.8 = 183. Pays de depart peut encore reclamer. Pas un quitus HMRC / Agencia Tributaria / DGFiP. Ne pas citer les taux d'IRPF. Nous ne deposons pas les declarations.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/self-employed-residence": {
       kind: "prose",
       title: "Compte propre — J.1",
-      dek: "Compte propre — J.1",
+      dek: "Quota Decret 75/2026 de 200: 150 investissement, 50 professions libérales.",
       meta: "Compte propre — J.1",
-      blocks: [{ p: ["34%. Decret 75/2026."] }],
+      blocks: [
+        {
+          p: [
+            "Quota Decret 75/2026 de 200: 150 investissement, 50 professions libérales. Premiere 1 an, 3x2, après 7 ans 10.",
+            "Voie investissement: >34%, constitution, commerce actif en 3 mois, AFA 50 000 encore nomme sur la page J.1, BOPA l'emporte.",
+            "Voie profession libérale: autorisation et college en 3 mois. Comu en 3 mois. Renouvellement demande l'activite commerciale, pas un chiffre d'affaires.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/entrepreneur-residence": {
       kind: "prose",
       title: "Programmes entrepreneurs — D.4",
-      dek: "Programmes entrepreneurs — D.4",
+      dek: "Residence programmes entrepreneurs — D.4. Pas un visa start-up general.",
       meta: "Programmes entrepreneurs — D.4",
-      blocks: [],
+      blocks: [
+        {
+          p: [
+            "Residence programmes entrepreneurs — D.4. Pas un visa start-up general. 90 jours. Initiale 1 an renouvelable mêmes périodes. Plus court que D.1/D.3.",
+            "Dossier: resolution ministere, logement ou achat dans l'année, moyens par règlement non imprimes en euros, assurance, engagement 90 jours, Comu dans le mois.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/the-file": {
       kind: "prose",
       title: "Le dossier et la banque",
-      dek: "Le dossier et la banque",
+      dek: "Apostille et traduction catalane sauf ecrit contraire.",
       meta: "Le dossier et la banque",
-      blocks: [],
+      blocks: [
+        {
+          p: [
+            "Apostille et traduction catalane sauf ecrit contraire.",
+            "Liste: passeport; casiers 10 ans; logement bail ou acte; moyens et origine des fonds; sante; examen médical; actes mariage/naissance; J.1 statuts plan registre autorisation; D.1 engagement puis preuve dans le delai.",
+            "Banques petites, supervisees. Conversation bancaire en parallele, pas après l'accord.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/opening-a-bank-account": {
       kind: "prose",
       title: "Ouvrir un compte",
-      dek: "Ouvrir un compte",
+      dek: "Andbank, MoraBanc ou Creand.",
       meta: "Ouvrir un compte",
-      blocks: [{ p: ["Andbank, MoraBanc, Creand."] }],
+      blocks: [
+        {
+          p: [
+            "Andbank, MoraBanc ou Creand. Conformite. Minimums possibles, chaque banque fixe son seuil, nous n'inventons pas ces chiffres.",
+            "KYC en personne. Pas internet. Pas anonymes. Echange d'informations. Auto-certification residence fiscale. Discretion n'est pas un bouclier. Supervisión AFA.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/buying-property": {
       kind: "prose",
       title: "Acheter en non-resident",
-      dek: "Acheter en non-resident",
+      dek: "Note 26 fevrier 2026 et Decret 58/2026.",
       meta: "Acheter en non-resident",
-      blocks: [{ p: ["6% 10%. Decret 58/2026."] }],
+      blocks: [
+        {
+          p: [
+            "Note 26 fevrier 2026 et Decret 58/2026. Autorisation préalable. Non resident non andorran, ou resident sans 3 ans dans les 10 ans. Taxe 3% a 6% premier bien, 5% a 10% seconde residence.",
+            "Notaire. Agents AGIA. Pas de maisons inventees. Achat peut servir de preuve de logement. Le permis reste une demande d'immigration.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
   },

@@ -3,13 +3,41 @@ export const parishCards: Record<
   { slug: string; name: string; line: string }[]
 > = {
   fr: [
-    { slug: "andorra-la-vella", name: "Andorra la Vella", line: "" },
-    { slug: "escaldes-engordany", name: "Escaldes-Engordany", line: "" },
-    { slug: "encamp", name: "Encamp", line: "" },
-    { slug: "canillo", name: "Canillo", line: "" },
-    { slug: "ordino", name: "Ordino", line: "" },
-    { slug: "la-massana", name: "La Massana", line: "" },
-    { slug: "sant-julia-de-loria", name: "Sant Julià de Lòria", line: "" },
+    {
+      slug: "andorra-la-vella",
+      name: "Andorra la Vella",
+      line: "La capitale: ministeres, commerces, centre quotidien de la vallée.",
+    },
+    {
+      slug: "escaldes-engordany",
+      name: "Escaldes-Engordany",
+      line: "Contre la capitale. Eau thermale, hôpital public, troncon plus residentiel de la vallée.",
+    },
+    {
+      slug: "encamp",
+      name: "Encamp",
+      line: "Paroisse de travail sur la route de Grandvalira, avec Pas de la Casa a la frontiere francaise.",
+    },
+    {
+      slug: "canillo",
+      name: "Canillo",
+      line: "Haute vallée est: Soldeu, El Tarter, troncon plus calme de Grandvalira.",
+    },
+    {
+      slug: "ordino",
+      name: "Ordino",
+      line: "Paroisse nord de villages et de bois. Ton plus residentiel. Sorteny.",
+    },
+    {
+      slug: "la-massana",
+      name: "La Massana",
+      line: "Pal, Arinsal et le massif du Comapedrosa. Ski l'hiver, sentiers l'ete.",
+    },
+    {
+      slug: "sant-julia-de-loria",
+      name: "Sant Julià de Lòria",
+      line: "Porte sud sur la route d'Espagne. Ville-seuil, universite, vie moins alpine.",
+    },
   ],
   es: [
     {
