@@ -21,6 +21,9 @@ Marketing site for https://privateandorra.com — privacy, residency, and proper
 | `/directory` | `src/pages/directory/index.astro` |
 | `/directory/[slug]` | `src/pages/directory/[slug].astro` |
 | `/privacy` | `src/pages/privacy.astro` (LQPD) |
+| `/official-sources` | `src/pages/official-sources.astro` |
+| `/education` | `src/pages/education.astro` |
+| `/healthcare` | `src/pages/healthcare.astro` |
 
 Shared chrome lives in `src/layouts/Base.astro`, `src/components/Header.astro` and `src/components/Footer.astro`. Directory and parish copy is in `src/data/`.
 

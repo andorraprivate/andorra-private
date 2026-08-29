@@ -31,6 +31,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.privateandorra.com/official-sources</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/education</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/healthcare</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.privateandorra.com/privacy</loc>
     <lastmod>2026-08-29</lastmod>
     <priority>0.5</priority>
@@ -132,6 +147,21 @@
   </url>
   <url>
     <loc>https://www.privateandorra.com/directory/british-college-andorra</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/directory/universitat-d-andorra</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/directory/hanson</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/directory/geiser</loc>
     <lastmod>2026-08-29</lastmod>
     <priority>0.6</priority>
   </url>

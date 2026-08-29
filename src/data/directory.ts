@@ -172,6 +172,39 @@ export const listings: DirectoryListing[] = [
     parishSlug: "andorra-la-vella",
     sourcedFrom: "britishcollegeandorra.com",
   },
+  {
+    slug: "universitat-d-andorra",
+    name: "Universitat d’Andorra",
+    category: "schools",
+    officialUrl: "https://www.uda.ad/en/",
+    summary:
+      "The public university of the Principality. Its official site places the campus in Sant Julià de Lòria and describes bachelor, master’s and doctoral programmes.",
+    parish: "Sant Julià de Lòria",
+    parishSlug: "sant-julia-de-loria",
+    sourcedFrom: "uda.ad",
+  },
+  {
+    slug: "hanson",
+    name: "Hanson",
+    category: "property",
+    officialUrl: "https://www.hanson.ad/",
+    summary:
+      "Encamp estate agency listed on the official AGIA register. Its own site describes sales, rentals and development work from Avinguda Joan Martí.",
+    parish: "Encamp",
+    parishSlug: "encamp",
+    sourcedFrom: "hanson.ad and agia.ad",
+  },
+  {
+    slug: "geiser",
+    name: "Geiser",
+    category: "property",
+    officialUrl: "https://immogeiser.com/",
+    summary:
+      "Ordino estate agency listed on the official AGIA register. Its own site describes itself as the parish’s local agency for sales, rentals and valuations.",
+    parish: "Ordino",
+    parishSlug: "ordino",
+    sourcedFrom: "immogeiser.com and agia.ad",
+  },
 ];
 
 export const officialRegisters = [
@@ -219,6 +252,16 @@ export const officialRegisters = [
     name: "SAAS — public healthcare",
     url: "https://saas.ad/",
     note: "Servei Andorrà d’Atenció Sanitària.",
+  },
+  {
+    name: "Govern d’Andorra — Education",
+    url: "https://www.govern.ad/ca/tematiques/educacio-formacio-investigacio-i-divulgacio-del-coneixement/estudiar-a-andorra/sistemes-educatius-a-andorra",
+    note: "The three education systems in Andorra.",
+  },
+  {
+    name: "Govern d’Andorra — Health",
+    url: "https://www.govern.ad/ca/tematiques/salut",
+    note: "Official health theme on Govern.ad.",
   },
 ];
 
