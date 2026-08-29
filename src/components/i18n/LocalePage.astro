@@ -227,6 +227,13 @@ const noticeParts =
           <h1>{copy.title}</h1>
           <p>{copy.dek}</p>
         </section>
+        {copy.lead && copy.lead.length > 0 && (
+          <section class="prose">
+            {copy.lead.map((para) => (
+              <p>{para}</p>
+            ))}
+          </section>
+        )}
         <section class="section" style="padding-top: 0;">
           <div class="card-grid">
             {cards.map((parish) => (
@@ -248,6 +255,13 @@ const noticeParts =
           <h1>{copy.title}</h1>
           <p>{copy.dek}</p>
         </section>
+        {copy.lead && copy.lead.length > 0 && (
+          <section class="prose">
+            {copy.lead.map((para) => (
+              <p>{para}</p>
+            ))}
+          </section>
+        )}
         <section class="section" style="padding-top: 0;">
           {copy.empty && (
             <div class="empty-listings">

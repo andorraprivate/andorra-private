@@ -35,6 +35,7 @@ export type ParishesCopy = {
   title: string;
   dek: string;
   meta: string;
+  lead?: string[];
 };
 
 export type PropertiesCopy = {
@@ -42,6 +43,7 @@ export type PropertiesCopy = {
   title: string;
   dek: string;
   meta: string;
+  lead?: string[];
   empty: string;
   formIntro?: string;
 };
@@ -125,8 +127,10 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "Le permis autorise a rester. La residence fiscale decide qui vous impose. La maison n'est qu'un actif — sauf si le permis l'exige.",
-            "90 vs 183. Llei 5/2014 art. 8.",
+            "Trois systemes.",
+            "1 permis 90 ou 183 immigration pas fiscal.",
+            "2 IRPF Llei 5/2014 art.8 183 jours ou centre d'intérêts. Permis 90 jours ne fait pas un resident fiscal.",
+            "3 acheter ne donne pas un permis. Plancher 800 000. IIEI pour non-residents et moins de 3 ans.",
           ],
         },
       ],
@@ -143,40 +147,74 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/living-in-andorra": {
       kind: "prose",
       title: "Vivre en Andorre",
-      dek: "Vivre en Andorre",
+      dek: "C'est la semaine de travail qui compte, pas un samedi sur les pistes.",
       meta: "Vivre en Andorre",
-      blocks: [],
+      blocks: [
+        {
+          p: [
+            "C'est la semaine de travail qui compte, pas un samedi sur les pistes. Andorre est une coprincipaute entre la France et l'Espagne. On traverse la vallée principale en moins d'une heure. Ce n'est pas une banlieue de Barcelone ou de Toulouse.",
+            "Le catalan est la langue officielle. L'espagnol et le francais sont largement employs. L'anglais est courant dans les bureaux et moins au magasin du village. Les notes actuelles du Gouvernement attendent des nouveaux residents un mouvement vers le catalan au renouvellement. Confirmez le niveau alors exige sur Govern.ad.",
+            "Andorra la Vella et Escaldes-Engordany tiennent la plupart des rendez-vous et l'hôpital public. Ordino et Canillo sont plus hauts. La Massana et Encamp sont sur les routes de ski. Sant Julia de Loria est la porte sud, plus pres de l'Espagne et de l'universite. Un logement qui tient pour un dossier de residence n'est pas un chalet de vacances.",
+            "Trois systemes scolaires publies: andorran, espagnol, francais. L'universite publique est a Sant Julia. La sante publique est le SAAS; l'Hôpital Nostra Senyora de Meritxell est decrit comme le seul hôpital du pays. La sécurité sociale est la CASS. La couverture depend de l'affiliation.",
+          ],
+        },
+      ],
     },
     "/parishes": {
       kind: "parishes",
       title: "Les sept paroisses",
-      dek: "Les sept paroisses",
+      dek: "Chaque paroisse a son Comu, son caractere et son altitude. Choisissez la paroisse avant la maison.",
       meta: "Les sept paroisses",
+      lead: [
+        "Chaque paroisse a son Comu, son caractere et son altitude. Choisissez la paroisse avant la maison.",
+      ],
     },
     "/properties": {
       kind: "properties",
       title: "Biens immobiliers",
-      dek: "Biens immobiliers",
+      dek: "Des logements pour des gens qui vivront ici, pas un portail racle.",
       meta: "Biens immobiliers",
-      empty: "",
+      lead: [
+        "Des logements pour des gens qui vivront ici, pas un portail racle. Tant que nous n'avons pas vu un dossier, la liste reste vide.",
+        "Nous n'inventons ni maisons, ni prix, ni photographies. Rien sur cette page n'est une offre. Acheter ou louer passe en general par un agent AGIA, un notaire, et pour les non-residents les regles d'investissement étranger en vigueur.",
+        "Paroisse, type, statut. Pas de photo empruntee. Pas de prix guess.",
+      ],
+      empty: "Selection actuelle: aucune annonce publique.",
       formIntro: "Laissez un email.",
     },
     "/moving-to-andorra": {
       kind: "prose",
       title: "S'installer en Andorre",
-      dek: "S'installer en Andorre",
+      dek: "Un depart, c'est un dossier d'immigration, un logement, une banque, et le plus souvent un conseil local.",
       meta: "S'installer en Andorre",
-      blocks: [],
-      formIntro: "Laissez un email.",
+      blocks: [
+        {
+          p: [
+            "Un depart, c'est un dossier d'immigration, un logement, une banque, et le plus souvent un conseil local. Orientation, pas un devis.",
+            "Les types de permis sont andorrans. Convention 2001 Espagne et France, plus tardive Portugal. Demandes au Servei d'Immigració. Identite, casiers apostilles, preuve de logement, etat civil, contrat pour salaries. Visite médicale. Après octroi, inscription au Comu.",
+            "D.3 D.1 J.1 société distincte B.1. Aucun n'est la residence fiscale. Nous ne sommes pas un cabinet d'avocats.",
+          ],
+        },
+      ],
+      formIntro: "Pour une introduction, laissez un courriel.",
     },
     "/residence-without-work": {
       kind: "prose",
       title: "Residence sans travail — D.1",
-      dek: "Residence sans travail — D.1",
+      dek: "Source Govern.ad. Renouvellement D.2. Art.96 Llei 2/2026. En cas de conflit, la loi l'emporte.",
       meta: "Residence sans travail — D.1",
+      notice:
+        "Source Govern.ad. Renouvellement D.2. Art.96 Llei 2/2026. En cas de conflit, la loi l'emporte.",
       blocks: [
         {
-          p: ["D.1.2 D.1.3 D.1.4. Art.96."],
+          p: [
+            "D.1.2 professionnels a projection internationale: siege en Andorre, au plus une personne sous contrat, 85% services hors Andorre, quota, 90 jours, viabilite et qualification.",
+            "D.1.3 interet scientifique culturel sportif: reconnaissance internationale, meme quota et 90 jours, 85% hors Andorre, curriculum, revenus l'année précédant.",
+            "D.1.4 centres gériatriques ou medicaux prives: 90 jours, sans activite professionnelle.",
+            "Au 29 aout 2026 pas de D.1.1. Dossier classique art.96. Initiale 2 ans; premier renouvellement 2; deuxieme 3; ensuite 10 sauf conventionnes.",
+            "Investissement 1 000 000; 800 000 par unite; Fons d'Habitatge 400 000 conformément a la règlementation; AFA 50 000+12 000 definitif sauf refus; tarifs 3 000/1 000/500.",
+            "Revenus 300% salaire minimum annuel + 100% par dépendant; calcul salaire x12x3; ne pas convertir en euros. 90 jours immigration ne sont pas 183 jours IRPF.",
+          ],
         },
       ],
       formIntro: "Laissez un email.",
@@ -184,65 +222,125 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/digital-nomad": {
       kind: "prose",
       title: "Nomade numerique — D.3",
-      dek: "Nomade numerique — D.3",
+      dek: "Residence nomade numerique — D.3. Autorise a resider pendant la duree.",
       meta: "Nomade numerique — D.3",
-      blocks: [],
+      blocks: [
+        {
+          p: [
+            "Residence nomade numerique — D.3. Autorise a resider pendant la duree. Travail sans lieu fixe, telecommúnications, quota, 90 jours. Initiale 2/2/3/10.",
+            "Dossier: formulaire residence sans travail; passeport ou CNI UE/EEE; casiers + declaration; resolution ministere économie; logement ou achat dans l'année; engagement 90 jours et assurance; moyens fixés par règlement sans montant en euros; maladie et invalidite (maladie seule mineurs et plus de 60); Comu dans le mois.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/family-reunification": {
       kind: "prose",
       title: "Regroupement familial — B.1",
-      dek: "Regroupement familial — B.1",
+      dek: "Reside avec national andorran ou titulaire residence-et-travail qui resident dans le pays.",
       meta: "Regroupement familial — B.1",
-      blocks: [],
+      blocks: [
+        {
+          p: [
+            "Reside avec national andorran ou titulaire residence-et-travail qui resident dans le pays.",
+            "Conjoint ou unio estable de parella; enfants mineurs et ceux du conjoint sous garde; enfants majeurs a charge sous tutelle; ascendants a charge 65+ ou retraites; autres sous tutelle si les deux parents ont perdu l'autorite parentale. Pas de freres/soeurs ni concubins non inscrits.",
+            "National: 10 ans. Residence-et-travail: 1 an, 3x2, après 7 ans 10.",
+            "Ressources 100% salaire minimum demandeur; menage 100% par adulte 70% par mineur; double revenu seulement si conjoint consent. Ne pas convertir en euros.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/tax-residence": {
       kind: "prose",
       title: "Residence fiscale",
-      dek: "Residence fiscale",
+      dek: "Permis n'est pas ce test.",
       meta: "Residence fiscale",
-      blocks: [{ p: ["Art. 8."] }],
+      blocks: [
+        {
+          p: [
+            "Permis n'est pas ce test. IRPF si plus de 183 jours (absences sporadiques comptent sauf preuve ailleurs) ou noyau principal d'intérêts ici. Presomption conjoint non separe et enfants mineurs.",
+            "D.1 et D.3 90 jours = immigration. Art.8 = 183. Pays de depart peut encore reclamer. Pas un quitus HMRC / Agencia Tributaria / DGFiP. Ne pas citer les taux d'IRPF. Nous ne deposons pas les declarations.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/self-employed-residence": {
       kind: "prose",
       title: "Compte propre — J.1",
-      dek: "Compte propre — J.1",
+      dek: "Quota Decret 75/2026 de 200: 150 investissement, 50 professions libérales.",
       meta: "Compte propre — J.1",
-      blocks: [{ p: ["34%. Decret 75/2026."] }],
+      blocks: [
+        {
+          p: [
+            "Quota Decret 75/2026 de 200: 150 investissement, 50 professions libérales. Premiere 1 an, 3x2, après 7 ans 10.",
+            "Voie investissement: >34%, constitution, commerce actif en 3 mois, AFA 50 000 encore nomme sur la page J.1, BOPA l'emporte.",
+            "Voie profession libérale: autorisation et college en 3 mois. Comu en 3 mois. Renouvellement demande l'activite commerciale, pas un chiffre d'affaires.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/entrepreneur-residence": {
       kind: "prose",
       title: "Programmes entrepreneurs — D.4",
-      dek: "Programmes entrepreneurs — D.4",
+      dek: "Residence programmes entrepreneurs — D.4. Pas un visa start-up general.",
       meta: "Programmes entrepreneurs — D.4",
-      blocks: [],
+      blocks: [
+        {
+          p: [
+            "Residence programmes entrepreneurs — D.4. Pas un visa start-up general. 90 jours. Initiale 1 an renouvelable mêmes périodes. Plus court que D.1/D.3.",
+            "Dossier: resolution ministere, logement ou achat dans l'année, moyens par règlement non imprimes en euros, assurance, engagement 90 jours, Comu dans le mois.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/the-file": {
       kind: "prose",
       title: "Le dossier et la banque",
-      dek: "Le dossier et la banque",
+      dek: "Apostille et traduction catalane sauf ecrit contraire.",
       meta: "Le dossier et la banque",
-      blocks: [],
+      blocks: [
+        {
+          p: [
+            "Apostille et traduction catalane sauf ecrit contraire.",
+            "Liste: passeport; casiers 10 ans; logement bail ou acte; moyens et origine des fonds; sante; examen médical; actes mariage/naissance; J.1 statuts plan registre autorisation; D.1 engagement puis preuve dans le delai.",
+            "Banques petites, supervisees. Conversation bancaire en parallele, pas après l'accord.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/opening-a-bank-account": {
       kind: "prose",
       title: "Ouvrir un compte",
-      dek: "Ouvrir un compte",
+      dek: "Andbank, MoraBanc ou Creand.",
       meta: "Ouvrir un compte",
-      blocks: [{ p: ["Andbank, MoraBanc, Creand."] }],
+      blocks: [
+        {
+          p: [
+            "Andbank, MoraBanc ou Creand. Conformite. Minimums possibles, chaque banque fixe son seuil, nous n'inventons pas ces chiffres.",
+            "KYC en personne. Pas internet. Pas anonymes. Echange d'informations. Auto-certification residence fiscale. Discretion n'est pas un bouclier. Supervisión AFA.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
     "/buying-property": {
       kind: "prose",
       title: "Acheter en non-resident",
-      dek: "Acheter en non-resident",
+      dek: "Note 26 fevrier 2026 et Decret 58/2026.",
       meta: "Acheter en non-resident",
-      blocks: [{ p: ["6% 10%. Decret 58/2026."] }],
+      blocks: [
+        {
+          p: [
+            "Note 26 fevrier 2026 et Decret 58/2026. Autorisation préalable. Non resident non andorran, ou resident sans 3 ans dans les 10 ans. Taxe 3% a 6% premier bien, 5% a 10% seconde residence.",
+            "Notaire. Agents AGIA. Pas de maisons inventees. Achat peut servir de preuve de logement. Le permis reste une demande d'immigration.",
+          ],
+        },
+      ],
       formIntro: "Laissez un email.",
     },
   },
@@ -304,7 +402,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "Permiso 90 o 183. IRPF Llei 5/2014 art.8 183 días o centro de intereses. Comprar no otorga permiso.",
+            "Tres pruebas. 90 o 183 inmigración. Art.8 183 o centro de intereses. Comprar no otorga permiso.",
           ],
         },
       ],
@@ -320,12 +418,15 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/living-in-andorra": {
       kind: "prose",
       title: "Vivir en Andorra",
-      dek: "Vivir en Andorra.",
+      dek: "La prueba es la semana laboral, no un sabado en las pistas.",
       meta: "Vivir en Andorra",
       blocks: [
         {
           p: [
-            "Coprincipado. Catalan oficial. Tres sistemás escolares. SAAS Meritxell único hospital. CASS.",
+            "La prueba es la semana laboral, no un sabado en las pistas. Andorra es un coprincipado entre Francia y Espana. Se recorre el valle principal en menos de una hora. No es un suburbio de Barcelona ni de Toulouse.",
+            "El catalan es la lengua oficial. El espanol y el frances se usan mucho. El ingles es habitual en despachos y menos en la tienda del pueblo. Las notas actuales del Gobierno esperan que los nuevos residentes avancen hacia el catalan en la renovación. Confirme el nivel entonces exigido en Govern.ad.",
+            "Andorra la Vella y Escaldes-Engordany concentran la mayoria de las citas y el hospital público. Ordino y Canillo estan más altos. La Massana y Encamp estan en carreteras de esqui. Sant Julia de Loria es la puerta sur, más cerca de Espana y de la universidad. Una vivienda que sirve para un expediente de residencia no es un chalet de vacaciones.",
+            "Tres sistemás escolares públicados: andorrano, espanol y frances. La universidad pública esta en Sant Julia. La sanidad pública es el SAAS; el Hospital Nostra Senyora de Meritxell se describe como el único hospital del pais. La seguridad social es la CASS. La cobertura depende de la afiliación.",
           ],
         },
       ],
@@ -333,26 +434,34 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/parishes": {
       kind: "parishes",
       title: "Las siete parroquias",
-      dek: "Las siete parroquias.",
+      dek: "Cada una tiene su Comu, su caracter y su altitud. Elija la parroquia antes que la casa.",
       meta: "Las siete parroquias",
+      lead: [
+        "Cada una tiene su Comu, su caracter y su altitud. Elija la parroquia antes que la casa.",
+      ],
     },
     "/properties": {
       kind: "properties",
       title: "Inmuebles",
-      dek: "No inventamos casas.",
+      dek: "Viviendas para quien va a vivir aqui, no un portal raspado.",
       meta: "Inmuebles",
-      empty: "Lista vacia.",
+      lead: [
+        "Viviendas para quien va a vivir aqui, no un portal raspado. Hasta que no hayamos visto un expediente, la lista permanece vacia.",
+        "No inventamos casas, precios ni fotografias. Nada en esta página es una oferta. Comprar o alquilar suele pasar por un agente AGIA, un notario y, para no residentes, las reglas vigentes de inversion extranjera.",
+      ],
+      empty: "Selección actual: ningun anuncio público.",
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/moving-to-andorra": {
       kind: "prose",
       title: "Mudarse a Andorra",
-      dek: "Mudarse a Andorra.",
+      dek: "Una mudanza es un expediente de inmigración, un sitio donde vivir, un banco y, casí siempre, un asesor local.",
       meta: "Mudarse a Andorra",
       blocks: [
         {
           p: [
-            "Convenio 2001 Espana y Francia, Portugal posterior. Servei d'Immigració. D.3 D.1 J.1 B.1. No somos un despacho.",
+            "Una mudanza es un expediente de inmigración, un sitio donde vivir, un banco y, casí siempre, un asesor local. Orientacion, no un presupuesto.",
+            "Convenio 2001 con Espana y Francia, otro posterior con Portugal. Servei d'Immigració. D.3 D.1 J.1 B.1. Ninguno es la residencia fiscal. No somos un despacho de abogados.",
           ],
         },
       ],
@@ -361,14 +470,16 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/residence-without-work": {
       kind: "prose",
       title: "Residencia sin trabajo — D.1",
-      dek: "Residencia sin trabajo — D.1.",
+      dek: "Fuente página D.1 Govern.ad. Renovación D.2. Art.96. Si discrepan, rige la ley.",
       meta: "Residencia sin trabajo — D.1",
+      notice:
+        "Fuente página D.1 Govern.ad. Renovación D.2. Art.96. Si discrepan, rige la ley.",
       blocks: [
         {
           p: [
-            "D.1.2 D.1.3 D.1.4. No D.1.1.",
-            "Art.96 1.000.000; 800.000 por unidad; 400.000 Fons d'Habitatge; AFA 50.000+12.000 definitivas no reembolsables salvo denegacion; tarifas 3.000/1.000/500.",
-            "300%+100%. 90 ≠ 183 IRPF.",
+            "D.1.2 D.1.3 D.1.4. No D.1.1. 2/2/3/10.",
+            "Inversion 1.000.000; 800.000 por unidad; Fons d'Habitatge 400.000; AFA 50.000+12.000; tarifas 3.000/1.000/500.",
+            "Ingresos 300%+100%, formula salario x12x3. 90 ≠ 183 IRPF.",
           ],
         },
       ],
@@ -379,7 +490,11 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Nomada digital — D.3",
       dek: "Residencia nomada digital — D.3.",
       meta: "Nomada digital — D.3",
-      blocks: [],
+      blocks: [
+        {
+          p: ["Medios no en euros. Comu en un mes."],
+        },
+      ],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/family-reunification": {
@@ -387,23 +502,35 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Reagrupación familiar — B.1",
       dek: "Reagrupación familiar — B.1.",
       meta: "Reagrupación familiar — B.1",
-      blocks: [{ p: ["100%/70%."] }],
+      blocks: [{ p: ["Medios 100%/70%."] }],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/tax-residence": {
       kind: "prose",
       title: "Residencia fiscal",
-      dek: "Residencia fiscal.",
+      dek: "Art.8 Llei 5/2014.",
       meta: "Residencia fiscal",
-      blocks: [{ p: ["Art.8."] }],
+      blocks: [
+        {
+          p: [
+            "Art.8 Llei 5/2014. No placet de HMRC / Agencia Tributaria / DGFiP.",
+          ],
+        },
+      ],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/self-employed-residence": {
       kind: "prose",
       title: "Cuenta propia — J.1",
-      dek: "Cuenta propia — J.1.",
+      dek: "Cupo 200. 34%.",
       meta: "Cuenta propia — J.1",
-      blocks: [{ p: ["Cupo 200. 34%. Profesion libéral."] }],
+      blocks: [
+        {
+          p: [
+            "Cupo 200. 34%. AFA 50.000. Profesion libéral. Comu tres meses. Sin cifra de facturación.",
+          ],
+        },
+      ],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/entrepreneur-residence": {
@@ -411,23 +538,23 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Programás emprendedores — D.4",
       dek: "Residencia programás de emprendedores — D.4.",
       meta: "Programás emprendedores — D.4",
-      blocks: [{ p: ["Tarjetas de un ano."] }],
+      blocks: [{ p: ["Un ano. 90 días. Medios no en euros."] }],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/the-file": {
       kind: "prose",
       title: "El expediente y el banco",
-      dek: "El expediente y el banco.",
+      dek: "Apostilla y traduccion al catalan.",
       meta: "El expediente y el banco",
-      blocks: [{ p: ["apostilla traduccion catalan."] }],
+      blocks: [{ p: ["Apostilla y traduccion al catalan."] }],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/opening-a-bank-account": {
       kind: "prose",
       title: "Abrir una cuenta",
-      dek: "Abrir una cuenta.",
+      dek: "Andbank MoraBanc Creand.",
       meta: "Abrir una cuenta",
-      blocks: [{ p: ["Andbank MoraBanc Creand."] }],
+      blocks: [{ p: ["Andbank MoraBanc Creand. KYC. AFA."] }],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/buying-property": {
@@ -438,7 +565,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "3% a 6% primer inmueble, 5% a 10% segunda. Decret 58/2026.",
+            "3% a 6% primer, 5% a 10% segunda. Decret 58/2026. AGIA. Una casa no es un permiso.",
           ],
         },
       ],
@@ -514,21 +641,32 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/living-in-andorra": {
       kind: "prose",
       title: "Viure a Andorra",
-      dek: "Viure a Andorra.",
+      dek: "La prova es la setmana laboral, no un dissabte a les pistes.",
       meta: "Viure a Andorra",
-      blocks: [{ p: ["Coprincipat. Catala oficial. Tres sistemes. SAAS. CASS."] }],
+      blocks: [
+        {
+          p: [
+            "La prova es la setmana laboral, no un dissabte a les pistes. Andorra es un coprincipat entre Franca i Espanya. Es recorre la vall principal en menys d'una hora. No es un suburbi de Barcelona ni de Tolosa.",
+            "El catala es la llengua oficial. El castella i el frances s'hi fan servir molt. L'angles es habitual als despatxos i menys a la botiga del poble. Les notes actuals del Govern esperen que els nous residents avencin cap al catala en la renovació. Confirmeu el nivell aleshores exigit a Govern.ad.",
+            "Andorra la Vella i Escaldes-Engordany concentren la majoria de les cites i l'hospital public. Ordino i Canillo son mes alts. La Massana i Encamp son a carreteres d'esqui. Sant Julia de Loria es la porta sud, mes a prop d'Espanya i de la universitat. Un habitatge que serveix per a un expedient de residencia no es un xalet de vacances.",
+            "Tres sistemes escolars públicats: andorrà, espanyol i frances. La universitat pública es a Sant Julia. La sanitat pública es el SAAS; l'Hospital Nostra Senyora de Meritxell es descriu com l'unic hospital del pais. La seguretat social es la CASS. La cobertura depèn de l'afiliació.",
+          ],
+        },
+      ],
     },
     "/parishes": {
       kind: "parishes",
       title: "Les set parroquies",
-      dek: "Les set parroquies.",
+      dek: "Cadascuna te el seu Comu.",
       meta: "Les set parroquies",
+      lead: ["Cadascuna te el seu Comu."],
     },
     "/properties": {
       kind: "properties",
       title: "Immobles",
-      dek: "Immobles",
+      dek: "Llista buida.",
       meta: "Immobles",
+      lead: ["No inventem cases, preus ni fotografies."],
       empty: "Llista buida.",
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
@@ -537,7 +675,11 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Mudar-se a Andorra",
       dek: "Mudar-se a Andorra.",
       meta: "Mudar-se a Andorra",
-      blocks: [{ p: ["Conveni 2001."] }],
+      blocks: [
+        {
+          p: ["Conveni 2001. Servei d'Immigració. D.3 D.1 J.1 B.1."],
+        },
+      ],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/residence-without-work": {
@@ -548,8 +690,9 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "Subtipus i art.96.",
-            "Art.96 1.000.000; 800.000 per unitat; 400.000 Fons d'Habitatge; AFA 50.000+12.000 definitives no reemborsables tret de denegacio; tarifes 3.000/1.000/500.",
+            "D.1.2 D.1.3 D.1.4. Art.96. No D.1.1. 2/2/3/10.",
+            "1.000.000 / 800.000 / 400.000 / AFA 50.000+12.000 / 3.000 1.000 500.",
+            "Ingressos 300%+100%. 90 ≠ 183 IRPF.",
           ],
         },
       ],
@@ -560,7 +703,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Nomada digital — D.3",
       dek: "Residencia nomada digital — D.3.",
       meta: "Nomada digital — D.3",
-      blocks: [],
+      blocks: [{ p: ["Mitjans no en euros."] }],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/family-reunification": {
@@ -584,7 +727,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Compte propi — J.1",
       dek: "Compte propi — J.1.",
       meta: "Compte propi — J.1",
-      blocks: [{ p: ["Quota 200. 34%."] }],
+      blocks: [{ p: ["Quota 200. 34%. AFA 50.000. Professio libéral."] }],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/entrepreneur-residence": {
@@ -598,9 +741,9 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/the-file": {
       kind: "prose",
       title: "L'expedient i el banc",
-      dek: "L'expedient i el banc.",
+      dek: "Apostilla i traduccio al catala.",
       meta: "L'expedient i el banc",
-      blocks: [],
+      blocks: [{ p: ["Apostilla i traduccio al catala."] }],
       formIntro: "Si voleu una presentacio, deixeu un correu.",
     },
     "/opening-a-bank-account": {
