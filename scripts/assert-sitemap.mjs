@@ -41,6 +41,7 @@ const required = [
   "https://www.privateandorra.com/moving-to-andorra",
   "https://www.privateandorra.com/opening-a-bank-account",
   "https://www.privateandorra.com/buying-property",
+  "https://www.privateandorra.com/company-formation",
   "https://www.privateandorra.com/digital-nomad",
   "https://www.privateandorra.com/residence-without-work",
   "https://www.privateandorra.com/family-reunification",

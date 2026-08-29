@@ -21,6 +21,7 @@ const priorities = {
   "/moving-to-andorra-from-france": "0.85",
   "/opening-a-bank-account": "0.85",
   "/buying-property": "0.85",
+  "/company-formation": "0.85",
   "/digital-nomad": "0.85",
   "/residence-without-work": "0.85",
   "/tax-residence": "0.85",
