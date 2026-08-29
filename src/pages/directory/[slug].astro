@@ -38,9 +38,9 @@ const related = listingsByCategory(item.category).filter(
   <section class="prose">
     <div class="notice">
       <p>
-        We are not this organisation and do not take a fee from the listing.
-        Details can change; use the official site for contact, opening hours and
-        current services.
+        We are not this organisation and we do not take a fee from the
+        listing. Use the official site for contact, hours and current
+        services.
       </p>
     </div>
 
@@ -72,7 +72,7 @@ const related = listingsByCategory(item.category).filter(
     {
       item.detail && item.detail.length > 0 && (
         <>
-          <h2>What her site covers</h2>
+          <h2>Notes</h2>
           {item.detail.map((paragraph) => (
             <p>{paragraph}</p>
           ))}
@@ -97,9 +97,8 @@ const related = listingsByCategory(item.category).filter(
 
     <h2>Source</h2>
     <p>
-      Listed from {item.sourcedFrom}. No telephone number, email or street
-      address is repeated here unless you open the official site, so we cannot
-      drift from it.
+      Listed from {item.sourcedFrom}. Contact details live on the official
+      site, so they cannot go stale here.
     </p>
 
     {
