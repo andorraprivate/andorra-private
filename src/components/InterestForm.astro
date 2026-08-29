@@ -1,0 +1,66 @@
+---
+interface Props {
+  intro: string;
+  source: string;
+}
+
+const { intro, source } = Astro.props;
+---
+
+<section class="interest" id="interest">
+  <h2>Register your interest</h2>
+  <p id="form-intro">{intro}</p>
+
+  <form
+    class="interest-form"
+    id="interest-form"
+    action="https://formspree.io/f/xkjwaqan"
+    method="POST"
+  >
+    <input type="hidden" name="source" value={source} />
+    <input
+      type="email"
+      name="email"
+      placeholder="Your email address"
+      required
+    />
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="success-message" id="success-message">
+    <h3>Thank you</h3>
+    <p>
+      Your interest has been registered. We’ll be in touch as suitable
+      opportunities become available.
+    </p>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("interest-form") as HTMLFormElement | null;
+  const successMessage = document.getElementById("success-message");
+  const formIntro = document.getElementById("form-intro");
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        form.style.display = "none";
+        if (formIntro) formIntro.style.display = "none";
+        if (successMessage) successMessage.style.display = "block";
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+</script>

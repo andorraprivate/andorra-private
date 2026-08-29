@@ -1,0 +1,86 @@
+---
+import Base from "../../layouts/Base.astro";
+import {
+  listings,
+  categoryOrder,
+  categoryLabels,
+  officialRegisters,
+  listingsByCategory,
+} from "../../data/directory";
+---
+
+<Base
+  title="Andorra directory | Residency, law, banks, clinics"
+  description="A first set of Andorran firms and institutions with official websites: residency advisors, law and tax, licensed estate agents, banks, clinics and a school."
+  path="/directory"
+>
+  <section class="page-header">
+    <h1>Directory</h1>
+    <p>
+      High-ticket help for a move: counsel, banks, licensed agents, clinics.
+      Every name below has an official site. We do not invent telephone numbers
+      or claim a relationship we do not have.
+    </p>
+  </section>
+
+  <section class="prose">
+    <div class="notice">
+      <p>
+        This is a sourced first set of {listings.length} listings, not a paid
+        ranking. Confirm licences on the official registers. For immigration
+        itself, start with
+        <a href="/become-a-resident">become a resident</a>
+        and
+        <a
+          href="https://www.govern.ad/ca/tematiques/immigracio/residencia-i-treball"
+          target="_blank"
+          rel="noopener">Govern.ad</a
+        >.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    {
+      categoryOrder.map((category) => {
+        const items = listingsByCategory(category);
+        if (items.length === 0) return null;
+        return (
+          <div style="margin-bottom: 4rem;">
+            <div class="section-header" style="margin-bottom: 2rem;">
+              <h2>{categoryLabels[category]}</h2>
+            </div>
+            <div class="card-grid">
+              {items.map((item) => (
+                <div class="card">
+                  <div class="card-label">{item.parish ?? "Andorra"}</div>
+                  <h3>{item.name}</h3>
+                  <p>{item.summary}</p>
+                  <a href={`/directory/${item.slug}`} class="text-link">
+                    Details
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })
+    }
+
+    <div class="section-header">
+      <h2>Official registers</h2>
+      <p>
+        Use these when you need the complete list, not a first introduction.
+      </p>
+    </div>
+    <div class="official-links">
+      {
+        officialRegisters.map((reg) => (
+          <a href={reg.url} target="_blank" rel="noopener">
+            {reg.name} — {reg.note}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>

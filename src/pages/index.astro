@@ -1,436 +1,148 @@
 ---
-// Andorra Private – Homepage
+import Base from "../layouts/Base.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    
-    <title>Andorra Private | Europe’s most private high-altitude address</title>
-    <meta name="description" content="Discover life in Andorra — a refined mountain principality offering privacy, favourable residency options, and exceptional quality of life." />
-    
-    <meta property="og:title" content="Andorra Private | Europe’s most private high-altitude address" />
-    <meta property="og:description" content="A refined mountain principality for those who value discretion, space, and a quieter form of luxury." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://privateandorra.com" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop" />
+<Base
+  title="Andorra Private | Europe’s most private high-altitude address"
+  description="Discover life in Andorra — a refined mountain principality offering privacy, favourable residency options, and exceptional quality of life."
+  path="/"
+  overlayNav={true}
+>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-label">The Principality</div>
+      <h1>Europe’s most private<br />high-altitude address</h1>
+      <p>
+        A refined mountain principality for those who value discretion, space,
+        and a quieter form of luxury.
+      </p>
+      <a href="/become-a-resident" class="hero-cta">Become a Resident</a>
+      <a href="/directory" class="hero-cta secondary">The directory</a>
+    </div>
+  </section>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <section class="why" id="lifestyle">
+    <div class="why-header">
+      <h2>Why Andorra</h2>
+      <p>
+        Not another alpine resort town. A sovereign principality with genuine
+        privacy, remarkable quality of life, and a scale that still feels human.
+      </p>
+    </div>
 
-    <style>
-      :root {
-        --forest: #1A2F23;
-        --stone: #E8E0D5;
-        --offwhite: #F7F4EF;
-        --charcoal: #1C1C1C;
-        --brass: #B08D57;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: 'Inter', system-ui, sans-serif;
-        background: var(--offwhite);
-        color: var(--charcoal);
-        line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
-      }
-
-      h1, h2, h3 {
-        font-family: 'Cormorant Garamond', Georgia, serif;
-        font-weight: 500;
-        line-height: 1.15;
-      }
-
-      nav {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 2rem 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 20;
-      }
-
-      .logo {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 1.35rem;
-        letter-spacing: 0.04em;
-        color: white;
-        text-decoration: none;
-      }
-
-      .nav-links a {
-        color: rgba(255,255,255,0.88);
-        text-decoration: none;
-        font-size: 0.82rem;
-        margin-left: 2.2rem;
-        letter-spacing: 0.05em;
-        transition: color 0.2s;
-      }
-
-      .nav-links a:hover {
-        color: white;
-      }
-
-      .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        padding: 0 7%;
-        background: 
-          linear-gradient(to bottom, rgba(20, 32, 26, 0.45), rgba(20, 32, 26, 0.72)),
-          url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2670&auto=format&fit=crop') center/cover no-repeat;
-        color: white;
-        position: relative;
-      }
-
-      .hero-content {
-        max-width: 680px;
-        padding-top: 4rem;
-      }
-
-      .hero-label {
-        font-size: 0.72rem;
-        letter-spacing: 0.28em;
-        text-transform: uppercase;
-        opacity: 0.85;
-        margin-bottom: 1.6rem;
-      }
-
-      .hero h1 {
-        font-size: clamp(2.9rem, 5.8vw, 4.6rem);
-        margin-bottom: 1.4rem;
-        font-weight: 500;
-      }
-
-      .hero p {
-        font-size: 1.12rem;
-        font-weight: 300;
-        max-width: 480px;
-        opacity: 0.92;
-        margin-bottom: 2.6rem;
-        line-height: 1.75;
-      }
-
-      .hero-cta {
-        display: inline-block;
-        padding: 0.95rem 2.1rem;
-        border: 1px solid rgba(255,255,255,0.55);
-        color: white;
-        text-decoration: none;
-        font-size: 0.8rem;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        transition: all 0.25s ease;
-      }
-
-      .hero-cta:hover {
-        background: white;
-        color: var(--forest);
-      }
-
-      .why {
-        padding: 7rem 7%;
-        background: var(--offwhite);
-      }
-
-      .why-header {
-        max-width: 620px;
-        margin-bottom: 4.5rem;
-      }
-
-      .why-header h2 {
-        font-size: clamp(2.1rem, 3.5vw, 2.8rem);
-        margin-bottom: 1.2rem;
-        color: var(--forest);
-      }
-
-      .why-header p {
-        font-size: 1.05rem;
-        color: #555;
-        font-weight: 300;
-        line-height: 1.7;
-      }
-
-      .pillars {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 2.5rem;
-      }
-
-      .pillar {
-        background: white;
-        padding: 2.4rem 2rem;
-        border: 1px solid #eae6df;
-      }
-
-      .pillar-number {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 1.6rem;
-        color: var(--brass);
-        margin-bottom: 1.1rem;
-      }
-
-      .pillar h3 {
-        font-size: 1.35rem;
-        margin-bottom: 0.9rem;
-        color: var(--forest);
-      }
-
-      .pillar p {
-        font-size: 0.95rem;
-        color: #555;
-        font-weight: 300;
-        line-height: 1.65;
-      }
-
-      .life {
-        padding: 7rem 7%;
-        background: #f0ebe3;
-      }
-
-      .life-header {
-        max-width: 620px;
-        margin-bottom: 4rem;
-      }
-
-      .life-header h2 {
-        font-size: clamp(2.1rem, 3.5vw, 2.8rem);
-        margin-bottom: 1.2rem;
-        color: var(--forest);
-      }
-
-      .life-header p {
-        font-size: 1.05rem;
-        color: #555;
-        font-weight: 300;
-        line-height: 1.7;
-      }
-
-      .life-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-      }
-
-      .life-card {
-        background: white;
-        padding: 2.6rem 2.2rem;
-        border: 1px solid #e5dfd6;
-      }
-
-      .life-label {
-        font-size: 0.72rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--brass);
-        margin-bottom: 1.1rem;
-      }
-
-      .life-card h3 {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-        color: var(--forest);
-      }
-
-      .life-card p {
-        font-size: 0.95rem;
-        color: #555;
-        font-weight: 300;
-        line-height: 1.65;
-      }
-
-      footer {
-        background: var(--forest);
-        color: rgba(255,255,255,0.85);
-        padding: 4.5rem 7% 3rem;
-      }
-
-      .footer-inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        gap: 3rem;
-        margin-bottom: 3.5rem;
-      }
-
-      .footer-brand {
-        max-width: 280px;
-      }
-
-      .footer-brand .logo {
-        color: white;
-        font-size: 1.4rem;
-        display: block;
-        margin-bottom: 1rem;
-      }
-
-      .footer-brand p {
-        font-size: 0.9rem;
-        font-weight: 300;
-        line-height: 1.6;
-        opacity: 0.8;
-      }
-
-      .footer-links {
-        display: flex;
-        gap: 4rem;
-      }
-
-      .footer-col h4 {
-        font-family: 'Inter', sans-serif;
-        font-size: 0.75rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-bottom: 1.2rem;
-        opacity: 0.7;
-        font-weight: 500;
-      }
-
-      .footer-col a {
-        display: block;
-        color: rgba(255,255,255,0.85);
-        text-decoration: none;
-        font-size: 0.9rem;
-        margin-bottom: 0.6rem;
-        transition: color 0.2s;
-      }
-
-      .footer-col a:hover {
-        color: white;
-      }
-
-      .footer-bottom {
-        border-top: 1px solid rgba(255,255,255,0.12);
-        padding-top: 1.8rem;
-        font-size: 0.8rem;
-        opacity: 0.6;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-    </style>
-  </head>
-
-  <body>
-    <nav>
-      <a href="/" class="logo">Andorra Private</a>
-      <div class="nav-links">
-        <a href="#lifestyle">Lifestyle</a>
-        <a href="#living">Living Here</a>
-        <a href="/become-a-resident">Become a Resident</a>
-        <a href="/properties">Properties</a>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-number">01</div>
+        <h3>True Privacy</h3>
+        <p>
+          One of Europe’s most discreet jurisdictions. A place where wealth does
+          not need to announce itself.
+        </p>
       </div>
-    </nav>
-
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-label">The Principality</div>
-        <h1>Europe’s most private<br>high-altitude address</h1>
-        <p>A refined mountain principality for those who value discretion, space, and a quieter form of luxury.</p>
-        <a href="/become-a-resident" class="hero-cta">Become a Resident</a>
+      <div class="pillar">
+        <div class="pillar-number">02</div>
+        <h3>Mountain Living</h3>
+        <p>
+          Dramatic Pyrenean landscape with exceptional air quality, outdoor
+          access, and a slower daily rhythm.
+        </p>
       </div>
-    </section>
-
-    <section class="why" id="lifestyle">
-      <div class="why-header">
-        <h2>Why Andorra</h2>
-        <p>Not another alpine resort town. A sovereign principality with genuine privacy, remarkable quality of life, and a scale that still feels human.</p>
+      <div class="pillar">
+        <div class="pillar-number">03</div>
+        <h3>Favourable Framework</h3>
+        <p>
+          Attractive residency options, political stability, and a clear path for
+          long-term living. Always confirm current rules with
+          <a href="https://www.govern.ad/" target="_blank" rel="noopener"
+            >Govern.ad</a
+          >.
+        </p>
       </div>
-
-      <div class="pillars">
-        <div class="pillar">
-          <div class="pillar-number">01</div>
-          <h3>True Privacy</h3>
-          <p>One of Europe’s most discreet jurisdictions. A place where wealth does not need to announce itself.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-number">02</div>
-          <h3>Mountain Living</h3>
-          <p>Dramatic Pyrenean landscape with exceptional air quality, outdoor access, and a slower daily rhythm.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-number">03</div>
-          <h3>Favourable Framework</h3>
-          <p>Attractive tax residency options, political stability, and a clear path for long-term living.</p>
-        </div>
-        <div class="pillar">
-          <div class="pillar-number">04</div>
-          <h3>Human Scale</h3>
-          <p>Small enough to feel personal, sophisticated enough to feel complete. No crowds, no noise.</p>
-        </div>
+      <div class="pillar">
+        <div class="pillar-number">04</div>
+        <h3>Human Scale</h3>
+        <p>
+          Small enough to feel personal, sophisticated enough to feel complete.
+          No crowds, no noise.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="life" id="living">
-      <div class="life-header">
-        <h2>Life in the Principality</h2>
-        <p>Four seasons of mountain living, refined rather than extreme. A place designed for both ambition and recovery.</p>
+  <section class="life" id="living">
+    <div class="life-header">
+      <h2>Life in the Principality</h2>
+      <p>
+        Four seasons of mountain living, refined rather than extreme. A place
+        designed for both ambition and recovery.
+      </p>
+    </div>
+
+    <div class="life-grid">
+      <div class="life-card">
+        <div class="life-label">Winter</div>
+        <h3>Quiet slopes &amp; sharp air</h3>
+        <p>
+          World-class skiing without the chaos of the bigger Alpine resorts.
+          Crisp mornings, empty runs, and long evenings by the fire.
+        </p>
       </div>
-
-      <div class="life-grid">
-        <div class="life-card">
-          <div class="life-label">Winter</div>
-          <h3>Quiet slopes & sharp air</h3>
-          <p>World-class skiing without the chaos of the bigger Alpine resorts. Crisp mornings, empty runs, and long evenings by the fire.</p>
-        </div>
-        <div class="life-card">
-          <div class="life-label">Summer</div>
-          <h3>High meadows & long light</h3>
-          <p>Hiking, trail running, and quiet terraces overlooking the Pyrenees. Warm days, cool nights, and exceptional outdoor living.</p>
-        </div>
-        <div class="life-card">
-          <div class="life-label">Everyday</div>
-          <h3>Gastronomy & ease</h3>
-          <p>Excellent restaurants, strong local produce, and a pace of life that still leaves room to think. A rare combination in Europe.</p>
-        </div>
+      <div class="life-card">
+        <div class="life-label">Summer</div>
+        <h3>High meadows &amp; long light</h3>
+        <p>
+          Hiking, trail running, and quiet terraces overlooking the Pyrenees.
+          Warm days, cool nights, and exceptional outdoor living.
+        </p>
       </div>
-    </section>
-
-    <footer>
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <a href="/" class="logo">Andorra Private</a>
-          <p>A refined introduction to life in Europe’s most private high-altitude principality.</p>
-        </div>
-
-        <div class="footer-links">
-          <div class="footer-col">
-            <h4>Explore</h4>
-            <a href="#lifestyle">Why Andorra</a>
-            <a href="#living">Life Here</a>
-            <a href="/become-a-resident">Become a Resident</a>
-            <a href="/properties">Properties</a>
-          </div>
-          <div class="footer-col">
-            <h4>Legal</h4>
-            <a href="/privacy">Privacy Policy</a>
-            <a href="mailto:hello@privateandorra.com">hello@privateandorra.com</a>
-          </div>
-        </div>
+      <div class="life-card">
+        <div class="life-label">Everyday</div>
+        <h3>Gastronomy &amp; ease</h3>
+        <p>
+          Excellent restaurants, strong local produce, and a pace of life that
+          still leaves room to think. A rare combination in Europe.
+        </p>
       </div>
+    </div>
+    <a href="/living-in-andorra" class="text-link">Read about living here</a>
+  </section>
 
-      <div class="footer-bottom">
-        <span>© 2026 Andorra Private</span>
-        <span>Privateandorra.com</span>
+  <section class="section">
+    <div class="section-header">
+      <h2>Start with the facts</h2>
+      <p>
+        Residency, housing and professional help should begin with official
+        sources and named firms — not rumour.
+      </p>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">Residency</div>
+        <h3>Become a resident</h3>
+        <p>
+          How the official permit types are organised, with links to Govern.ad
+          and no invented figures.
+        </p>
+        <a href="/become-a-resident" class="text-link">Read the guide</a>
       </div>
-    </footer>
-  </body>
-</html>
+      <div class="card">
+        <div class="card-label">Directory</div>
+        <h3>Trusted introductions</h3>
+        <p>
+          Banks, counsel, estate agents, clinics and a school — each with its
+          official website.
+        </p>
+        <a href="/directory" class="text-link">Open the directory</a>
+      </div>
+      <div class="card">
+        <div class="card-label">Parishes</div>
+        <h3>Seven communes</h3>
+        <p>
+          A short portrait of each parish, from the capital to the high valleys,
+          with the official Comú site.
+        </p>
+        <a href="/parishes" class="text-link">Explore the parishes</a>
+      </div>
+    </div>
+  </section>
+</Base>

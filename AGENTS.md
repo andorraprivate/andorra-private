@@ -15,7 +15,14 @@ Marketing site for https://privateandorra.com — privacy, residency, and proper
 | `/` | `src/pages/index.astro` |
 | `/become-a-resident` | `src/pages/become-a-resident.astro` |
 | `/properties` | `src/pages/properties.astro` |
+| `/living-in-andorra` | `src/pages/living-in-andorra.astro` |
+| `/parishes` | `src/pages/parishes/index.astro` |
+| `/parishes/[slug]` | `src/pages/parishes/[slug].astro` |
+| `/directory` | `src/pages/directory/index.astro` |
+| `/directory/[slug]` | `src/pages/directory/[slug].astro` |
 | `/privacy` | `src/pages/privacy.astro` (LQPD) |
+
+Shared chrome lives in `src/layouts/Base.astro`, `src/components/Header.astro` and `src/components/Footer.astro`. Directory and parish copy is in `src/data/`.
 
 Keep `public/sitemap.xml` and `public/robots.txt` in sync with routes. Canonical host is `privateandorra.com`.
 
@@ -39,5 +46,6 @@ Manage with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
 - Edit in this repo and push to `main`. Do not type production changes into github.dev.
 - Visual language: forest `#1A2F23`, stone `#E8E0D5`, off-white `#F7F4EF`, charcoal, brass `#B08D57`. Cormorant Garamond + Inter.
+- Do not invent firms, telephone numbers, law figures or property listings. Link official sites.
 - Do not commit `.env` or Formspree secrets.
 - Browser dashboards (Vercel / GitHub / Formspree / Porkbun): Chrome via Browser Use. Stop at passwords, MFA, and payments.

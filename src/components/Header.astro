@@ -1,0 +1,32 @@
+---
+interface Props {
+  overlay?: boolean;
+  current?: string;
+}
+
+const { overlay = false, current = "" } = Astro.props;
+
+const links = [
+  { href: "/living-in-andorra", label: "Living" },
+  { href: "/parishes", label: "Parishes" },
+  { href: "/directory", label: "Directory" },
+  { href: "/become-a-resident", label: "Become a Resident" },
+  { href: "/properties", label: "Properties" },
+];
+---
+
+<nav class:list={["site-nav", { overlay }]}>
+  <a href="/" class="logo">Andorra Private</a>
+  <div class="nav-links">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          aria-current={current === link.href ? "page" : undefined}
+        >
+          {link.label}
+        </a>
+      ))
+    }
+  </div>
+</nav>
