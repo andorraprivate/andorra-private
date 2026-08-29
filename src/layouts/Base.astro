@@ -2,6 +2,17 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import {
+  defaultLocale,
+  htmlLang,
+  isI18nSlug,
+  localeFromPath,
+  localePath,
+  locales,
+  ogLocale,
+  slugFromPath,
+  type Locale,
+} from "../lib/i18n";
 
 interface Props {
   title: string;
@@ -9,6 +20,7 @@ interface Props {
   path: string;
   overlayNav?: boolean;
   ogImage?: string;
+  locale?: Locale;
 }
 
 const {
@@ -17,12 +29,20 @@ const {
   path,
   overlayNav = false,
   ogImage = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop",
+  locale = localeFromPath(path),
 } = Astro.props;
 
 const canonical = `https://www.privateandorra.com${path === "/" ? "/" : path}`;
+const slug = slugFromPath(path);
+const alternates = isI18nSlug(slug)
+  ? locales.map((code) => ({
+      code,
+      href: `https://www.privateandorra.com${localePath(code, slug)}`,
+    }))
+  : [{ code: defaultLocale, href: canonical }];
 ---
 
-<html lang="en-GB">
+<html lang={htmlLang[locale]}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -30,12 +50,26 @@ const canonical = `https://www.privateandorra.com${path === "/" ? "/" : path}`;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {
+      alternates.map((alt) => (
+        <link rel="alternate" hreflang={alt.code} href={alt.href} />
+      ))
+    }
+    {
+      isI18nSlug(slug) && (
+        <link
+          rel="alternate"
+          hreflang="x-default"
+          href={`https://www.privateandorra.com${localePath("en", slug)}`}
+        />
+      )
+    }
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content="en_GB" />
+    <meta property="og:locale" content={ogLocale[locale]} />
     <meta property="og:site_name" content="Andorra Private" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -49,10 +83,10 @@ const canonical = `https://www.privateandorra.com${path === "/" ? "/" : path}`;
     />
   </head>
   <body>
-    <Header overlay={overlayNav} current={path} />
+    <Header overlay={overlayNav} current={slug} locale={locale} />
     <main id="main">
       <slot />
     </main>
-    <Footer />
+    <Footer locale={locale} />
   </body>
 </html>

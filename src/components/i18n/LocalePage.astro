@@ -1,0 +1,265 @@
+---
+import Base from "../../layouts/Base.astro";
+import InterestForm from "../InterestForm.astro";
+import {
+  categoryOrder,
+  categoryLabels,
+  officialRegisters,
+  listingsByCategory,
+} from "../../data/directory";
+import { directoryBlurbs } from "../../data/i18n/blurbs";
+import { parishCards } from "../../data/i18n/parishCards";
+import { pages } from "../../data/i18n/pages";
+import { localePath, type Locale } from "../../lib/i18n";
+import type { I18nSlug } from "../../lib/i18n";
+
+interface Props {
+  locale: "fr" | "es" | "ca";
+  slug: I18nSlug;
+}
+
+const { locale, slug } = Astro.props;
+const copy = pages[locale][slug];
+const path = localePath(locale as Locale, slug);
+const agents = listingsByCategory("property");
+const blurbs = directoryBlurbs[locale];
+const cards = parishCards[locale];
+
+const bopa =
+  "https://bopadocuments.blob.core.windows.net/bopa-documents/038015/pdf/CGL_2026_02_12_10_11_12.pdf";
+---
+
+<Base
+  title={copy.title}
+  description={copy.meta}
+  path={path}
+  locale={locale}
+  overlayNav={copy.kind === "home"}
+>
+  {
+    copy.kind === "home" && (
+      <>
+        <section class="hero">
+          <div class="hero-content">
+            <div class="hero-label">Andorra</div>
+            <h1>{copy.title}</h1>
+            <p>{copy.dek}</p>
+            <a href={localePath(locale, "/become-a-resident")} class="hero-cta">
+              {pages[locale]["/become-a-resident"].title}
+            </a>
+            <a href={localePath(locale, "/directory")} class="hero-cta secondary">
+              {pages[locale]["/directory"].title}
+            </a>
+          </div>
+        </section>
+        <section class="why">
+          <div class="why-header">
+            <p>{copy.choosing}</p>
+          </div>
+          <div class="pillars">
+            {copy.pillars.map((pillar) => (
+              <div class="pillar">
+                <h3>{pillar.h}</h3>
+                <p>{pillar.p}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section class="life">
+          <div class="life-grid">
+            {copy.year.map((item) => (
+              <div class="life-card">
+                <div class="life-label">{item.label}</div>
+                <h3>{item.h}</h3>
+                <p>{item.p}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </>
+    )
+  }
+
+  {
+    copy.kind === "prose" && (
+      <>
+        <section class="page-header">
+          <h1>{copy.title}</h1>
+          <p>{copy.dek}</p>
+        </section>
+        <section class="prose">
+          {copy.notice && (
+            <div class="notice">
+              <p>
+                {copy.notice}{" "}
+                <a href="https://www.govern.ad/" target="_blank" rel="noopener">
+                  Govern.ad
+                </a>
+                {" "}
+                <a href={bopa} target="_blank" rel="noopener">
+                  BOPA
+                </a>
+                .
+              </p>
+            </div>
+          )}
+          {copy.table && (
+            <table>
+              <thead>
+                <tr>
+                  {copy.table.headers.map((h) => (
+                    <th>{h}</th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {copy.table.rows.map((row) => (
+                  <tr>
+                    {row.map((cell) => (
+                      <td>{cell}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+          {copy.blocks.map((block) => (
+            <>
+              {block.h && <h2>{block.h}</h2>}
+              {block.p.map((para) => (
+                <p>{para}</p>
+              ))}
+            </>
+          ))}
+        </section>
+        {copy.formIntro && (
+          <InterestForm intro={copy.formIntro} source={`${locale}-${slug.replace(/^\//, "")}`} />
+        )}
+      </>
+    )
+  }
+
+  {
+    copy.kind === "directory" && (
+      <>
+        <section class="page-header">
+          <h1>{copy.title}</h1>
+          <p>{copy.dek}</p>
+        </section>
+        <section class="prose">
+          <div class="notice">
+            <p>
+              {copy.intro ? `${copy.intro} ` : ""}
+              <a href={localePath(locale, "/become-a-resident")}>
+                {pages[locale]["/become-a-resident"].title}
+              </a>
+              {" "}
+              <a
+                href="https://www.govern.ad/"
+                target="_blank"
+                rel="noopener"
+              >
+                Govern.ad
+              </a>
+              .
+            </p>
+          </div>
+          <p>{copy.noStars}</p>
+        </section>
+        <section class="section" style="padding-top: 0;">
+          {categoryOrder.map((category) => {
+            const items = listingsByCategory(category);
+            if (items.length === 0) return null;
+            return (
+              <div class="category-block" id={category}>
+                <div class="section-header" style="margin-bottom: 2rem;">
+                  <h2>{categoryLabels[category]}</h2>
+                </div>
+                <div class="card-grid">
+                  {items.map((item) => (
+                    <div class="card">
+                      <div class="card-label">{item.parish ?? "Andorra"}</div>
+                      <h3>{item.name}</h3>
+                      <p>{blurbs[item.slug] ?? item.summary}</p>
+                      <a href={`/directory/${item.slug}`} class="text-link">
+                        {item.name}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+          <div class="section-header">
+            <h2>Govern.ad · AFA · AGIA · CASS · SAAS</h2>
+          </div>
+          <div class="official-links">
+            {officialRegisters.map((reg) => (
+              <a href={reg.url} target="_blank" rel="noopener">
+                {reg.name}
+              </a>
+            ))}
+          </div>
+        </section>
+      </>
+    )
+  }
+
+  {
+    copy.kind === "parishes" && (
+      <>
+        <section class="page-header">
+          <h1>{copy.title}</h1>
+          <p>{copy.dek}</p>
+        </section>
+        <section class="section" style="padding-top: 0;">
+          <div class="card-grid">
+            {cards.map((parish) => (
+              <div class="card">
+                <h3>{parish.name}</h3>
+                {parish.line && <p>{parish.line}</p>}
+              </div>
+            ))}
+          </div>
+        </section>
+      </>
+    )
+  }
+
+  {
+    copy.kind === "properties" && (
+      <>
+        <section class="page-header">
+          <h1>{copy.title}</h1>
+          <p>{copy.dek}</p>
+        </section>
+        <section class="section" style="padding-top: 0;">
+          {copy.empty && (
+            <div class="empty-listings">
+              <h3>{copy.empty}</h3>
+            </div>
+          )}
+          <div class="card-grid">
+            {cards.map((parish) => (
+              <div class="card">
+                <h3>{parish.name}</h3>
+                {parish.line && <p>{parish.line}</p>}
+              </div>
+            ))}
+          </div>
+          <div class="card-grid">
+            {agents.map((agent) => (
+              <div class="card">
+                <h3>{agent.name}</h3>
+                <p>{blurbs[agent.slug] ?? agent.summary}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+        {copy.formIntro && (
+          <InterestForm intro={copy.formIntro} source={`${locale}-${slug.replace(/^\//, "")}`} />
+        )}
+      </>
+    )
+  }
+</Base>

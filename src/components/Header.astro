@@ -1,27 +1,61 @@
 ---
+import { localePath, locales, localeLabel, switchLocalePath, type Locale } from "../lib/i18n";
+
 interface Props {
   overlay?: boolean;
   current?: string;
+  locale?: Locale;
 }
 
-const { overlay = false, current = "" } = Astro.props;
+const { overlay = false, current = "", locale = "en" } = Astro.props;
 
-const links = [
-  { href: "/living-in-andorra", label: "Living" },
-  { href: "/parishes", label: "Parishes" },
-  { href: "/directory", label: "Directory" },
-  { href: "/become-a-resident", label: "Become a Resident" },
-  { href: "/properties", label: "Properties" },
-];
+const navByLocale: Record<Locale, { href: string; label: string }[]> = {
+  en: [
+    { href: "/living-in-andorra", label: "Living" },
+    { href: "/parishes", label: "Parishes" },
+    { href: "/directory", label: "Directory" },
+    { href: "/become-a-resident", label: "Become a Resident" },
+    { href: "/properties", label: "Properties" },
+  ],
+  fr: [
+    { href: "/living-in-andorra", label: "Vivre en Andorre" },
+    { href: "/parishes", label: "Les sept paroisses" },
+    { href: "/directory", label: "Annuaire" },
+    { href: "/become-a-resident", label: "Devenir resident" },
+    { href: "/properties", label: "Biens immobiliers" },
+  ],
+  es: [
+    { href: "/living-in-andorra", label: "Vivir en Andorra" },
+    { href: "/parishes", label: "Las siete parroquias" },
+    { href: "/directory", label: "Directorio" },
+    { href: "/become-a-resident", label: "Hacerse residente" },
+    { href: "/properties", label: "Inmuebles" },
+  ],
+  ca: [
+    { href: "/living-in-andorra", label: "Viure a Andorra" },
+    { href: "/parishes", label: "Les set parroquies" },
+    { href: "/directory", label: "Directori" },
+    { href: "/become-a-resident", label: "Esdevenir resident" },
+    { href: "/properties", label: "Immobles" },
+  ],
+};
+
+const links = navByLocale[locale].map((link) => ({
+  ...link,
+  href: localePath(locale, link.href),
+}));
 
 function isCurrent(href: string) {
-  return current === href || current.startsWith(`${href}/`);
+  const bare = href.replace(/^\/(fr|es|ca)/, "") || "/";
+  return current === bare || current.startsWith(`${bare}/`);
 }
+
+const switcherPath = current || "/";
 ---
 
 <a class="skip-link" href="#main">Skip to content</a>
 <nav class:list={["site-nav", { overlay }]}>
-  <a href="/" class="logo">Andorra Private</a>
+  <a href={localePath(locale, "/")} class="logo">Andorra Private</a>
   <details class="nav-menu">
     <summary class="nav-toggle">Menu</summary>
     <div class="nav-links">
@@ -37,4 +71,20 @@ function isCurrent(href: string) {
       }
     </div>
   </details>
+  <nav class="lang-switch" aria-label="Language">
+    {
+      locales.map((code, i) => (
+        <>
+          {i > 0 && <span aria-hidden="true">|</span>}
+          <a
+            href={switchLocalePath(switcherPath, code)}
+            hreflang={code}
+            aria-current={locale === code ? "true" : undefined}
+          >
+            {localeLabel[code]}
+          </a>
+        </>
+      ))
+    }
+  </nav>
 </nav>
