@@ -402,7 +402,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "Permiso 90 o 183. IRPF Llei 5/2014 art.8 183 días o centro de intereses. Comprar no otorga permiso.",
+            "Tres pruebas. 90 o 183 inmigración. Art.8 183 o centro de intereses. Comprar no otorga permiso.",
           ],
         },
       ],
@@ -418,12 +418,15 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/living-in-andorra": {
       kind: "prose",
       title: "Vivir en Andorra",
-      dek: "Vivir en Andorra.",
+      dek: "La prueba es la semana laboral, no un sabado en las pistas.",
       meta: "Vivir en Andorra",
       blocks: [
         {
           p: [
-            "Coprincipado. Catalan oficial. Tres sistemás escolares. SAAS Meritxell único hospital. CASS.",
+            "La prueba es la semana laboral, no un sabado en las pistas. Andorra es un coprincipado entre Francia y Espana. Se recorre el valle principal en menos de una hora. No es un suburbio de Barcelona ni de Toulouse.",
+            "El catalan es la lengua oficial. El espanol y el frances se usan mucho. El ingles es habitual en despachos y menos en la tienda del pueblo. Las notas actuales del Gobierno esperan que los nuevos residentes avancen hacia el catalan en la renovación. Confirme el nivel entonces exigido en Govern.ad.",
+            "Andorra la Vella y Escaldes-Engordany concentran la mayoria de las citas y el hospital público. Ordino y Canillo estan más altos. La Massana y Encamp estan en carreteras de esqui. Sant Julia de Loria es la puerta sur, más cerca de Espana y de la universidad. Una vivienda que sirve para un expediente de residencia no es un chalet de vacaciones.",
+            "Tres sistemás escolares públicados: andorrano, espanol y frances. La universidad pública esta en Sant Julia. La sanidad pública es el SAAS; el Hospital Nostra Senyora de Meritxell se describe como el único hospital del pais. La seguridad social es la CASS. La cobertura depende de la afiliación.",
           ],
         },
       ],
@@ -431,26 +434,34 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/parishes": {
       kind: "parishes",
       title: "Las siete parroquias",
-      dek: "Las siete parroquias.",
+      dek: "Cada una tiene su Comu, su caracter y su altitud. Elija la parroquia antes que la casa.",
       meta: "Las siete parroquias",
+      lead: [
+        "Cada una tiene su Comu, su caracter y su altitud. Elija la parroquia antes que la casa.",
+      ],
     },
     "/properties": {
       kind: "properties",
       title: "Inmuebles",
-      dek: "No inventamos casas.",
+      dek: "Viviendas para quien va a vivir aqui, no un portal raspado.",
       meta: "Inmuebles",
-      empty: "Lista vacia.",
+      lead: [
+        "Viviendas para quien va a vivir aqui, no un portal raspado. Hasta que no hayamos visto un expediente, la lista permanece vacia.",
+        "No inventamos casas, precios ni fotografias. Nada en esta página es una oferta. Comprar o alquilar suele pasar por un agente AGIA, un notario y, para no residentes, las reglas vigentes de inversion extranjera.",
+      ],
+      empty: "Selección actual: ningun anuncio público.",
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/moving-to-andorra": {
       kind: "prose",
       title: "Mudarse a Andorra",
-      dek: "Mudarse a Andorra.",
+      dek: "Una mudanza es un expediente de inmigración, un sitio donde vivir, un banco y, casí siempre, un asesor local.",
       meta: "Mudarse a Andorra",
       blocks: [
         {
           p: [
-            "Convenio 2001 Espana y Francia, Portugal posterior. Servei d'Immigració. D.3 D.1 J.1 B.1. No somos un despacho.",
+            "Una mudanza es un expediente de inmigración, un sitio donde vivir, un banco y, casí siempre, un asesor local. Orientacion, no un presupuesto.",
+            "Convenio 2001 con Espana y Francia, otro posterior con Portugal. Servei d'Immigració. D.3 D.1 J.1 B.1. Ninguno es la residencia fiscal. No somos un despacho de abogados.",
           ],
         },
       ],
@@ -459,14 +470,16 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/residence-without-work": {
       kind: "prose",
       title: "Residencia sin trabajo — D.1",
-      dek: "Residencia sin trabajo — D.1.",
+      dek: "Fuente página D.1 Govern.ad. Renovación D.2. Art.96. Si discrepan, rige la ley.",
       meta: "Residencia sin trabajo — D.1",
+      notice:
+        "Fuente página D.1 Govern.ad. Renovación D.2. Art.96. Si discrepan, rige la ley.",
       blocks: [
         {
           p: [
-            "D.1.2 D.1.3 D.1.4. No D.1.1.",
-            "Art.96 1.000.000; 800.000 por unidad; 400.000 Fons d'Habitatge; AFA 50.000+12.000 definitivas no reembolsables salvo denegacion; tarifas 3.000/1.000/500.",
-            "300%+100%. 90 ≠ 183 IRPF.",
+            "D.1.2 D.1.3 D.1.4. No D.1.1. 2/2/3/10.",
+            "Inversion 1.000.000; 800.000 por unidad; Fons d'Habitatge 400.000; AFA 50.000+12.000; tarifas 3.000/1.000/500.",
+            "Ingresos 300%+100%, formula salario x12x3. 90 ≠ 183 IRPF.",
           ],
         },
       ],
@@ -477,7 +490,11 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Nomada digital — D.3",
       dek: "Residencia nomada digital — D.3.",
       meta: "Nomada digital — D.3",
-      blocks: [],
+      blocks: [
+        {
+          p: ["Medios no en euros. Comu en un mes."],
+        },
+      ],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/family-reunification": {
@@ -485,23 +502,35 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Reagrupación familiar — B.1",
       dek: "Reagrupación familiar — B.1.",
       meta: "Reagrupación familiar — B.1",
-      blocks: [{ p: ["100%/70%."] }],
+      blocks: [{ p: ["Medios 100%/70%."] }],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/tax-residence": {
       kind: "prose",
       title: "Residencia fiscal",
-      dek: "Residencia fiscal.",
+      dek: "Art.8 Llei 5/2014.",
       meta: "Residencia fiscal",
-      blocks: [{ p: ["Art.8."] }],
+      blocks: [
+        {
+          p: [
+            "Art.8 Llei 5/2014. No placet de HMRC / Agencia Tributaria / DGFiP.",
+          ],
+        },
+      ],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/self-employed-residence": {
       kind: "prose",
       title: "Cuenta propia — J.1",
-      dek: "Cuenta propia — J.1.",
+      dek: "Cupo 200. 34%.",
       meta: "Cuenta propia — J.1",
-      blocks: [{ p: ["Cupo 200. 34%. Profesion libéral."] }],
+      blocks: [
+        {
+          p: [
+            "Cupo 200. 34%. AFA 50.000. Profesion libéral. Comu tres meses. Sin cifra de facturación.",
+          ],
+        },
+      ],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/entrepreneur-residence": {
@@ -509,23 +538,23 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Programás emprendedores — D.4",
       dek: "Residencia programás de emprendedores — D.4.",
       meta: "Programás emprendedores — D.4",
-      blocks: [{ p: ["Tarjetas de un ano."] }],
+      blocks: [{ p: ["Un ano. 90 días. Medios no en euros."] }],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/the-file": {
       kind: "prose",
       title: "El expediente y el banco",
-      dek: "El expediente y el banco.",
+      dek: "Apostilla y traduccion al catalan.",
       meta: "El expediente y el banco",
-      blocks: [{ p: ["apostilla traduccion catalan."] }],
+      blocks: [{ p: ["Apostilla y traduccion al catalan."] }],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/opening-a-bank-account": {
       kind: "prose",
       title: "Abrir una cuenta",
-      dek: "Abrir una cuenta.",
+      dek: "Andbank MoraBanc Creand.",
       meta: "Abrir una cuenta",
-      blocks: [{ p: ["Andbank MoraBanc Creand."] }],
+      blocks: [{ p: ["Andbank MoraBanc Creand. KYC. AFA."] }],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/buying-property": {
@@ -536,7 +565,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "3% a 6% primer inmueble, 5% a 10% segunda. Decret 58/2026.",
+            "3% a 6% primer, 5% a 10% segunda. Decret 58/2026. AGIA. Una casa no es un permiso.",
           ],
         },
       ],
