@@ -1,0 +1,41 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base
+  title="Page not found | Andorra Private"
+  description="That address is not on Andorra Private. Try the directory, the parishes, or the residency note."
+  path="/404"
+>
+  <section class="page-header">
+    <p class="card-label">404</p>
+    <h1>Page not found</h1>
+    <p>
+      That address is not on this site. Nothing here is hidden behind a paid
+      listing — the public pages are below.
+    </p>
+  </section>
+
+  <section class="section" style="padding-top: 0;">
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">Residency</div>
+        <h3>Become a resident</h3>
+        <p>Official permit types, with links to Govern.ad.</p>
+        <a href="/become-a-resident" class="text-link">Read the guide</a>
+      </div>
+      <div class="card">
+        <div class="card-label">Directory</div>
+        <h3>Sourced firms</h3>
+        <p>Counsel, banks, licensed agents, clinics and a school.</p>
+        <a href="/directory" class="text-link">Open the directory</a>
+      </div>
+      <div class="card">
+        <div class="card-label">Parishes</div>
+        <h3>Seven communes</h3>
+        <p>Short notes on each parish, with the official Comú site.</p>
+        <a href="/parishes" class="text-link">Explore the parishes</a>
+      </div>
+    </div>
+  </section>
+</Base>

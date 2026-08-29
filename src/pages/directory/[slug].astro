@@ -1,0 +1,102 @@
+---
+import Base from "../../layouts/Base.astro";
+import {
+  listings,
+  listingBySlug,
+  listingsByCategory,
+  categoryLabels,
+} from "../../data/directory";
+
+export function getStaticPaths() {
+  return listings.map((item) => ({ params: { slug: item.slug } }));
+}
+
+const { slug } = Astro.params;
+const item = listingBySlug(slug!);
+if (!item) {
+  throw new Error(`Unknown directory slug: ${slug}`);
+}
+
+const related = listingsByCategory(item.category).filter(
+  (entry) => entry.slug !== item.slug,
+);
+---
+
+<Base
+  title={`${item.name} | Andorra Private directory`}
+  description={`${item.name} — ${item.summary}`}
+  path={`/directory/${item.slug}`}
+>
+  <section class="page-header">
+    <p class="card-label">
+      <a href={`/directory#${item.category}`}>{categoryLabels[item.category]}</a>
+    </p>
+    <h1>{item.name}</h1>
+    <p>{item.summary}</p>
+  </section>
+
+  <section class="prose">
+    <div class="notice">
+      <p>
+        We are not this organisation and do not take a fee from the listing.
+        Details can change; use the official site for contact, opening hours and
+        current services.
+      </p>
+    </div>
+
+    <h2>Official website</h2>
+    <p>
+      <a href={item.officialUrl} target="_blank" rel="noopener"
+        >{item.officialUrl}</a
+      >
+    </p>
+    {
+      item.parish && (
+        <>
+          <h2>Parish</h2>
+          <p>
+            Published against{" "}
+            {item.parishSlug ? (
+              <a href={`/parishes/${item.parishSlug}`}>{item.parish}</a>
+            ) : (
+              item.parish
+            )}
+            . See the
+            <a href="/parishes">parish notes</a>
+            for context.
+          </p>
+        </>
+      )
+    }
+
+    <h2>Source</h2>
+    <p>
+      Listed from {item.sourcedFrom}. No telephone number or street address is
+      repeated here unless you open the official site, so we cannot drift from
+      it.
+    </p>
+
+    {
+      related.length > 0 && (
+        <>
+          <h2>Also in {categoryLabels[item.category].toLowerCase()}</h2>
+          <div class="official-links">
+            {related.map((entry) => (
+              <a href={`/directory/${entry.slug}`}>{entry.name}</a>
+            ))}
+          </div>
+        </>
+      )
+    }
+
+    <p>
+      <a href="/directory" class="text-link">Back to the directory</a>
+    </p>
+    <p>
+      Related:
+      <a href="/become-a-resident">residency</a>,
+      <a href="/properties">properties</a>,
+      <a href="/living-in-andorra">living in Andorra</a>.
+    </p>
+  </section>
+</Base>

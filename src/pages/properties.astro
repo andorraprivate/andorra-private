@@ -1,377 +1,139 @@
 ---
-// Andorra Private – Properties
+import Base from "../layouts/Base.astro";
+import InterestForm from "../components/InterestForm.astro";
+import { listingsByCategory } from "../data/directory";
+import { parishes } from "../data/parishes";
+
+const agents = listingsByCategory("property");
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    
-    <title>Properties in Andorra | Andorra Private</title>
-    <meta name="description" content="Explore selected properties in Andorra suited to long-term living and residency. Quiet locations, strong views, and lasting quality." />
-    
-    <meta property="og:title" content="Properties in Andorra | Andorra Private" />
-    <meta property="og:description" content="Selected properties suited to long-term living and residency in Andorra." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://privateandorra.com/properties" />
+<Base
+  title="Properties in Andorra | How we list homes"
+  description="How Andorra Private will list homes: parish, type and situation — without invented houses or borrowed photographs. AGIA-registered agents and a register of interest."
+  path="/properties"
+>
+  <section class="page-header">
+    <h1>Properties</h1>
+    <p>
+      Selected homes for long-term living, not a scraped property portal. Until
+      we publish a file we have seen, the list stays empty.
+    </p>
+  </section>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <section class="prose wide">
+    <div class="notice">
+      <p>
+        We do not invent houses, prices or photographs. Nothing on this page is
+        an offer. Buying or renting in Andorra usually involves an
+        AGIA-registered agent, a notary, and — for non-residents — the foreign
+        investment rules then in force.
+      </p>
+    </div>
 
-    <style>
-      :root {
-        --forest: #1A2F23;
-        --stone: #E8E0D5;
-        --offwhite: #F7F4EF;
-        --charcoal: #1C1C1C;
-        --brass: #B08D57;
-      }
+    <h2>How a listing will appear</h2>
+    <p>
+      When a home is ready to publish, it will use the same quiet card as the
+      rest of the site. The cards below are a template, not houses for sale.
+    </p>
+  </section>
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        font-family: 'Inter', system-ui, sans-serif;
-        background: var(--offwhite);
-        color: var(--charcoal);
-        line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
-      }
-
-      h1, h2, h3 {
-        font-family: 'Cormorant Garamond', Georgia, serif;
-        font-weight: 500;
-        line-height: 1.15;
-      }
-
-      nav {
-        padding: 2rem 7%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: var(--forest);
-      }
-
-      .logo {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 1.35rem;
-        letter-spacing: 0.04em;
-        color: white;
-        text-decoration: none;
-      }
-
-      .nav-links a {
-        color: rgba(255,255,255,0.88);
-        text-decoration: none;
-        font-size: 0.82rem;
-        margin-left: 2.2rem;
-        letter-spacing: 0.05em;
-        transition: color 0.2s;
-      }
-
-      .nav-links a:hover {
-        color: white;
-      }
-
-      .page-header {
-        padding: 6rem 7% 4rem;
-        background: var(--offwhite);
-      }
-
-      .page-header h1 {
-        font-size: clamp(2.6rem, 5vw, 3.8rem);
-        color: var(--forest);
-        margin-bottom: 1.2rem;
-      }
-
-      .page-header p {
-        font-size: 1.1rem;
-        color: #555;
-        font-weight: 300;
-        max-width: 560px;
-        line-height: 1.7;
-      }
-
-      .content {
-        padding: 0 7% 6rem;
-        max-width: 800px;
-      }
-
-      .content h2 {
-        font-size: 1.8rem;
-        color: var(--forest);
-        margin: 3rem 0 1.2rem;
-      }
-
-      .content p {
-        font-size: 1.05rem;
-        color: #555;
-        font-weight: 300;
-        line-height: 1.75;
-        margin-bottom: 1.4rem;
-      }
-
-      .interest {
-        background: #f0ebe3;
-        padding: 6rem 7%;
-        text-align: center;
-      }
-
-      .interest h2 {
-        font-size: clamp(2rem, 3.5vw, 2.6rem);
-        color: var(--forest);
-        margin-bottom: 1rem;
-      }
-
-      .interest p {
-        font-size: 1.05rem;
-        color: #555;
-        font-weight: 300;
-        max-width: 480px;
-        margin: 0 auto 2.5rem;
-        line-height: 1.7;
-      }
-
-      .interest-form {
-        display: flex;
-        gap: 1rem;
-        max-width: 480px;
-        margin: 0 auto;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .interest-form input {
-        flex: 1;
-        min-width: 220px;
-        padding: 0.95rem 1.2rem;
-        border: 1px solid #d9d3c9;
-        background: white;
-        font-size: 0.95rem;
-        font-family: inherit;
-      }
-
-      .interest-form button {
-        padding: 0.95rem 1.8rem;
-        background: var(--forest);
-        color: white;
-        border: none;
-        font-size: 0.82rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: background 0.2s;
-      }
-
-      .interest-form button:hover {
-        background: #243d2e;
-      }
-
-      .success-message {
-        display: none;
-        max-width: 480px;
-        margin: 0 auto;
-        padding: 2rem;
-        background: white;
-        border: 1px solid #e5dfd6;
-      }
-
-      .success-message h3 {
-        font-size: 1.5rem;
-        color: var(--forest);
-        margin-bottom: 0.8rem;
-      }
-
-      .success-message p {
-        font-size: 1rem;
-        color: #555;
-        font-weight: 300;
-        margin-bottom: 0;
-      }
-
-      footer {
-        background: var(--forest);
-        color: rgba(255,255,255,0.85);
-        padding: 4.5rem 7% 3rem;
-      }
-
-      .footer-inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        gap: 3rem;
-        margin-bottom: 3.5rem;
-      }
-
-      .footer-brand {
-        max-width: 280px;
-      }
-
-      .footer-brand .logo {
-        color: white;
-        font-size: 1.4rem;
-        display: block;
-        margin-bottom: 1rem;
-      }
-
-      .footer-brand p {
-        font-size: 0.9rem;
-        font-weight: 300;
-        line-height: 1.6;
-        opacity: 0.8;
-      }
-
-      .footer-links {
-        display: flex;
-        gap: 4rem;
-      }
-
-      .footer-col h4 {
-        font-family: 'Inter', sans-serif;
-        font-size: 0.75rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        margin-bottom: 1.2rem;
-        opacity: 0.7;
-        font-weight: 500;
-      }
-
-      .footer-col a {
-        display: block;
-        color: rgba(255,255,255,0.85);
-        text-decoration: none;
-        font-size: 0.9rem;
-        margin-bottom: 0.6rem;
-        transition: color 0.2s;
-      }
-
-      .footer-col a:hover {
-        color: white;
-      }
-
-      .footer-bottom {
-        border-top: 1px solid rgba(255,255,255,0.12);
-        padding-top: 1.8rem;
-        font-size: 0.8rem;
-        opacity: 0.6;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-    </style>
-  </head>
-
-  <body>
-    <nav>
-      <a href="/" class="logo">Andorra Private</a>
-      <div class="nav-links">
-        <a href="/#lifestyle">Lifestyle</a>
-        <a href="/#living">Living Here</a>
-        <a href="/become-a-resident">Become a Resident</a>
-        <a href="/properties">Properties</a>
+  <section class="section" style="padding-top: 0;">
+    <div class="card-grid">
+      <div class="listing-card">
+        <div class="listing-meta">Template · fields</div>
+        <h3>Parish · type · status</h3>
+        <p>
+          Situation and use — valley apartment, village house, or high-valley
+          chalet — without a borrowed photograph or a guessed price.
+        </p>
       </div>
-    </nav>
-
-    <section class="page-header">
-      <h1>Properties</h1>
-      <p>Selected properties in Andorra suited to long-term living and residency. Quiet locations, strong views, and lasting quality.</p>
-    </section>
-
-    <section class="content">
-      <h2>Homes in the Principality</h2>
-      <p>Andorra offers a range of residential properties — from modern apartments in the main valleys to quieter mountain homes with exceptional views.</p>
-      <p>We are currently building a curated selection of properties that meet high standards of location, quality, and suitability for long-term living or residency requirements.</p>
-
-      <h2>What to expect</h2>
-      <p>As the selection develops, listings will focus on properties that align with the quiet-luxury character of Andorra Private — discreet, well-located, and suitable for those seeking a refined mountain lifestyle.</p>
-      <p>If you are interested in property in Andorra, register your interest below and we will be in touch as suitable opportunities become available.</p>
-    </section>
-
-    <section class="interest" id="interest">
-      <h2>Register your interest</h2>
-      <p id="form-intro">Leave your details and we’ll be in touch regarding properties in Andorra.</p>
-      
-      <form class="interest-form" id="interest-form" action="https://formspree.io/f/xkjwaqan" method="POST">
-        <input type="email" name="email" placeholder="Your email address" required />
-        <button type="submit">Submit</button>
-      </form>
-
-      <div class="success-message" id="success-message">
-        <h3>Thank you</h3>
-        <p>Your interest has been registered. We’ll be in touch as suitable opportunities become available.</p>
+      <div class="listing-card">
+        <div class="listing-meta">Template · what we will state</div>
+        <h3>Only facts we can stand behind</h3>
+        <p>
+          Parish, approximate setting, number of bedrooms if confirmed, and
+          whether the file is for sale, to let, or a private introduction.
+          Source named.
+        </p>
       </div>
-    </section>
+      <div class="listing-card">
+        <div class="listing-meta">Template · not published</div>
+        <h3>What we will not do</h3>
+        <p>
+          Stock mountain photographs, copied agency galleries, invented
+          inventories, or “from €…” figures we have not been given in writing.
+        </p>
+      </div>
+    </div>
 
-    <footer>
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <a href="/" class="logo">Andorra Private</a>
-          <p>A refined introduction to life in Europe’s most private high-altitude principality.</p>
-        </div>
+    <div class="empty-listings">
+      <div class="listing-meta">Current selection</div>
+      <h3>No public listings yet</h3>
+      <p>
+        The structure is ready. When a property is cleared for this site it will
+        appear here, parish by parish. Until then, register your interest or
+        speak to a licensed agent.
+      </p>
+    </div>
+  </section>
 
-        <div class="footer-links">
-          <div class="footer-col">
-            <h4>Explore</h4>
-            <a href="/#lifestyle">Why Andorra</a>
-            <a href="/#living">Life Here</a>
-            <a href="/become-a-resident">Become a Resident</a>
-            <a href="/properties">Properties</a>
+  <section class="prose">
+    <h2>Where people look</h2>
+    <p>
+      The seven parishes are not interchangeable. The capital and Escaldes are
+      practical; Ordino and Canillo are quieter and higher; La Massana and
+      Encamp sit on ski valleys; Sant Julià is the southern gate. Read the
+      <a href="/parishes">parish notes</a>
+      before you instruct a search.
+    </p>
+    <div class="card-grid">
+      {
+        parishes.map((parish) => (
+          <div class="card">
+            <div class="card-label">{parish.label}</div>
+            <h3>{parish.name}</h3>
+            <p>{parish.summary}</p>
+            <a href={`/parishes/${parish.slug}`} class="text-link">
+              Parish note
+            </a>
           </div>
-          <div class="footer-col">
-            <h4>Legal</h4>
-            <a href="/privacy">Privacy Policy</a>
-            <a href="mailto:hello@privateandorra.com">hello@privateandorra.com</a>
+        ))
+      }
+    </div>
+
+    <h2>Licensed agents</h2>
+    <p>
+      The official college of estate agents is
+      <a href="https://www.agia.ad/collegiats" target="_blank" rel="noopener"
+        >AGIA</a
+      >. We list a first set of member firms that publish their own sites. This
+      is not an endorsement, and it is not exhaustive.
+    </p>
+    <div class="card-grid">
+      {
+        agents.map((agent) => (
+          <div class="card">
+            <div class="card-label">AGIA register</div>
+            <h3>{agent.name}</h3>
+            <p>{agent.summary}</p>
+            <a href={`/directory/${agent.slug}`} class="text-link">
+              Directory note
+            </a>
           </div>
-        </div>
-      </div>
+        ))
+      }
+    </div>
 
-      <div class="footer-bottom">
-        <span>© 2026 Andorra Private</span>
-        <span>Privateandorra.com</span>
-      </div>
-    </footer>
+    <p>
+      Residency files often need proof of accommodation. If you are moving for a
+      permit, read
+      <a href="/become-a-resident">become a resident</a>
+      first, then look at housing.
+    </p>
+  </section>
 
-    <script>
-      const form = document.getElementById('interest-form');
-      const successMessage = document.getElementById('success-message');
-      const formIntro = document.getElementById('form-intro');
-
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const formData = new FormData(form);
-        
-        try {
-          const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-              'Accept': 'application/json'
-            }
-          });
-
-          if (response.ok) {
-            form.style.display = 'none';
-            formIntro.style.display = 'none';
-            successMessage.style.display = 'block';
-          } else {
-            alert('Something went wrong. Please try again.');
-          }
-        } catch (error) {
-          alert('Something went wrong. Please try again.');
-        }
-      });
-    </script>
-  </body>
-</html>
+  <InterestForm
+    intro="Leave your details and we’ll be in touch regarding properties in Andorra."
+    source="properties"
+  />
+</Base>
