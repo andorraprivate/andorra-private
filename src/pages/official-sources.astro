@@ -1,0 +1,119 @@
+---
+import Base from "../layouts/Base.astro";
+import { officialRegisters } from "../data/directory";
+---
+
+<Base
+  title="Official sources | Andorra Private"
+  description="Where Andorran residency, tax, banking, healthcare, education and property licences are published: Govern.ad, AFA, AGIA, CADA, CASS, SAAS and Andorran Banking."
+  path="/official-sources"
+>
+  <section class="page-header">
+    <h1>Official sources</h1>
+    <p>
+      A short map of the public registers. We do not repeat fees, quotas or
+      investment figures here — those change, and only the live official text is
+      safe.
+    </p>
+  </section>
+
+  <section class="prose">
+    <div class="notice">
+      <p>
+        This page is an index, not advice. Open the official site for the
+        current procedure. For named firms we have already sourced, use the
+        <a href="/directory">directory</a>.
+      </p>
+    </div>
+
+    <h2>Immigration and residence</h2>
+    <p>
+      The Servei d’Immigració publishes residence-and-work and residence-without-work
+      authorisations on
+      <a
+        href="https://www.govern.ad/ca/tematiques/immigracio/residencia-i-treball"
+        target="_blank"
+        rel="noopener">Govern.ad</a
+      >. Letter codes such as A.1, J.1 and D.1 are the Government’s own. Read
+      <a href="/become-a-resident">become a resident</a>
+      for orientation, then the live pages.
+    </p>
+
+    <h2>Tax and finance</h2>
+    <p>
+      The
+      <a
+        href="https://www.govern.ad/ca/ministeris-i-secretaries-d-estat/ministeri-de-finances"
+        target="_blank"
+        rel="noopener">Ministeri de Finances</a
+      >
+      and the taxes-and-customs theme on Govern.ad are the public tax sources.
+      The
+      <a href="https://www.afa.ad/en" target="_blank" rel="noopener"
+        >Andorran Financial Authority</a
+      >
+      supervises the financial system. We do not quote rates.
+    </p>
+
+    <h2>Banks</h2>
+    <p>
+      <a href="https://www.andorranbanking.ad/en/" target="_blank" rel="noopener"
+        >Andorran Banking</a
+      >
+      is the association of Andorran banks. It currently lists three groups —
+      Andbank, MoraBanc and Creand — which we also list in the directory. Opening
+      an account is a compliance process described by each bank and by the AFA.
+    </p>
+
+    <h2>Property licences</h2>
+    <p>
+      Licensed estate agents are listed by
+      <a href="https://www.agia.ad/collegiats" target="_blank" rel="noopener"
+        >AGIA</a
+      >, the professional college. We only name firms that appear there and
+      publish their own site. See
+      <a href="/properties">how we list homes</a>.
+    </p>
+
+    <h2>Lawyers</h2>
+    <p>
+      Practising advocates are organised through the
+      <a href="https://www.cada.ad/" target="_blank" rel="noopener"
+        >Col·legi d’Advocats d’Andorra</a
+      >. Confirm a name on that register before you instruct anyone.
+    </p>
+
+    <h2>Health and social security</h2>
+    <p>
+      Public care is described by
+      <a href="https://saas.ad/" target="_blank" rel="noopener">SAAS</a>;
+      affiliation and benefits by
+      <a href="https://www.cass.ad/" target="_blank" rel="noopener">CASS</a>.
+      A short reading is on
+      <a href="/healthcare">healthcare</a>.
+    </p>
+
+    <h2>Education</h2>
+    <p>
+      The Government publishes the three education systems — Andorran, Spanish
+      and French — on its
+      <a
+        href="https://www.govern.ad/ca/tematiques/educacio-formacio-investigacio-i-divulgacio-del-coneixement/estudiar-a-andorra/sistemes-educatius-a-andorra"
+        target="_blank"
+        rel="noopener">education pages</a
+      >. See
+      <a href="/education">education</a>.
+    </p>
+
+    <h2>The full list we use</h2>
+    <div class="official-links">
+      {
+        officialRegisters.map((reg) => (
+          <a href={reg.url} target="_blank" rel="noopener">
+            {reg.name} — {reg.note}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>
