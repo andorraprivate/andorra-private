@@ -16,6 +16,16 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.privateandorra.com/buying-property-in-2026</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/company-active-residency</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.privateandorra.com/company-formation</loc>
     <lastmod>2026-08-29</lastmod>
     <priority>0.85</priority>
@@ -91,6 +101,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.privateandorra.com/passive-residency</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.privateandorra.com/practitioner-map</loc>
     <lastmod>2026-08-29</lastmod>
     <priority>0.8</priority>
@@ -111,14 +126,34 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.privateandorra.com/residency-vs-tax</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.privateandorra.com/self-employed-residence</loc>
     <lastmod>2026-08-29</lastmod>
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.privateandorra.com/shortlist</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.privateandorra.com/tax-residence</loc>
     <lastmod>2026-08-29</lastmod>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/the-file</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/where-to-live</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.privateandorra.com/robots.txt</loc>
