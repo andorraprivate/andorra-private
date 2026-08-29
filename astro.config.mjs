@@ -8,4 +8,7 @@ export default defineConfig({
   site: 'https://www.privateandorra.com',
   output: 'static',
   trailingSlash: 'never',
+  // Keep spaces around inline <a> in running prose. compressHTML
+  // otherwise turns `on\n<a>` into `on<a>` (theofficial, onbecome).
+  compressHTML: false,
 });
