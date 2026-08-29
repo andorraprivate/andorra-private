@@ -24,7 +24,7 @@ Marketing site for https://privateandorra.com — privacy, residency, and proper
 
 Shared chrome lives in `src/layouts/Base.astro`, `src/components/Header.astro` and `src/components/Footer.astro`. Directory and parish copy is in `src/data/`.
 
-`src/pages/sitemap.xml.ts` is generated from directory and parish data. Keep `public/robots.txt` pointing at `/sitemap.xml`. Canonical host is `privateandorra.com`.
+Keep `public/sitemap.xml` as a static file (do not add `src/pages/sitemap.xml.ts` — a generated route has 500’d on Vercel). List every public route. Canonical host is `https://www.privateandorra.com`. Keep `public/robots.txt` pointing at that sitemap.
 
 ## Commands (always from this directory)
 
