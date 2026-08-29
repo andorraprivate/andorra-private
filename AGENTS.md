@@ -24,6 +24,13 @@ Marketing site for https://privateandorra.com — privacy, residency, and proper
 | `/official-sources` | `src/pages/official-sources.astro` |
 | `/education` | `src/pages/education.astro` |
 | `/healthcare` | `src/pages/healthcare.astro` |
+| `/moving-to-andorra` | `src/pages/moving-to-andorra.astro` |
+| `/moving-to-andorra-from-the-uk` | `src/pages/moving-to-andorra-from-the-uk.astro` |
+| `/moving-to-andorra-from-spain` | `src/pages/moving-to-andorra-from-spain.astro` |
+| `/moving-to-andorra-from-france` | `src/pages/moving-to-andorra-from-france.astro` |
+| `/opening-a-bank-account` | `src/pages/opening-a-bank-account.astro` |
+| `/buying-property` | `src/pages/buying-property.astro` |
+| `/digital-nomad` | `src/pages/digital-nomad.astro` |
 
 Shared chrome lives in `src/layouts/Base.astro`, `src/components/Header.astro` and `src/components/Footer.astro`. Directory and parish copy is in `src/data/`.
 
