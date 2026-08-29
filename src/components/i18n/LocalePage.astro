@@ -27,6 +27,11 @@ const cards = parishCards[locale];
 
 const bopa =
   "https://bopadocuments.blob.core.windows.net/bopa-documents/038015/pdf/CGL_2026_02_12_10_11_12.pdf";
+
+const noticeParts =
+  copy.kind === "prose" && copy.notice
+    ? copy.notice.split(/(Govern\.ad|BOPA)/g)
+    : [];
 ---
 
 <Base
@@ -91,27 +96,37 @@ const bopa =
           {copy.notice && (
             <div class="notice">
               <p>
-                {copy.notice}{" "}
-                <a href="https://www.govern.ad/" target="_blank" rel="noopener">
-                  Govern.ad
-                </a>
-                {" "}
-                <a href={bopa} target="_blank" rel="noopener">
-                  BOPA
-                </a>
-                .
+                {noticeParts.map((part) =>
+                  part === "Govern.ad" ? (
+                    <a
+                      href="https://www.govern.ad/"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      Govern.ad
+                    </a>
+                  ) : part === "BOPA" ? (
+                    <a href={bopa} target="_blank" rel="noopener">
+                      BOPA
+                    </a>
+                  ) : (
+                    part
+                  ),
+                )}
               </p>
             </div>
           )}
           {copy.table && (
             <table>
-              <thead>
-                <tr>
-                  {copy.table.headers.map((h) => (
-                    <th>{h}</th>
-                  ))}
-                </tr>
-              </thead>
+              {copy.table.headers.some(Boolean) && (
+                <thead>
+                  <tr>
+                    {copy.table.headers.map((h) => (
+                      <th>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+              )}
               <tbody>
                 {copy.table.rows.map((row) => (
                   <tr>

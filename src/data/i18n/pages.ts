@@ -105,21 +105,10 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       meta: "Residence en Andorre: lettres officielles A.1, J.1, D.1, B.1, D.3, D.4 et chiffres 2026.",
       notice:
         "Utilisez la procedure en vigueur sur Govern.ad et le texte 2026 de la Llei 2/2026 au BOPA avant d'agir. Les lettres ci-dessous sont celles du Gouvernement.",
-      table: {
-        headers: ["Lettre", ""],
-        rows: [
-          ["A.1", "Residence et travail pour un employeur andorran."],
-          ["J.1", "Residence et travail a titre indépendant (compte propre)."],
-          ["D.1", "Residence sans prendre un emploi local."],
-          ["B.1", "Regroupement familial."],
-          ["C.1", "Travail frontalier."],
-          ["D.3", "Nomade numerique. Toujours sur Govern.ad."],
-          ["D.4", "Programmes pour entrepreneurs. Toujours sur Govern.ad."],
-        ],
-      },
       blocks: [
         {
           p: [
+            "A.1 Residence et travail pour un employeur andorran. J.1 Residence et travail a titre indépendant (compte propre). D.1 Residence sans prendre un emploi local. B.1 Regroupement familial. C.1 Travail frontalier. D.3 Nomade numerique. Toujours sur Govern.ad. D.4 Programmes pour entrepreneurs. Toujours sur Govern.ad.",
             "Des conseillers anglophones utilisent parfois une carte privee A/B/C/D. Chez Jane Whittaker, A = D.1 sans travail, B = D.1.2, C = D.1.3, D = J.1. Cette carte se dit une fois. Elle n'est pas la loi. Ce site emploie les codes officiels.",
             "A.1 exige en general un contrat avec une société andorrane réelle et une place dans le quota de l'année. J.1 est la première autorisation si vous travaillez a votre compte. La première carte A.1 ou J.1 est en general d'un an. Une note du Govern decrit le Decret 75/2026: quota general de 200 autorisations indépendantes — 150 cas d'investissement étranger, 50 professions libérales. Verifiez qu'une place est effectivement délivrée avant de croire une rumeur de « voie fermee ».",
             "Llei 2/2026 du 22 janvier, publiee au BOPA le 12 fevrier 2026, en vigueur le 13 fevrier 2026. Article 96: le titulaire principal d'une residence sans activite lucrative doit investir, de facon permanente et effective, au moins 1 000 000 d'euros dans des actifs andorrans nommes. Immobilier; parts de sociétés residentes; certains titres de creance ou OPC d'emetteurs residents pour 36 mois au plus avant de basculer; dette publique; produits d'assurance-vie d'assureurs residents; ou depots AFA non remuneres. Si immobilier: plus de 800 000 euros par unite; le million reste le total. 400 000 euros Fons d'Habitatge « conformément a la règlementation applicable ». Possibilite légale, pas un guichet. AFA 50 000 + 12 000 par dépendant, définitives et non remboursables sauf refus de l'autorisation initiale. Tarifs Govern.ad: 3 000 / 1 000 / 500.",
