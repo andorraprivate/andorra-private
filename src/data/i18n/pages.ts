@@ -262,8 +262,8 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       ],
       year: [
         {
-          label: "Invierno",
-          h: "Grandvalira y Pal-Arinsal",
+          label: "El ano",
+          h: "Invierno",
           p: "Invierno Grandvalira y Pal-Arinsal.",
         },
         {
@@ -273,7 +273,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
         },
         {
           label: "La semana",
-          h: "Bancos, escuelas, Inmigración",
+          h: "Inmigración",
           p: "La semana bancos escuelas Inmigración en el valle central.",
         },
       ],
@@ -339,9 +339,9 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
     "/properties": {
       kind: "properties",
       title: "Inmuebles",
-      dek: "Inmuebles",
+      dek: "No inventamos casas.",
       meta: "Inmuebles",
-      empty: "",
+      empty: "Lista vacia.",
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/moving-to-andorra": {
@@ -352,7 +352,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "Convenio 2001 Espana y Francia, Portugal posterior. Servei d'Immigració. D.3 D.1 J.1 B.1.",
+            "Convenio 2001 Espana y Francia, Portugal posterior. Servei d'Immigració. D.3 D.1 J.1 B.1. No somos un despacho.",
           ],
         },
       ],
@@ -366,7 +366,9 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "D.1.2 D.1.3 D.1.4. Art.96. 300%+100%. 90 ≠ 183 IRPF.",
+            "D.1.2 D.1.3 D.1.4. No D.1.1.",
+            "Art.96 1.000.000; 800.000 por unidad; 400.000 Fons d'Habitatge; AFA 50.000+12.000 definitivas no reembolsables salvo denegacion; tarifas 3.000/1.000/500.",
+            "300%+100%. 90 ≠ 183 IRPF.",
           ],
         },
       ],
@@ -401,7 +403,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "Cuenta propia — J.1",
       dek: "Cuenta propia — J.1.",
       meta: "Cuenta propia — J.1",
-      blocks: [{ p: ["Cupo 200. 34%."] }],
+      blocks: [{ p: ["Cupo 200. 34%. Profesion libéral."] }],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/entrepreneur-residence": {
@@ -417,7 +419,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       title: "El expediente y el banco",
       dek: "El expediente y el banco.",
       meta: "El expediente y el banco",
-      blocks: [],
+      blocks: [{ p: ["apostilla traduccion catalan."] }],
       formIntro: "Si quiere una presentacion, deje un correo.",
     },
     "/opening-a-bank-account": {
