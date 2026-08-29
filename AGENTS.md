@@ -31,6 +31,11 @@ Marketing site for https://privateandorra.com — privacy, residency, and proper
 | `/opening-a-bank-account` | `src/pages/opening-a-bank-account.astro` |
 | `/buying-property` | `src/pages/buying-property.astro` |
 | `/digital-nomad` | `src/pages/digital-nomad.astro` |
+| `/residence-without-work` | `src/pages/residence-without-work.astro` |
+| `/tax-residence` | `src/pages/tax-residence.astro` |
+| `/family-reunification` | `src/pages/family-reunification.astro` |
+| `/self-employed-residence` | `src/pages/self-employed-residence.astro` |
+| `/entrepreneur-residence` | `src/pages/entrepreneur-residence.astro` |
 
 Shared chrome lives in `src/layouts/Base.astro`, `src/components/Header.astro` and `src/components/Footer.astro`. Directory and parish copy is in `src/data/`.
 
