@@ -73,6 +73,12 @@ function slugsFrom(file) {
   return slugs;
 }
 
+function unprefixed(path) {
+  if (path === "/fr" || path === "/es" || path === "/ca") return "/";
+  const match = path.match(/^\/(fr|es|ca)(\/.*)$/);
+  return match ? match[2] : path;
+}
+
 function loc(path) {
   return `${origin}${path === "/" ? "/" : path}`;
 }
@@ -109,11 +115,13 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${unique
   .map((path) => {
+    const slug = unprefixed(path);
     const priority =
       priorities[path] ??
-      (path.startsWith("/parishes/")
+      priorities[slug] ??
+      (slug.startsWith("/parishes/")
         ? "0.7"
-        : path.startsWith("/directory/")
+        : slug.startsWith("/directory/")
           ? "0.6"
           : "0.5");
     return urlEntry(path, priority);

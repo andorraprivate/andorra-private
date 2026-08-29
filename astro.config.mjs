@@ -11,4 +11,11 @@ export default defineConfig({
   // Keep spaces around inline <a> in running prose. compressHTML
   // otherwise turns `on\n<a>` into `on<a>` (theofficial, onbecome).
   compressHTML: false,
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'fr', 'es', 'ca'],
+    routing: {
+      prefixDefaultLocale: false,
+    },
+  },
 });

@@ -1,48 +1,136 @@
 ---
+import { localePath, type Locale } from "../lib/i18n";
+
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "en" } = Astro.props;
+
+const chrome: Record<
+  Locale,
+  { blurb: string; explore: string; moving: string; official: string; legal: string }
+> = {
+  en: {
+    blurb: "English notes on living in Andorra, taken from official pages.",
+    explore: "Explore",
+    moving: "Moving",
+    official: "Official",
+    legal: "Legal",
+  },
+  fr: {
+    blurb: "Andorre Private.",
+    explore: "Explorer",
+    moving: "S'installer",
+    official: "Officiel",
+    legal: "Legal",
+  },
+  es: {
+    blurb: "Andorra Private.",
+    explore: "Explorar",
+    moving: "Mudarse",
+    official: "Oficial",
+    legal: "Legal",
+  },
+  ca: {
+    blurb: "Andorra Private.",
+    explore: "Explorar",
+    moving: "Mudar-se",
+    official: "Oficial",
+    legal: "Legal",
+  },
+};
+
+const t = chrome[locale];
+const p = (slug: string) => localePath(locale, slug);
 ---
 
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="/" class="logo">Andorra Private</a>
-      <p>
-        English notes on living in Andorra, taken from official pages.
-      </p>
+      <a href={p("/")} class="logo">Andorra Private</a>
+      <p>{t.blurb}</p>
     </div>
 
     <div class="footer-links">
       <div class="footer-col">
-        <h4>Explore</h4>
-        <a href="/living-in-andorra">Living in Andorra</a>
-        <a href="/parishes">The seven parishes</a>
-        <a href="/directory">Directory</a>
-        <a href="/become-a-resident">Become a Resident</a>
-        <a href="/properties">Properties</a>
+        <h4>{t.explore}</h4>
+        <a href={p("/living-in-andorra")}>
+          {locale === "en" ? "Living in Andorra" : locale === "fr" ? "Vivre en Andorre" : locale === "es" ? "Vivir en Andorra" : "Viure a Andorra"}
+        </a>
+        <a href={p("/parishes")}>
+          {locale === "en" ? "The seven parishes" : locale === "fr" ? "Les sept paroisses" : locale === "es" ? "Las siete parroquias" : "Les set parroquies"}
+        </a>
+        <a href={p("/directory")}>
+          {locale === "en" ? "Directory" : locale === "fr" ? "Annuaire" : locale === "es" ? "Directorio" : "Directori"}
+        </a>
+        <a href={p("/become-a-resident")}>
+          {locale === "en" ? "Become a Resident" : locale === "fr" ? "Devenir resident" : locale === "es" ? "Hacerse residente" : "Esdevenir resident"}
+        </a>
+        <a href={p("/properties")}>
+          {locale === "en" ? "Properties" : locale === "fr" ? "Biens immobiliers" : locale === "es" ? "Inmuebles" : "Immobles"}
+        </a>
       </div>
       <div class="footer-col">
-        <h4>Moving</h4>
-        <a href="/moving-to-andorra">Moving to Andorra</a>
-        <a href="/moving-to-andorra-from-the-uk">From the UK</a>
-        <a href="/opening-a-bank-account">Bank account</a>
-        <a href="/buying-property">Buying property</a>
-        <a href="/company-formation">Company formation</a>
-        <a href="/residence-without-work">Residence without work (D.1)</a>
-        <a href="/digital-nomad">Digital nomad (D.3)</a>
-        <a href="/family-reunification">Family reunification</a>
-        <a href="/tax-residence">Tax residence</a>
+        <h4>{t.moving}</h4>
+        <a href={p("/moving-to-andorra")}>
+          {locale === "en" ? "Moving to Andorra" : locale === "fr" ? "S'installer en Andorre" : locale === "es" ? "Mudarse a Andorra" : "Mudar-se a Andorra"}
+        </a>
+        {
+          locale === "en" && (
+            <a href="/moving-to-andorra-from-the-uk">From the UK</a>
+          )
+        }
+        <a href={p("/opening-a-bank-account")}>
+          {locale === "en" ? "Bank account" : locale === "fr" ? "Ouvrir un compte" : locale === "es" ? "Abrir una cuenta" : "Obrir un compte"}
+        </a>
+        <a href={p("/buying-property")}>
+          {locale === "en" ? "Buying property" : locale === "fr" ? "Acheter en non-resident" : locale === "es" ? "Comprar siendo no residente" : "Comprar sent no resident"}
+        </a>
+        {
+          locale === "en" && (
+            <a href="/company-formation">Company formation</a>
+          )
+        }
+        <a href={p("/residence-without-work")}>
+          {locale === "en" ? "Residence without work (D.1)" : locale === "fr" ? "Residence sans travail — D.1" : locale === "es" ? "Residencia sin trabajo — D.1" : "Residencia sense treball — D.1"}
+        </a>
+        <a href={p("/digital-nomad")}>
+          {locale === "en" ? "Digital nomad (D.3)" : locale === "fr" ? "Nomade numerique — D.3" : locale === "es" ? "Nomada digital — D.3" : "Nomada digital — D.3"}
+        </a>
+        <a href={p("/family-reunification")}>
+          {locale === "en" ? "Family reunification" : locale === "fr" ? "Regroupement familial — B.1" : locale === "es" ? "Reagrupación familiar — B.1" : "Reagrupament familiar — B.1"}
+        </a>
+        <a href={p("/tax-residence")}>
+          {locale === "en" ? "Tax residence" : locale === "fr" ? "Residence fiscale" : "Residencia fiscal"}
+        </a>
+        <a href={p("/the-file")}>
+          {locale === "en" ? "The file" : locale === "fr" ? "Le dossier et la banque" : locale === "es" ? "El expediente y el banco" : "L'expedient i el banc"}
+        </a>
+        <a href={p("/residency-vs-tax")}>
+          {locale === "en" ? "Three things people confuse" : locale === "fr" ? "Trois choses que l'on confond" : locale === "es" ? "Tres cosas que la gente confunde" : "Tres coses que la gent confon"}
+        </a>
       </div>
       <div class="footer-col">
-        <h4>Official</h4>
-        <a href="/practitioner-map">Practitioner map</a>
-        <a href="/official-sources">Official sources</a>
-        <a href="/education">Education</a>
-        <a href="/healthcare">Healthcare</a>
-        <a href="https://www.govern.ad/" target="_blank" rel="noopener"
-          >Govern.ad</a
+        <h4>{t.official}</h4>
+        {
+          locale === "en" && (
+            <>
+              <a href="/practitioner-map">Practitioner map</a>
+              <a href="/official-sources">Official sources</a>
+              <a href="/education">Education</a>
+              <a href="/healthcare">Healthcare</a>
+            </>
+          )
+        }
+        <a
+          href="https://www.govern.ad/"
+          target="_blank"
+          rel="noopener">Govern.ad</a
         >
       </div>
       <div class="footer-col">
-        <h4>Legal</h4>
+        <h4>{t.legal}</h4>
         <a href="/privacy">Privacy Policy</a>
         <a href="mailto:hello@privateandorra.com">hello@privateandorra.com</a>
       </div>

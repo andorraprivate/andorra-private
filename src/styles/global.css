@@ -133,6 +133,27 @@ nav.site-nav.overlay {
   color: white;
 }
 
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.lang-switch a {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+}
+
+.lang-switch a[aria-current="true"],
+.lang-switch a:hover {
+  color: #fff;
+}
+
 .hero {
   min-height: 100vh;
   display: flex;
