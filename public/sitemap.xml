@@ -11,51 +11,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.privateandorra.com/properties</loc>
-    <lastmod>2026-08-29</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.privateandorra.com/living-in-andorra</loc>
-    <lastmod>2026-08-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.privateandorra.com/parishes</loc>
-    <lastmod>2026-08-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.privateandorra.com/directory</loc>
-    <lastmod>2026-08-29</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.privateandorra.com/moving-to-andorra</loc>
-    <lastmod>2026-08-29</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.privateandorra.com/moving-to-andorra-from-the-uk</loc>
-    <lastmod>2026-08-29</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.privateandorra.com/moving-to-andorra-from-spain</loc>
-    <lastmod>2026-08-29</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.privateandorra.com/moving-to-andorra-from-france</loc>
-    <lastmod>2026-08-29</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.privateandorra.com/opening-a-bank-account</loc>
-    <lastmod>2026-08-29</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
     <loc>https://www.privateandorra.com/buying-property</loc>
     <lastmod>2026-08-29</lastmod>
     <priority>0.85</priority>
@@ -66,12 +21,17 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.privateandorra.com/residence-without-work</loc>
+    <loc>https://www.privateandorra.com/directory</loc>
     <lastmod>2026-08-29</lastmod>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.privateandorra.com/tax-residence</loc>
+    <loc>https://www.privateandorra.com/education</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/entrepreneur-residence</loc>
     <lastmod>2026-08-29</lastmod>
     <priority>0.85</priority>
   </url>
@@ -81,19 +41,34 @@
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.privateandorra.com/self-employed-residence</loc>
+    <loc>https://www.privateandorra.com/healthcare</loc>
     <lastmod>2026-08-29</lastmod>
-    <priority>0.85</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.privateandorra.com/entrepreneur-residence</loc>
-    <lastmod>2026-08-29</lastmod>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.privateandorra.com/practitioner-map</loc>
+    <loc>https://www.privateandorra.com/living-in-andorra</loc>
     <lastmod>2026-08-29</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/moving-to-andorra</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/moving-to-andorra-from-france</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/moving-to-andorra-from-spain</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/moving-to-andorra-from-the-uk</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.privateandorra.com/official-sources</loc>
@@ -101,19 +76,49 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.privateandorra.com/education</loc>
+    <loc>https://www.privateandorra.com/opening-a-bank-account</loc>
     <lastmod>2026-08-29</lastmod>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.privateandorra.com/healthcare</loc>
+    <loc>https://www.privateandorra.com/parishes</loc>
     <lastmod>2026-08-29</lastmod>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/practitioner-map</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.privateandorra.com/privacy</loc>
     <lastmod>2026-08-29</lastmod>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/properties</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/residence-without-work</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/self-employed-residence</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/tax-residence</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.privateandorra.com/robots.txt</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.privateandorra.com/parishes/andorra-la-vella</loc>
