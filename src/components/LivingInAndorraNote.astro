@@ -1,0 +1,80 @@
+---
+interface Props {
+  topic: "j1-closed" | "passive-renewal" | "family-renewal";
+}
+
+const { topic } = Astro.props;
+
+const index = "https://www.livinginandorra.com/index.html";
+const catD =
+  "https://www.livinginandorra.com/residency_category_d.html#active_update";
+const renewals = "https://www.livinginandorra.com/residency_renewals.html";
+---
+
+{
+  topic === "j1-closed" && (
+    <div class="notice">
+      <p>
+        <a href={index} target="_blank" rel="noopener">
+          Living in Andorra
+        </a>{" "}
+        states, as of its 15 September 2026 index, that Compte Propi /
+        official J.1 remains closed to new applications. A
+        <a href={catD} target="_blank" rel="noopener">
+          Category D note
+        </a>{" "}
+        on that site reports a Compte Propi quota closed in October 2025,
+        a February 2026 quota of 150 places reported as fully taken on
+        the day it opened, and, as of September 2026, no new quota and
+        no official news of a change to price or procedure. The same
+        note speculates that a reopen may wait until parliamentary
+        elections due by March 2027, and that procedure and cost may
+        change when that is addressed. That timeline is a practitioner
+        report, not a Government notice. Confirm on Govern.ad and the
+        quota decree before you treat a place as available.
+      </p>
+    </div>
+  )
+}
+
+{
+  topic === "passive-renewal" && (
+    <div class="notice">
+      <p>
+        Official-verify: the live D.2 list still names, among other
+        proofs, a pension certificate, a tax return from the last country
+        of residence, and bank certifications.{" "}
+        <a href={renewals} target="_blank" rel="noopener">
+          Living in Andorra
+        </a>{" "}
+        states that Immigration now requires the annual income test to
+        be shown by a certificate from an Andorran bank, and that a
+        foreign bank certificate or foreign income proof is no longer
+        accepted as a substitute. Confirm that practice with counsel
+        against the live D.2 text. This site does not treat her income
+        multiples as law.
+      </p>
+    </div>
+  )
+}
+
+{
+  topic === "family-renewal" && (
+    <div class="notice">
+      <p>
+        Official-verify: the published B.2 list does not currently name
+        a bank solvency certificate.{" "}
+        <a href={renewals} target="_blank" rel="noopener">
+          Living in Andorra
+        </a>{" "}
+        states that, for active residents with dependants (family
+        grouping), an Andorran bank certificate of solvency is now
+        required at the first renewal as well as at the initial file, and
+        that the certificate must be issued on the principal holder’s
+        personal account — not a company account and not a joint
+        account. Confirm on the live B.2 page and with counsel. We do
+        not convert household means tests into salary multiples here.
+      </p>
+    </div>
+  )
+}

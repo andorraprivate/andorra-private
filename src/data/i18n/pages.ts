@@ -112,7 +112,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
           p: [
             "A.1 Residence et travail pour un employeur andorran. J.1 Residence et travail a titre indépendant (compte propre). D.1 Residence sans prendre un emploi local. B.1 Regroupement familial. C.1 Travail frontalier. D.3 Nomade numerique. Toujours sur Govern.ad. D.4 Programmes pour entrepreneurs. Toujours sur Govern.ad.",
             "Des conseillers anglophones utilisent parfois une carte privee A/B/C/D. Chez Jane Whittaker, A = D.1 sans travail, B = D.1.2, C = D.1.3, D = J.1. Cette carte se dit une fois. Elle n'est pas la loi. Ce site emploie les codes officiels.",
-            "A.1 exige en general un contrat avec une société andorrane réelle et une place dans le quota de l'année. J.1 est la première autorisation si vous travaillez a votre compte. La première carte A.1 ou J.1 est en general d'un an. Une note du Govern decrit le Decret 75/2026: quota general de 200 autorisations indépendantes — 150 cas d'investissement étranger, 50 professions libérales. Verifiez qu'une place est effectivement délivrée avant de croire une rumeur de « voie fermee ».",
+            "A.1 exige en general un contrat avec une société andorrane réelle et une place dans le quota de l'année. J.1 est la première autorisation si vous travaillez a votre compte. La première carte A.1 ou J.1 est en general d'un an. Une note du Govern decrit le Decret 75/2026: quota general de 200 autorisations indépendantes — 150 cas d'investissement étranger, 50 professions libérales. Living in Andorra indique, au 15 septembre 2026, que le Compte Propi / J.1 reste ferme aux nouvelles demandes. Le calendrier qu'elle donne n'est pas un avis du Gouvernement. Confirmez sur Govern.ad.",
             "Llei 2/2026 du 22 janvier, publiee au BOPA le 12 fevrier 2026, en vigueur le 13 fevrier 2026. Article 96: le titulaire principal d'une residence sans activite lucrative doit investir, de facon permanente et effective, au moins 1 000 000 d'euros dans des actifs andorrans nommes. Immobilier; parts de sociétés residentes; certains titres de creance ou OPC d'emetteurs residents pour 36 mois au plus avant de basculer; dette publique; produits d'assurance-vie d'assureurs residents; ou depots AFA non remuneres. Si immobilier: plus de 800 000 euros par unite; le million reste le total. 400 000 euros Fons d'Habitatge « conformément a la règlementation applicable ». Possibilite légale, pas un guichet. AFA 50 000 + 12 000 par dépendant, définitives et non remboursables sauf refus de l'autorisation initiale. Tarifs Govern.ad: 3 000 / 1 000 / 500.",
           ],
         },
@@ -274,7 +274,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "Quota Decret 75/2026 de 200: 150 investissement, 50 professions libérales. Premiere 1 an, 3x2, après 7 ans 10.",
+            "Quota Decret 75/2026 de 200: 150 investissement, 50 professions libérales. Living in Andorra indique, au 15 septembre 2026, que le Compte Propi / J.1 reste ferme aux nouvelles demandes. Le calendrier qu'elle donne n'est pas un avis du Gouvernement. Confirmez sur Govern.ad. Premiere 1 an, 3x2, après 7 ans 10.",
             "Voie investissement: >34%, constitution, commerce actif en 3 mois, AFA 50 000 encore nomme sur la page J.1, BOPA l'emporte.",
             "Voie profession libérale: autorisation et college en 3 mois. Comu en 3 mois. Renouvellement demande l'activite commerciale, pas un chiffre d'affaires.",
           ],
@@ -399,7 +399,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
         {
           p: [
             "Algunos asesores anglosajones usan un mapa privado A/B/C/D. En Jane Whittaker, A = D.1 sin trabajo, B = D.1.2, C = D.1.3, D = J.1. Ese mapa se dice una vez. No es la ley. Este sitio usa los códigos oficiales.",
-            "Residencia y trabajo: A.1 suele exigir un contrato con una sociedad andorrana real y plaza en el cupo del ano. J.1 es la primera autorización si trabaja por cuenta propia. La primera tarjeta A.1 o J.1 suele ser de un ano. Una nota del Govern describe el Decret 75/2026: cupo general de 200 autorizaciónes por cuenta propia — 150 casos de inversion extranjera, 50 profesiones libérales. Compruebe que se esta expidiendo plaza antes de planear sobre el rumor de que la vía esta « cerrada ».",
+            "Residencia y trabajo: A.1 suele exigir un contrato con una sociedad andorrana real y plaza en el cupo del ano. J.1 es la primera autorización si trabaja por cuenta propia. La primera tarjeta A.1 o J.1 suele ser de un ano. Una nota del Govern describe el Decret 75/2026: cupo general de 200 autorizaciónes por cuenta propia — 150 casos de inversion extranjera, 50 profesiones libérales. Living in Andorra indica, a 15 de septiembre de 2026, que Compte Propi / J.1 sigue cerrado a nuevas solicitudes. El calendario que da no es un aviso del Gobierno. Confirme en Govern.ad.",
             "Lo que dice la Llei 2/2026 para la residencia sin actividad lucrativa: Llei 2/2026 de 22 de enero, públicada en el BOPA el 12 de febrero de 2026, en vigor el 13 de febrero de 2026. Articulo 96: el titular principal de una residencia sin actividad lucrativa debe invertir, de forma permanente y efectiva, al menos 1.000.000 de euros en activos andorraños nombrados.",
           ],
           ul: [
@@ -602,7 +602,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "El J.1 autoriza a residir y a ejercer una actividad por cuenta propia de forma permanente. El Decret 75/2026 se describe como un cupo general de 200: 150 casos de inversion extranjera, 50 profesiones libérales. Compruebe que se esta expidiendo plaza de verdad. Primera autorización de un ano, renovable tres veces por dos años. A los siete años, renovaciónes de diez. Inversion extranjera: más del 34 %, constitución legal, en tres meses comercio inscrito y activo. Deposito AFA: la página J.1 en linea sigue nombrando 50.000 euros; si los textos discrepan, rige el BOPA. Profesion libéral: autorización y colegiación en tres meses. Alta en el Comu en tres meses. Los papeles de renovación piden prueba de la actividad comercial. No fijan una cifra de facturación.",
+            "El J.1 autoriza a residir y a ejercer una actividad por cuenta propia de forma permanente. El Decret 75/2026 se describe como un cupo general de 200: 150 casos de inversion extranjera, 50 profesiones libérales. Living in Andorra indica, a 15 de septiembre de 2026, que Compte Propi / J.1 sigue cerrado a nuevas solicitudes. El calendario que da no es un aviso del Gobierno. Confirme en Govern.ad. Primera autorización de un ano, renovable tres veces por dos años. A los siete años, renovaciónes de diez. Inversion extranjera: más del 34 %, constitución legal, en tres meses comercio inscrito y activo. Deposito AFA: la página J.1 en linea sigue nombrando 50.000 euros; si los textos discrepan, rige el BOPA. Profesion libéral: autorización y colegiación en tres meses. Alta en el Comu en tres meses. Los papeles de renovación piden prueba de la actividad comercial. No fijan una cifra de facturación.",
           ],
         },
       ],
@@ -723,7 +723,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
         {
           p: [
             "Alguns assessors anglosaxons fan servir un mapa privat A/B/C/D. A Jane Whittaker, A = D.1 sense treball, B = D.1.2, C = D.1.3, D = J.1. Aquest mapa es diu un cop. No es la llei. Aquest lloc fa servir els codis oficials.",
-            "A.1 sol exigir un contracte amb una societat andorrana real i una placa en la quota de l'any. J.1 es la primera autorització si treballeu per compte propi. La primera targeta A.1 o J.1 sol ser d'un any. Una nota del Govern descriu el Decret 75/2026: quota general de 200 autoritzacións per compte propi — 150 casos d'inversio estrangera, 50 professions libérals. Comproveu que s'esta expedint placa.",
+            "A.1 sol exigir un contracte amb una societat andorrana real i una placa en la quota de l'any. J.1 es la primera autorització si treballeu per compte propi. La primera targeta A.1 o J.1 sol ser d'un any. Una nota del Govern descriu el Decret 75/2026: quota general de 200 autoritzacións per compte propi — 150 casos d'inversio estrangera, 50 professions libérals. Living in Andorra indica, el 15 de setembre del 2026, que el Compte Propi / J.1 continua tancat a noves sol·licituds. El calendari que dona no es un avís del Govern. Confirmeu a Govern.ad.",
             "Llei 2/2026 del 22 de gener, públicada al BOPA el 12 de febrer del 2026, en vigor el 13 de febrer del 2026. Article 96: el titular principal ha d'invertir, de manera permanent i efectiva, com a minim 1.000.000 d'euros en actius andorrans nomenats.",
           ],
           ul: [
@@ -909,7 +909,7 @@ export const pages: Record<"fr" | "es" | "ca", Record<I18nSlug, PageCopy>> = {
       blocks: [
         {
           p: [
-            "Quota Decret 75/2026 de 200: 150 / 50. Primera un any, tres vegades dos, als set anys deu. Inversio estrangera mes del 34 %, constitució, comerç actiu en tres mesos. Página J.1 encara nomena 50.000; si discrepen, BOPA. Professio libéral: autorització i col·legiació en tres mesos. Alta al Comu en tres mesos. Renovació demana activitat comercial, no facturació.",
+            "Quota Decret 75/2026 de 200: 150 / 50. Living in Andorra indica, el 15 de setembre del 2026, que el Compte Propi / J.1 continua tancat a noves sol·licituds. El calendari que dona no es un avís del Govern. Confirmeu a Govern.ad. Primera un any, tres vegades dos, als set anys deu. Inversio estrangera mes del 34 %, constitució, comerç actiu en tres mesos. Página J.1 encara nomena 50.000; si discrepen, BOPA. Professio libéral: autorització i col·legiació en tres mesos. Alta al Comu en tres mesos. Renovació demana activitat comercial, no facturació.",
           ],
         },
       ],
