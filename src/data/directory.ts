@@ -77,7 +77,7 @@ export const listings: DirectoryListing[] = [
       "English practitioner. livinginandorra.com is a guide. Official letter codes remain the law.",
     sourcedFrom: "livinginandorra.com",
     detail: [
-      "She describes herself as English-born and resident in Andorra for about thirty-nine years. The index is dated 19 August 2026. Official figures on this site come from Govern.ad and the BOPA, not from her pages.",
+      "She describes herself as English-born and resident in Andorra for about thirty-nine years. The index is dated 15 September 2026. Official figures on this site come from Govern.ad and the BOPA, not from her pages.",
       "Services she lists include meeting arrivals, bank introductions, tax and lawyer meetings, the Immigration pack, viewings through partnered agents (she names Roc Properties), insurance papers, schools, removals, car import, utilities and renewals. Those are her offers. We do not invent her fees.",
       "Cost-of-living PDFs on her site are her estimates, not official prices.",
     ],
@@ -85,6 +85,10 @@ export const listings: DirectoryListing[] = [
       {
         href: "https://www.livinginandorra.com/residency_options.html",
         label: "Residency options 2026 — Living in Andorra",
+      },
+      {
+        href: "https://www.livinginandorra.com/residency_category_d.html#active_update",
+        label: "Category D / Compte Propi — Living in Andorra",
       },
       {
         href: "https://www.livinginandorra.com/residency_renewals.html",
