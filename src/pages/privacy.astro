@@ -4,17 +4,21 @@ import Base from "../layouts/Base.astro";
 
 <Base
   title="Privacy Policy | Andorra Private"
-  description="Privacy Policy of Andorra Private in accordance with Andorran data protection law (Llei 29/2021)."
+  description="Privacy Policy of Andorra Private under Andorran Llei 29/2021 (LQPD), including the concierge forms and the newsletter."
   path="/privacy"
 >
   <div class="privacy-page">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 23 August 2026</p>
+    <p class="updated">Last updated: 11 October 2026</p>
 
     <p>
       This page explains how Andorra Private (“we”, “us” or “our”)
       collects, uses and protects your personal data when you visit
       privateandorra.com or send something through a form.
+    </p>
+    <p>
+      A Spanish text of this policy is on
+      <a href="/es/privacy">the Spanish page</a>.
     </p>
 
     <p>
@@ -29,50 +33,104 @@ import Base from "../layouts/Base.astro";
     <h2>1. Data Controller</h2>
     <p>The data controller is the operator of privateandorra.com.</p>
     <p>
-      For any privacy-related enquiry, please contact us at:<br />
+      For any privacy-related enquiry, write to:<br />
       <a href="mailto:hello@privateandorra.com">hello@privateandorra.com</a>
+    </p>
+    <p>
+      There is no telephone number on this site. Privacy requests are
+      handled in that inbox, in writing.
     </p>
 
     <h2>2. What data we collect</h2>
     <p>We may collect the following personal data:</p>
     <ul>
-      <li>Email address (when you submit an interest form)</li>
+      <li>Email address, and a name if you give one</li>
       <li>
-        Technical data such as IP address, browser type and basic usage data
-        (collected automatically for security and analytics purposes)
+        What you asked for (a reading pack, a plan, a partner introduction,
+        or the newsletter), the route and timing you selected, a household
+        count, and the message you wrote
+      </li>
+      <li>
+        The plan text generated on the planner, if you ask for it to be
+        emailed
+      </li>
+      <li>
+        Whether you agreed that a summary may be sent to an independent
+        licensed professional
+      </li>
+      <li>
+        Technical data such as IP address, browser type and basic usage
+        data, collected for security
       </li>
     </ul>
+    <p>We do not ask for a telephone number.</p>
 
     <h2>3. Purpose and legal basis</h2>
     <p>We process your data for the following purposes:</p>
     <ul>
       <li>
-        <strong>Responding to your interest</strong> in residency or property
-        opportunities in Andorra — based on your consent (Art. 6.1.a LQPD)
+        <strong>Sending what you asked for</strong> — the reading pack, a
+        copy of the plan, or a reply to your message — based on your
+        consent (Art. 6.1.a LQPD)
       </li>
       <li>
-        <strong>Improving the website and ensuring security</strong> — based on
-        our legitimate interest (Art. 6.1.f LQPD)
+        <strong>The newsletter</strong> — only if you subscribe, until you
+        unsubscribe — based on your consent (Art. 6.1.a LQPD)
+      </li>
+      <li>
+        <strong>A partner introduction</strong> — only if you tick that
+        box — based on your consent (Art. 6.1.a LQPD)
+      </li>
+      <li>
+        <strong>Keeping the site secure</strong> — based on our legitimate
+        interest (Art. 6.1.f LQPD)
       </li>
     </ul>
+    <p>
+      The plan is a text assembled in your browser from your answers and
+      from figures cited on the page. It is not a decision on a residence
+      file and it has no legal effect by itself.
+    </p>
 
     <h2>4. Who we share data with</h2>
-    <p>We use the following service providers who may process data on our behalf:</p>
+    <p>
+      We use the following service providers, who may process data on our
+      behalf:
+    </p>
     <ul>
-      <li><strong>Formspree</strong> — for form submissions</li>
-      <li><strong>Vercel</strong> — for website hosting</li>
+      <li>
+        <strong>Neon</strong> — Postgres database for concierge and
+        newsletter submissions, when a database connection is configured
+      </li>
+      <li><strong>Vercel</strong> — website hosting</li>
+      <li>
+        <strong>Formspree</strong> — the older email-only forms on other
+        pages of this site
+      </li>
     </ul>
     <p>
-      These providers act as data processors and are required to protect your
-      data under appropriate agreements.
+      These providers act as data processors. They may host data outside
+      Andorra. We do not sell your personal data.
     </p>
-    <p>We do not sell your personal data.</p>
+    <p>
+      If you tick the partner box, a summary (name, email, the letter the
+      planner suggested, the timing you gave, and the message you wrote)
+      may be emailed to an independent licensed professional: a lawyer,
+      gestor, estate agent, insurer or school. They are not our processor
+      for that message. They receive it so they can write to you. If you
+      leave the box unticked, we do not send that summary.
+    </p>
+    <p>
+      No card payment runs on this site today. If a payment is offered
+      later, this policy will name the processor before a card is taken.
+    </p>
 
     <h2>5. Data retention</h2>
     <p>
-      We keep your email address only for as long as necessary to respond to
-      your enquiry or until you ask us to delete it. Technical logs are retained
-      for a limited period for security purposes.
+      We keep a request for as long as it takes to send what you asked
+      for, and afterwards until you ask us to delete it. Newsletter
+      addresses are kept until you unsubscribe. Technical logs are kept
+      for a limited period for security.
     </p>
 
     <h2>6. Your rights</h2>
@@ -86,14 +144,16 @@ import Base from "../layouts/Base.astro";
       <li>Withdraw consent at any time</li>
     </ul>
     <p>
-      To exercise any of these rights, email us at
+      To exercise any of these rights, email
       <a href="mailto:hello@privateandorra.com">hello@privateandorra.com</a>.
+      Withdrawing consent does not affect processing that took place
+      before the withdrawal.
     </p>
 
     <h2>7. Complaints</h2>
     <p>
-      If you believe your data protection rights have been infringed, you may
-      lodge a complaint with the
+      If you believe your data protection rights have been infringed, you
+      may lodge a complaint with the
       <strong>Agència Andorrana de Protecció de Dades (APDA)</strong>:
     </p>
     <p>
@@ -105,8 +165,8 @@ import Base from "../layouts/Base.astro";
 
     <h2>8. Changes to this policy</h2>
     <p>
-      We may update this Privacy Policy from time to time. The latest version
-      will always be published on this page.
+      We may update this Privacy Policy from time to time. The latest
+      version will always be published on this page, with the date above.
     </p>
   </div>
 </Base>

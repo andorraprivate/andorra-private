@@ -1,0 +1,26 @@
+---
+import { localePath, type Locale } from "../lib/i18n";
+
+type Segment = string | { href: string; label: string; external?: boolean };
+
+interface Props {
+  parts: Segment[];
+  locale: Locale;
+}
+
+const { parts, locale } = Astro.props;
+---
+
+{
+  parts.map((part) =>
+    typeof part === "string" ? (
+      part
+    ) : part.external ? (
+      <a href={part.href} target="_blank" rel="noopener">
+        {part.label}
+      </a>
+    ) : (
+      <a href={localePath(locale, part.href)}>{part.label}</a>
+    ),
+  )
+}

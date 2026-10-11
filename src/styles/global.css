@@ -541,6 +541,10 @@ nav.site-nav.overlay {
   border: 1px solid #e5dfd6;
 }
 
+.success-message.is-visible {
+  display: block;
+}
+
 .success-message h3 {
   font-size: 1.5rem;
   color: var(--forest);
@@ -677,8 +681,18 @@ footer.site-footer {
     row-gap: 0.85rem;
   }
 
+  nav.site-nav {
+    position: relative;
+  }
+
   .nav-menu[open] .nav-links {
     display: flex;
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    right: 0;
+    z-index: 30;
+    background: var(--forest);
+    padding: 0.35rem 0 0.6rem;
   }
 
   .nav-links a {
@@ -698,5 +712,347 @@ footer.site-footer {
 
   .nav-links {
     display: flex;
+  }
+}
+
+.plan-tool,
+.lead-section {
+  padding: 1.5rem 7% 4.5rem;
+}
+
+.plan-tool .section-header {
+  margin-bottom: 1.5rem;
+}
+
+.quiz,
+.calc,
+.quote-output,
+.lead-card {
+  max-width: 720px;
+}
+
+.quiz-progress,
+.result-label,
+.card-label {
+  letter-spacing: 0.16em;
+}
+
+.quiz-progress {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 0.8rem;
+}
+
+.quiz h3,
+.calc h2,
+.quote-output h3,
+.lead-card h2 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  color: var(--forest);
+}
+
+.quiz h3 {
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  margin-bottom: 1.2rem;
+}
+
+.quiz-options,
+.offer-choice {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.quiz-option,
+.offer-choice label,
+.text-button,
+button[data-checkout]:not([hidden]),
+.lead-form button,
+.calc > button {
+  font-family: inherit;
+  text-align: left;
+  background: white;
+  color: var(--forest);
+  border: 1px solid #d9d3c9;
+  padding: 0.95rem 1rem;
+  min-height: 48px;
+  cursor: pointer;
+}
+
+.quiz-option[aria-pressed="true"],
+.quiz-option:hover,
+.offer-choice label:hover {
+  border-color: var(--brass);
+}
+
+.quiz [data-quiz-back],
+.text-button {
+  margin-top: 1rem;
+  background: transparent;
+  min-height: 44px;
+}
+
+.plan-result {
+  max-width: 720px;
+  margin: 2rem 0;
+  padding: 1.6rem 1.4rem 1.8rem;
+  background: var(--forest);
+  color: var(--offwhite);
+}
+
+.plan-result h3 {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 500;
+  margin: 0.4rem 0 1rem;
+}
+
+.plan-result p,
+.plan-result li {
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+.plan-result ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.plan-result a {
+  color: var(--stone);
+}
+
+.calc {
+  margin-top: 2.5rem;
+}
+
+.calc h2,
+.lead-card h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 0.6rem;
+}
+
+.calc > p,
+.lead-card > p,
+.notice-inline {
+  color: #555;
+  font-weight: 300;
+  margin-bottom: 1.2rem;
+}
+
+.calc-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.field label,
+.offer-choice legend {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+.field input,
+.field textarea,
+.field select {
+  font: inherit;
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid #d9d3c9;
+  background: white;
+  color: var(--charcoal);
+}
+
+.offer-choice {
+  border: 0;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.offer-choice label {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.check {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin: 0.9rem 0;
+  color: #444;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.check input {
+  margin-top: 0.25rem;
+  flex: 0 0 auto;
+}
+
+.quote-output {
+  margin-top: 1.6rem;
+}
+
+.quote-output table,
+.prose table {
+  width: 100%;
+}
+
+.quote-output {
+  overflow-x: auto;
+}
+
+.quote-output table {
+  border-collapse: collapse;
+  min-width: 280px;
+}
+
+.quote-output td {
+  border-bottom: 1px solid #e5dfd6;
+  padding: 0.75rem 0.4rem;
+  vertical-align: top;
+  font-weight: 300;
+  color: #444;
+}
+
+.quote-output td:last-child {
+  text-align: right;
+  white-space: nowrap;
+  color: var(--forest);
+}
+
+.quote-totals p {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.8rem 0;
+  color: var(--forest);
+}
+
+.quote-warnings,
+.source-list,
+.quote-output ul {
+  padding-left: 1.1rem;
+  margin: 0.8rem 0 1.2rem;
+  color: #555;
+  font-weight: 300;
+}
+
+.quote-output h3 {
+  font-size: 1.35rem;
+  margin: 1.4rem 0 0.6rem;
+}
+
+.offer-price:not([hidden]) {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.7rem;
+  color: var(--brass);
+  margin: 0.8rem 0;
+}
+
+button[data-checkout]:not([hidden]),
+.lead-form button,
+.calc > button {
+  background: var(--forest);
+  color: white;
+  border: 0;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.lead-form button:disabled,
+.calc > button:disabled,
+button[data-checkout]:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.form-error,
+.pay-status {
+  color: #6e3b32;
+  margin-bottom: 0.8rem;
+}
+
+.hp {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  overflow: hidden;
+}
+
+.lead-card {
+  background: white;
+  border: 1px solid #e5dfd6;
+  padding: 1.5rem 1.2rem 1.7rem;
+}
+
+.faq {
+  border-top: 1px solid #e5dfd6;
+  padding: 0.9rem 0;
+}
+
+.faq summary {
+  cursor: pointer;
+  color: var(--forest);
+  font-size: 1.05rem;
+}
+
+.faq p {
+  margin-top: 0.7rem;
+}
+
+.disclaimer {
+  margin-top: 2rem;
+  padding: 1.1rem 1.2rem;
+  background: #f0ebe3;
+  border-left: 3px solid var(--brass);
+}
+
+.disclaimer p,
+.prose-disclaimer {
+  margin: 0;
+  color: #444;
+  font-weight: 300;
+}
+
+.prose-disclaimer {
+  max-width: 720px;
+  margin-top: 2rem;
+}
+
+html.is-paid [data-free-note] {
+  display: none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+@media (min-width: 720px) {
+  .calc-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+  }
+
+  .lead-card,
+  .plan-result {
+    padding: 2rem 1.8rem;
   }
 }

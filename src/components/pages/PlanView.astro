@@ -1,0 +1,78 @@
+---
+import Base from "../../layouts/Base.astro";
+import Inlines from "../Inlines.astro";
+import JsonLd from "../JsonLd.astro";
+import LeadForm from "../LeadForm.astro";
+import PlanTool from "../PlanTool.astro";
+import { conciergeCopy, type ConciergeLocale } from "../../data/concierge-copy";
+import { localePath, type Locale } from "../../lib/i18n";
+
+interface Props {
+  locale: ConciergeLocale;
+}
+
+const { locale } = Astro.props;
+const t = conciergeCopy[locale];
+const path = localePath(locale as Locale, "/plan");
+const origin = "https://www.privateandorra.com";
+
+const article = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: t.plan.h1,
+  description: t.plan.description,
+  datePublished: "2026-10-11",
+  dateModified: "2026-10-11",
+  inLanguage: locale === "es" ? "es" : "en-GB",
+  mainEntityOfPage: `${origin}${path}`,
+  author: { "@type": "Organization", name: "Andorra Private", url: origin },
+  publisher: { "@type": "Organization", name: "Andorra Private", url: origin },
+  citation: [
+    "https://bopadocuments.blob.core.windows.net/bopa-documents/038015/pdf/CGL_2026_02_12_10_11_12.pdf",
+    "https://www.govern.ad/ca/tematiques/immigracio/altres-tramits/tarifes",
+  ],
+};
+
+const faq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: locale === "es" ? "¿De dónde salen las cifras?" : "Where do the euro figures come from?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: t.concierge.faq[3].a,
+      },
+    },
+  ],
+};
+---
+
+<Base title={t.plan.title} description={t.plan.description} path={path} locale={locale}>
+  <JsonLd data={[article, faq]} />
+  <section class="page-header">
+    <p class="card-label">{t.plan.label}</p>
+    <h1>{t.plan.h1}</h1>
+    <p>{t.plan.dek}</p>
+  </section>
+
+  <section class="prose wide">
+    {
+      t.plan.blocks.map((block) => (
+        <>
+          {block.h && <h2>{block.h}</h2>}
+          <p>
+            <Inlines parts={block.p} locale={locale} />
+          </p>
+        </>
+      ))
+    }
+    <aside class="disclaimer">
+      <p>{t.disclaimer}</p>
+    </aside>
+  </section>
+
+  <PlanTool locale={locale} />
+  <LeadForm locale={locale} source={`${locale}-plan`} path={path} variant="plan" />
+</Base>

@@ -1,0 +1,39 @@
+---
+import Base from "../../layouts/Base.astro";
+import Inlines from "../Inlines.astro";
+import LeadForm from "../LeadForm.astro";
+import { conciergeCopy, type ConciergeLocale } from "../../data/concierge-copy";
+import { localePath, type Locale } from "../../lib/i18n";
+
+interface Props {
+  locale: ConciergeLocale;
+}
+
+const { locale } = Astro.props;
+const t = conciergeCopy[locale];
+const path = localePath(locale as Locale, "/partners");
+---
+
+<Base title={t.partners.title} description={t.partners.description} path={path} locale={locale}>
+  <section class="page-header">
+    <p class="card-label">{t.partners.label}</p>
+    <h1>{t.partners.h1}</h1>
+    <p>{t.partners.dek}</p>
+  </section>
+  <section class="prose">
+    {
+      t.partners.blocks.map((block) => (
+        <>
+          {block.h && <h2>{block.h}</h2>}
+          <p>
+            <Inlines parts={block.p} locale={locale} />
+          </p>
+        </>
+      ))
+    }
+    <aside class="disclaimer">
+      <p>{t.disclaimer}</p>
+    </aside>
+  </section>
+  <LeadForm locale={locale} source={`${locale}-partners`} path={path} variant="request" />
+</Base>

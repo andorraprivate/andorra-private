@@ -1,0 +1,115 @@
+{
+  "asOf": "2026-10-11",
+  "authority": "Official letter codes, the BOPA, and the Govern.ad tariffs table. Secondary pages are quoted only where they disagree, and those figures are not added into the quote.",
+  "sources": {
+    "bopa-2-2026": {
+      "title": "Llei 2/2026, del 22 de gener, de mesures per a la continuïtat i la consolidació del creixement sostenible. BOPA 12 February 2026, in force 13 February 2026. Article 96 as already set out on this site.",
+      "url": "https://bopadocuments.blob.core.windows.net/bopa-documents/038015/pdf/CGL_2026_02_12_10_11_12.pdf",
+      "accessed": "2026-10-11"
+    },
+    "govern-tariffs": {
+      "title": "Tarifes tràmits d'immigració — Govern d'Andorra",
+      "url": "https://www.govern.ad/ca/tematiques/immigracio/altres-tramits/tarifes",
+      "accessed": "2026-10-11"
+    },
+    "govern-iiei": {
+      "title": "Govern.ad news note, 26 February 2026, on the foreign-investment property tax under Law 2/2026 and Decret 58/2026",
+      "url": "https://www.govern.ad/ca/w/s-actualitza-el-reglament-de-l-impost-sobre-la-inversio-estrangera-immobiliaria-d-acord-amb-la-nova-llei-de-continuitat-i-consolidacio-de-les-mesures-per-al-creixement-sostenible",
+      "accessed": "2026-10-11"
+    },
+    "itp": {
+      "title": "Buying property in 2026, on this site: ITP generally 4% of the deed price on second-hand property (1% State, 3% parish)",
+      "url": "https://www.privateandorra.com/buying-property-in-2026",
+      "accessed": "2026-10-11"
+    },
+    "govern-company": {
+      "title": "Fase de constitució de la societat — Govern d'Andorra. Minimum capital cited on this site’s company note.",
+      "url": "https://www.govern.ad/ca/tematiques/empresa-i-emprenedoria/creacio-i-modificacio-d-empreses/punt-empresa/fase-de-constitucio-de-la-societat",
+      "accessed": "2026-10-11"
+    },
+    "govern-d1": {
+      "title": "D.1 Residència sense treball — Govern d'Andorra",
+      "url": "https://www.govern.ad/ca/tematiques/immigracio/residencia/residencia-sense-treball-autoritzacio-inicial",
+      "accessed": "2026-10-11"
+    },
+    "govern-d3": {
+      "title": "D.3 Residència per a nòmada digital — Govern d'Andorra",
+      "url": "https://www.govern.ad/ca/tematiques/immigracio/residencia/residencia-per-a-nomada-digital",
+      "accessed": "2026-10-11"
+    },
+    "govern-j1": {
+      "title": "J.1 Residència i treball per compte propi — Govern d'Andorra",
+      "url": "https://www.govern.ad/ca/tematiques/immigracio/residencia-i-treball/residencia-i-treball-per-compte-propi-autoritzacio-inicial",
+      "accessed": "2026-10-11"
+    },
+    "wit": {
+      "title": "How much does residency in Andorra cost in 2026? — wit.ad. Page states it was updated 23 September 2026.",
+      "url": "https://wit.ad/en/how-much-does-a-residence-in-andorra-cost/",
+      "published": "2026-09-23",
+      "accessed": "2026-10-11",
+      "role": "secondary"
+    }
+  },
+  "figures": {
+    "d1Investment": 1000000,
+    "d1HousingFund": 400000,
+    "d1PropertyUnitFloorExclusive": 800000,
+    "d1AfaPrincipal": 50000,
+    "d1AfaDependant": 12000,
+    "d1TariffPrincipal": 3000,
+    "d1TariffDependant": 1000,
+    "d1Renewal": 500,
+    "j1Afa": 50000,
+    "j1Tariff": 190.96,
+    "applicationReceipt": 5.73,
+    "slCapital": 3000,
+    "b1Tariff": 22.61,
+    "workTariff": 190.96,
+    "itpRate": 0.04,
+    "iieiFirst": 0.06,
+    "iieiFurther": 0.1,
+    "presenceDays": 90,
+    "taxResidenceDays": 183
+  },
+  "excluded": [
+    {
+      "id": "wit-passive-charge",
+      "routes": ["d1"],
+      "source": "wit",
+      "claim": {
+        "en": "A secondary page still prints €2,500 for the principal, plus €500 a dependant, as the government charge for passive residence.",
+        "es": "Una página secundaria sigue imprimiendo 2.500 € para el titular, más 500 € por persona a cargo, como cargo del Gobierno para la residencia pasiva."
+      },
+      "why": {
+        "en": "The Govern.ad tariffs table, read on 11 October 2026, lists €3,000 for delivery of a residence-without-work authorisation and €1,000 for a dependant resident. This quote uses that table.",
+        "es": "La tabla de tarifas de Govern.ad, leída el 11 de octubre de 2026, indica 3.000 € por la entrega de una autorización de residencia sin trabajo y 1.000 € por el residente a cargo. Este cálculo usa esa tabla."
+      }
+    },
+    {
+      "id": "wit-means",
+      "routes": ["d1", "b1"],
+      "source": "wit",
+      "claim": {
+        "en": "The same secondary page converts a minimum-wage multiple into about €94,120 a year, and also describes 300% for the principal plus 100% a dependant. The two formulas on that page do not match.",
+        "es": "La misma página secundaria convierte un múltiplo del salario mínimo en unos 94.120 € al año, y también describe un 300% para el titular más un 100% por persona a cargo. Las dos fórmulas de esa página no coinciden."
+      },
+      "why": {
+        "en": "This site does not turn minimum-wage percentages into euros. Family reunification on the Government’s B.1 page is a percentage of the minimum wage, and we leave it as a percentage.",
+        "es": "Este sitio no convierte los porcentajes del salario mínimo en euros. El reagrupamiento familiar, en la página B.1 del Gobierno, es un porcentaje del salario mínimo, y así lo dejamos."
+      }
+    },
+    {
+      "id": "wit-nomad",
+      "routes": ["d3"],
+      "source": "wit",
+      "claim": {
+        "en": "That secondary page prints €224.61 as the digital-nomad charge.",
+        "es": "Esa página secundaria imprime 224,61 € como cargo del nómada digital."
+      },
+      "why": {
+        "en": "The tariffs table read on 11 October 2026 does not name a digital-nomad line. The Govern.ad D.3 page says economic means are those set by regulation. €224.61 is not added.",
+        "es": "La tabla de tarifas leída el 11 de octubre de 2026 no nombra una línea de nómada digital. La página D.3 de Govern.ad dice que los medios económicos son los que fije el reglamento. 224,61 € no se suma."
+      }
+    }
+  ]
+}

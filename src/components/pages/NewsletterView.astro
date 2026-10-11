@@ -1,0 +1,38 @@
+---
+import Base from "../../layouts/Base.astro";
+import LeadForm from "../LeadForm.astro";
+import { conciergeCopy, type ConciergeLocale } from "../../data/concierge-copy";
+import { localePath, type Locale } from "../../lib/i18n";
+
+interface Props {
+  locale: ConciergeLocale;
+}
+
+const { locale } = Astro.props;
+const t = conciergeCopy[locale];
+const path = localePath(locale as Locale, "/newsletter");
+---
+
+<Base title={t.newsletter.title} description={t.newsletter.description} path={path} locale={locale}>
+  <section class="page-header">
+    <p class="card-label">{t.newsletter.label}</p>
+    <h1>{t.newsletter.h1}</h1>
+    <p>{t.newsletter.dek}</p>
+  </section>
+  <section class="section">
+    <div class="card-grid">
+      {
+        t.newsletter.points.map((point, index) => (
+          <article class="card">
+            <div class="card-label">{String(index + 1).padStart(2, "0")}</div>
+            <p>{point}</p>
+          </article>
+        ))
+      }
+    </div>
+    <aside class="disclaimer prose-disclaimer">
+      <p>{t.disclaimer}</p>
+    </aside>
+  </section>
+  <LeadForm locale={locale} source={`${locale}-newsletter`} path={path} variant="newsletter" />
+</Base>

@@ -7,12 +7,13 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/generate-sitemap.mjs && astro build && node scripts/assert-sitemap.mjs && node scripts/assert-link-spacing.mjs",
+    "build": "node scripts/assert-costs.mjs && node scripts/generate-sitemap.mjs && astro build && node scripts/assert-sitemap.mjs && node scripts/assert-link-spacing.mjs && node scripts/assert-concierge-public.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "vercel --prod"
   },
   "dependencies": {
+    "@neondatabase/serverless": "^1.2.0",
     "astro": "^7.2.4"
   },
   "devDependencies": {

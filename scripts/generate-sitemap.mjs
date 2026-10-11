@@ -14,6 +14,8 @@ const lastmod = new Date().toISOString().slice(0, 10);
 const priorities = {
   "/": "1.0",
   "/become-a-resident": "0.9",
+  "/concierge": "0.9",
+  "/plan": "0.9",
   "/properties": "0.9",
   "/moving-to-andorra": "0.85",
   "/moving-to-andorra-from-the-uk": "0.85",
@@ -43,7 +45,10 @@ const priorities = {
   "/education": "0.7",
   "/healthcare": "0.7",
   "/privacy": "0.5",
+  "/newsletter": "0.6",
+  "/partners": "0.6",
   "/robots.txt": "0.3",
+  "/llms.txt": "0.4",
 };
 
 function walkPages(dir, acc = []) {
@@ -107,7 +112,7 @@ const directoryRoutes = slugsFrom(join(root, "src/data/directory.ts")).map(
   (slug) => `/directory/${slug}`,
 );
 
-const extraStatic = ["/robots.txt"];
+const extraStatic = ["/robots.txt", "/llms.txt"];
 const routes = [...pageRoutes, ...extraStatic, ...parishRoutes, ...directoryRoutes];
 const unique = [...new Set(routes)];
 
