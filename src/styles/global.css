@@ -677,8 +677,18 @@ footer.site-footer {
     row-gap: 0.85rem;
   }
 
+  nav.site-nav {
+    position: relative;
+  }
+
   .nav-menu[open] .nav-links {
     display: flex;
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    right: 0;
+    z-index: 30;
+    background: var(--forest);
+    padding: 0.35rem 0 0.6rem;
   }
 
   .nav-links a {
