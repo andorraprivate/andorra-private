@@ -1,0 +1,151 @@
+---
+import { localePath, type Locale } from "../lib/i18n";
+import { conciergeCopy, type ConciergeLocale } from "../data/concierge-copy";
+
+interface Props {
+  locale: ConciergeLocale;
+  source: string;
+  path: string;
+  variant: "request" | "plan" | "newsletter";
+}
+
+const { locale, source, path, variant } = Astro.props;
+const t = conciergeCopy[locale].form;
+const uid = source.replace(/[^a-z0-9]+/gi, "-");
+const action = variant === "newsletter" ? "/api/newsletter" : "/api/leads";
+const privacyHref = localePath(locale as Locale, "/privacy");
+---
+
+<section class="lead-section" id="request">
+  <div class="lead-card">
+    <h2>{variant === "newsletter" ? t.newsletterTitle : variant === "plan" ? conciergeCopy[locale].plan.emailTitle : t.requestTitle}</h2>
+    <p>
+      {
+        variant === "newsletter"
+          ? conciergeCopy[locale].newsletter.dek
+          : variant === "plan"
+            ? conciergeCopy[locale].plan.emailIntro
+            : t.requestIntro
+      }
+    </p>
+
+    <form
+      class="lead-form"
+      data-lead-form
+      data-plan-fields={variant === "plan" ? "true" : undefined}
+      action={action}
+      method="POST"
+    >
+      <input type="hidden" name="return_to" value={path} />
+      <input type="hidden" name="locale" value={locale} />
+      <input type="hidden" name="source" value={source} />
+      {variant === "plan" && <input type="hidden" name="offer" value="plan" />}
+      {variant === "plan" && (
+        <>
+          <input type="hidden" name="intent" value="" />
+          <input type="hidden" name="days" value="" />
+          <input type="hidden" name="local_work" value="" />
+          <input type="hidden" name="dependants" value="" />
+          <input type="hidden" name="capital" value="" />
+          <input type="hidden" name="timeline" value="" />
+          <input type="hidden" name="route" value="" />
+          <input type="hidden" name="plan_text" value="" />
+        </>
+      )}
+
+      <div class="hp" aria-hidden="true">
+        <label for={`${uid}-hp`}>{t.honeypot}</label>
+        <input id={`${uid}-hp`} name="company_website" tabindex="-1" autocomplete="off" />
+      </div>
+
+      {
+        variant !== "newsletter" && (
+          <div class="field">
+            <label for={`${uid}-name`}>{t.name}</label>
+            <input id={`${uid}-name`} name="name" type="text" autocomplete="name" maxlength="120" />
+          </div>
+        )
+      }
+
+      <div class="field">
+        <label for={`${uid}-email`}>{t.email}</label>
+        <input
+          id={`${uid}-email`}
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+          maxlength="200"
+        />
+      </div>
+
+      {
+        variant === "request" && (
+          <fieldset class="offer-choice">
+            <legend>{t.offerLegend}</legend>
+            {t.offers.map((offer, index) => (
+              <label>
+                <input
+                  type="radio"
+                  name="offer"
+                  value={offer.id}
+                  required
+                  checked={index === 0}
+                />
+                <span>{offer.label}</span>
+              </label>
+            ))}
+          </fieldset>
+        )
+      }
+
+      {
+        variant !== "newsletter" && (
+          <div class="field">
+            <label for={`${uid}-message`}>{t.message}</label>
+            <textarea
+              id={`${uid}-message`}
+              name="message"
+              rows="4"
+              maxlength="4000"
+              placeholder={t.messagePlaceholder}
+            />
+          </div>
+        )
+      }
+
+      <label class="check">
+        <input type="checkbox" name="consent_contact" required />
+        <span>
+          {variant === "newsletter" ? t.newsletterConsent : t.consent}{" "}
+          <a href={privacyHref}>{t.privacy}</a>.
+        </span>
+      </label>
+
+      {
+        variant !== "newsletter" && (
+          <label class="check">
+            <input type="checkbox" name="consent_partners" />
+            <span>{t.partners}</span>
+          </label>
+        )
+      }
+
+      <p class="form-error" data-form-error hidden>
+        {t.error}
+      </p>
+      <p class="pay-status" data-checkout-status hidden></p>
+      <button type="submit">{variant === "newsletter" ? t.newsletterSubmit : t.submit}</button>
+    </form>
+
+    <div class="success-message" data-success>
+      <h3>{t.successTitle}</h3>
+      <p>{t.success}</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { bootLeadForms } from "../scripts/lead-client";
+  bootLeadForms();
+</script>

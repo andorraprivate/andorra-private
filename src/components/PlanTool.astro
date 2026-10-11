@@ -1,0 +1,89 @@
+---
+import { conciergeCopy, type ConciergeLocale } from "../data/concierge-copy";
+
+interface Props {
+  locale: ConciergeLocale;
+}
+
+const { locale } = Astro.props;
+const t = conciergeCopy[locale].quiz;
+const page = conciergeCopy[locale].plan;
+const prefix = locale === "es" ? "/es" : "";
+const payUnavailable =
+  locale === "es"
+    ? "El pago no está disponible en este despliegue."
+    : "Payment is not available on this deployment.";
+---
+
+<section class="plan-tool" id="planner" data-planner data-locale={locale} data-prefix={prefix}>
+  <div class="section-header">
+    <h2>{page.toolTitle}</h2>
+  </div>
+  <noscript>
+    <p class="notice-inline">{t.noscript}</p>
+  </noscript>
+  <div class="quiz">
+    <p class="quiz-progress" data-quiz-progress></p>
+    <div data-quiz-step></div>
+    <button type="button" data-quiz-back hidden>{t.back}</button>
+  </div>
+
+  <div class="plan-result" data-plan-result hidden></div>
+
+  <div class="calc">
+    <h2>{page.calcTitle}</h2>
+    <p>{page.calcIntro}</p>
+    <div class="calc-grid">
+      <div class="field">
+        <label for="quote-route">{t.route}</label>
+        <select id="quote-route" data-route>
+          <option value="d1">{t.routes.d1}</option>
+          <option value="j1">{t.routes.j1}</option>
+          <option value="d3">{t.routes.d3}</option>
+          <option value="b1">{t.routes.b1}</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="quote-dependants">{t.dependants}</label>
+        <input id="quote-dependants" data-dependants type="number" min="0" max="12" value="0" />
+      </div>
+    </div>
+    <label class="check">
+      <input type="checkbox" data-housing />
+      <span>{t.housingFund}</span>
+    </label>
+    <div class="field">
+      <label for="quote-price">{t.property}</label>
+      <input id="quote-price" data-price type="number" min="0" step="1000" inputmode="decimal" placeholder={t.price} />
+    </div>
+    <fieldset class="offer-choice">
+      <legend>{t.property}</legend>
+      <label>
+        <input type="radio" name="band" value="first" data-band checked />
+        <span>{t.first}</span>
+      </label>
+      <label>
+        <input type="radio" name="band" value="further" data-band />
+        <span>{t.further}</span>
+      </label>
+    </fieldset>
+    <button type="button" data-calc-update>{t.update}</button>
+    <p class="offer-price" data-paid-slot="plan" hidden></p>
+    <button type="button" data-checkout="plan" hidden></button>
+    <p class="pay-status" data-checkout-status data-message={payUnavailable} hidden></p>
+  </div>
+  <div class="quote-output" data-calc-output>
+    <p>{t.empty}</p>
+  </div>
+</section>
+
+<script>
+  import { bootPlanner } from "../scripts/plan-client";
+  import { bootMonetisation } from "../scripts/monetisation-client";
+
+  const root = document.querySelector("[data-planner]");
+  if (root instanceof HTMLElement) {
+    bootPlanner(root);
+    bootMonetisation(root.dataset.locale || "en");
+  }
+</script>

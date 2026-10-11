@@ -25,6 +25,21 @@ export const i18nSlugs = [
 
 export type I18nSlug = (typeof i18nSlugs)[number];
 
+/** English and Spanish only. French and Catalan fall back to that locale’s home. */
+export const bilingualSlugs = [
+  "/concierge",
+  "/plan",
+  "/newsletter",
+  "/partners",
+  "/privacy",
+] as const;
+
+export function localesForSlug(path: string): readonly Locale[] {
+  if (isI18nSlug(path)) return locales;
+  if ((bilingualSlugs as readonly string[]).includes(path)) return ["en", "es"];
+  return [defaultLocale];
+}
+
 export const htmlLang: Record<Locale, string> = {
   en: "en-GB",
   fr: "fr",
@@ -79,5 +94,9 @@ export function localeFromPath(path: string): Locale {
 export function switchLocalePath(currentPath: string, next: Locale): string {
   const slug = slugFromPath(currentPath);
   if (isI18nSlug(slug)) return localePath(next, slug);
+  if ((bilingualSlugs as readonly string[]).includes(slug)) {
+    if (next === "en" || next === "es") return localePath(next, slug);
+    return localePath(next, "/");
+  }
   return localePath(next, "/");
 }

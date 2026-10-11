@@ -70,6 +70,16 @@ const p = (slug: string) => localePath(locale, slug);
         <a href={p("/properties")}>
           {locale === "en" ? "Properties" : locale === "fr" ? "Biens immobiliers" : locale === "es" ? "Inmuebles" : "Immobles"}
         </a>
+        {
+          (locale === "en" || locale === "es") && (
+            <>
+              <a href={p("/concierge")}>{locale === "es" ? "Conserjería" : "Concierge"}</a>
+              <a href={p("/plan")}>{locale === "es" ? "Planificador" : "Planner"}</a>
+              <a href={p("/newsletter")}>{locale === "es" ? "Boletín" : "Newsletter"}</a>
+              <a href={p("/partners")}>{locale === "es" ? "Profesionales" : "Partners"}</a>
+            </>
+          )
+        }
       </div>
       <div class="footer-col">
         <h4>{t.moving}</h4>
@@ -131,7 +141,9 @@ const p = (slug: string) => localePath(locale, slug);
       </div>
       <div class="footer-col">
         <h4>{t.legal}</h4>
-        <a href="/privacy">Privacy Policy</a>
+        <a href={locale === "es" ? "/es/privacy" : "/privacy"}>
+          {locale === "es" ? "Política de privacidad" : "Privacy Policy"}
+        </a>
         <a href="mailto:hello@privateandorra.com">hello@privateandorra.com</a>
       </div>
     </div>

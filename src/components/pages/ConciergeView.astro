@@ -1,0 +1,140 @@
+---
+import Base from "../../layouts/Base.astro";
+import JsonLd from "../JsonLd.astro";
+import LeadForm from "../LeadForm.astro";
+import { conciergeCopy, type ConciergeLocale } from "../../data/concierge-copy";
+import { localePath, type Locale } from "../../lib/i18n";
+
+interface Props {
+  locale: ConciergeLocale;
+}
+
+const { locale } = Astro.props;
+const t = conciergeCopy[locale];
+const path = localePath(locale as Locale, "/concierge");
+const payUnavailable =
+  locale === "es"
+    ? "El pago no está disponible en este despliegue."
+    : "Payment is not available on this deployment.";
+const origin = "https://www.privateandorra.com";
+
+const graph = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Andorra Private",
+    url: origin,
+    email: "hello@privateandorra.com",
+    description: t.concierge.description,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: locale === "es" ? "Conserjería de traslado a Andorra" : "Andorra relocation concierge",
+    serviceType: locale === "es" ? "Información para un traslado" : "Relocation information",
+    url: `${origin}${path}`,
+    provider: {
+      "@type": "Organization",
+      name: "Andorra Private",
+      url: origin,
+      email: "hello@privateandorra.com",
+    },
+    areaServed: { "@type": "Country", name: "Andorra" },
+    availableChannel: {
+      "@type": "ServiceChannel",
+      serviceUrl: `${origin}${path}`,
+      serviceEmail: "hello@privateandorra.com",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.concierge.faq.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  },
+];
+---
+
+<Base title={t.concierge.title} description={t.concierge.description} path={path} locale={locale}>
+  <JsonLd data={graph} />
+  <section class="page-header">
+    <p class="card-label">{t.concierge.label}</p>
+    <h1>{t.concierge.h1}</h1>
+    <p>{t.concierge.dek}</p>
+    <p>
+      <a class="text-link" href={localePath(locale, "/plan")}>{t.concierge.offers[1].h}</a>
+    </p>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <h2>{t.concierge.offersTitle}</h2>
+      <p>{t.concierge.offersIntro}</p>
+      <p data-free-note>{t.concierge.freeNote}</p>
+    </div>
+    <div class="card-grid">
+      {
+        t.concierge.offers.map((offer) => (
+          <article class="card" data-offer={offer.id}>
+            <div class="card-label">{offer.label}</div>
+            <h3>{offer.h}</h3>
+            <p>{offer.p}</p>
+            <p class="offer-price" data-paid-slot={offer.id} hidden />
+            <button type="button" data-checkout={offer.id} hidden />
+            <p class="pay-status" data-checkout-status data-message={payUnavailable} hidden />
+            <a class="text-link" href={localePath(locale, offer.href)}>
+              {offer.h}
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="life">
+    <div class="life-header">
+      <h2>{t.concierge.stepsTitle}</h2>
+    </div>
+    <div class="life-grid">
+      {
+        t.concierge.steps.map((step, index) => (
+          <div class="life-card">
+            <div class="life-label">{String(index + 1).padStart(2, "0")}</div>
+            <h3>{step.h}</h3>
+            <p>{step.p}</p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="prose">
+    <h2>{t.concierge.faqTitle}</h2>
+    {
+      t.concierge.faq.map((item) => {
+        const priced = item.a.includes("free") || item.a.includes("gratuitos");
+        return (
+          <details class="faq">
+            <summary>{item.q}</summary>
+            <p data-free-note={priced ? true : undefined}>{item.a}</p>
+            {priced && <p data-paid-note hidden />}
+          </details>
+        );
+      })
+    }
+    <aside class="disclaimer">
+      <p>{t.disclaimer}</p>
+    </aside>
+  </section>
+
+  <LeadForm locale={locale} source={`${locale}-concierge`} path={path} variant="request" />
+</Base>
+
+<script>
+  import { bootMonetisation } from "../../scripts/monetisation-client";
+  const lang = document.documentElement.lang.startsWith("es") ? "es" : "en";
+  bootMonetisation(lang);
+</script>
