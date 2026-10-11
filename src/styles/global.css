@@ -541,6 +541,10 @@ nav.site-nav.overlay {
   border: 1px solid #e5dfd6;
 }
 
+.success-message.is-visible {
+  display: block;
+}
+
 .success-message h3 {
   font-size: 1.5rem;
   color: var(--forest);
