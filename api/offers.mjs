@@ -1,8 +1,11 @@
 /**
  * Paid catalogue. Read only by /api/config and /api/checkout.
  * Do not import this file from a page or a client script.
- * There is no founder session and no telephone product in this list.
  * Public pages stay free until MONETISATION_ENABLED=true.
+ *
+ * Customer checkout is the guide and the automated plan only.
+ * Partner introductions and newsletter sponsorship are email arrangements.
+ * They have no euro amount and no checkout session.
  */
 
 export function monetisationEnabled() {
@@ -26,13 +29,19 @@ export const OFFERS = [
     stripePriceEnv: "STRIPE_PRICE_PLAN",
     name: { en: "Personalised relocation plan", es: "Plan de traslado personalizado" },
   },
+];
+
+/** Email-only. Never returned by /api/config and never accepted by /api/checkout. */
+export const OTHER_REVENUE = [
   {
-    id: "concierge",
-    amountCents: 490000,
-    currency: "eur",
-    from: true,
-    stripePriceEnv: "STRIPE_PRICE_CONCIERGE",
-    name: { en: "Concierge setup", es: "Puesta en marcha" },
+    id: "partner-referral",
+    checkout: false,
+    summary: "Partner introduction by email. The professional writes to the person who asked.",
+  },
+  {
+    id: "newsletter-sponsorship",
+    checkout: false,
+    summary: "Sponsorship of the monthly letter, arranged by email. No card checkout.",
   },
 ];
 
@@ -47,16 +56,11 @@ export function publicOffer(offer, locale) {
     currency: "EUR",
     maximumFractionDigits: 0,
   }).format(offer.amountCents / 100);
-  const priceLabel = offer.from
-    ? lang === "es"
-      ? `desde ${formatted}`
-      : `from ${formatted}`
-    : formatted;
   return {
     id: offer.id,
     name: offer.name[lang],
-    priceLabel,
-    from: offer.from,
+    priceLabel: formatted,
+    from: false,
     checkoutLabel: lang === "es" ? "Continuar al pago" : "Continue to payment",
   };
 }

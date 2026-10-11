@@ -14,7 +14,7 @@ export type ConciergeCopy = {
     dek: string;
     offersTitle: string;
     offersIntro: string;
-    offers: { id: string; label: string; h: string; p: string; href: string }[];
+    offers: { id: string; label: string; h: string; p: string; href: string; paid: boolean }[];
     freeNote: string;
     stepsTitle: string;
     steps: { h: string; p: string }[];
@@ -122,6 +122,7 @@ const en: ConciergeCopy = {
         h: "Reading pack",
         p: "The residency, banking and parish notes already published here, sent as one email.",
         href: "/living-in-andorra",
+        paid: true,
       },
       {
         id: "plan",
@@ -129,13 +130,15 @@ const en: ConciergeCopy = {
         h: "Automated plan",
         p: "Answer the questions on the planner. The page writes a plan from the sourced figures. Ask for a copy by email if you want one in your inbox.",
         href: "/plan",
+        paid: true,
       },
       {
-        id: "concierge",
-        label: "Setup",
-        h: "Setup introduction",
-        p: "A place to live, a bank introduction, insurance, a school, a car, utilities, deliveries. Say which of those you need. With your consent, a short summary goes to an independent licensed professional, who writes to you.",
+        id: "partner",
+        label: "Partner",
+        h: "Partner introduction",
+        p: "A place to live, a bank introduction, insurance, a school, a car, utilities, deliveries. Name which of those you need. With your consent, a short summary is emailed to an independent licensed professional, who writes to you.",
         href: "/directory",
+        paid: false,
       },
     ],
     freeNote: "These requests are free.",
@@ -305,7 +308,7 @@ const en: ConciergeCopy = {
     offers: [
       { id: "guide", label: "Reading pack" },
       { id: "plan", label: "Automated plan" },
-      { id: "concierge", label: "Setup introduction" },
+      { id: "partner", label: "Partner introduction" },
     ],
     consent: "I ask Andorra Private to email me about this request. I have read the privacy policy.",
     partners:
@@ -491,6 +494,7 @@ const es: ConciergeCopy = {
         h: "Dossier de lectura",
         p: "Las notas de residencia, banca y parroquias ya publicadas aquí, enviadas en un solo correo.",
         href: "/living-in-andorra",
+        paid: true,
       },
       {
         id: "plan",
@@ -498,13 +502,15 @@ const es: ConciergeCopy = {
         h: "Plan automático",
         p: "Responda a las preguntas del planificador. La página redacta un plan con las cifras citadas. Pida una copia por correo si la quiere en su buzón.",
         href: "/plan",
+        paid: true,
       },
       {
-        id: "concierge",
-        label: "Puesta en marcha",
-        h: "Introducción para la instalación",
-        p: "Un lugar donde vivir, una introducción bancaria, seguro, colegio, coche, suministros, entregas. Diga cuáles necesita. Con su consentimiento, un resumen breve va a un profesional colegiado independiente, que le escribe.",
+        id: "partner",
+        label: "Profesional",
+        h: "Introducción a un profesional",
+        p: "Un lugar donde vivir, una introducción bancaria, seguro, colegio, coche, suministros, entregas. Diga cuáles necesita. Con su consentimiento, un resumen breve se envía por correo a un profesional colegiado independiente, que le escribe.",
         href: "/directory",
+        paid: false,
       },
     ],
     freeNote: "Estas peticiones son gratuitas.",
@@ -674,7 +680,7 @@ const es: ConciergeCopy = {
     offers: [
       { id: "guide", label: "Dossier de lectura" },
       { id: "plan", label: "Plan automático" },
-      { id: "concierge", label: "Introducción para la instalación" },
+      { id: "partner", label: "Introducción a un profesional" },
     ],
     consent:
       "Pido a Andorra Private que me escriba por correo sobre esta petición. He leído la política de privacidad.",

@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import facts from "../src/data/facts.json" with { type: "json" };
 import { quote } from "../src/lib/relocation-cost.mjs";
 import { suggest, scoreLead } from "../src/lib/plan.mjs";
-import { monetisationEnabled, OFFERS, offerById } from "../api/offers.mjs";
+import { monetisationEnabled, OFFERS, OTHER_REVENUE, offerById } from "../api/offers.mjs";
 import { validateSubmission } from "../api/store.mjs";
 
 const d1 = quote({ route: "d1", dependants: 0 }, facts);
@@ -63,9 +63,16 @@ assert.equal(suggest({ intent: "family", days: "90" }).id, "b1");
 assert.equal(suggest({ intent: "no-work", days: "under-90" }).id, "none");
 assert.equal(scoreLead({ intent: "family", days: "90", timeline: "under-6", dependants: 1 }, true), 6);
 
-assert.equal(OFFERS.some((offer) => offer.id === "call"), false);
+assert.equal(OFFERS.some((offer) => offer.id === "call" || offer.id === "concierge"), false);
 assert.equal(offerById("call"), null);
-assert.equal(OFFERS.map((offer) => offer.id).join(","), "guide,plan,concierge");
+assert.equal(offerById("concierge"), null);
+assert.equal(OFFERS.map((offer) => offer.id).join(","), "guide,plan");
+assert.equal(OFFERS.some((offer) => offer.amountCents === 490000), false);
+assert.deepEqual(
+  OTHER_REVENUE.map((item) => item.id),
+  ["partner-referral", "newsletter-sponsorship"],
+);
+assert.equal(OTHER_REVENUE.every((item) => item.checkout === false && item.amountCents == null), true);
 assert.equal(monetisationEnabled(), false);
 
 const rejected = validateSubmission(
@@ -73,6 +80,11 @@ const rejected = validateSubmission(
   "lead",
 );
 assert.equal(rejected.ok, false);
+const rejectedSetup = validateSubmission(
+  { email: "a@b.co", consent_contact: true, offer: "concierge" },
+  "lead",
+);
+assert.equal(rejectedSetup.ok, false);
 
 const missingConsent = validateSubmission({ email: "a@b.co", offer: "plan" }, "lead");
 assert.equal(missingConsent.ok, false);

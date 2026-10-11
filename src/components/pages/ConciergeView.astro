@@ -82,9 +82,11 @@ const graph = [
             <div class="card-label">{offer.label}</div>
             <h3>{offer.h}</h3>
             <p>{offer.p}</p>
-            <p class="offer-price" data-paid-slot={offer.id} hidden />
-            <button type="button" data-checkout={offer.id} hidden />
-            <p class="pay-status" data-checkout-status data-message={payUnavailable} hidden />
+            {offer.paid && <p class="offer-price" data-paid-slot={offer.id} hidden />}
+            {offer.paid && <button type="button" data-checkout={offer.id} hidden />}
+            {offer.paid && (
+              <p class="pay-status" data-checkout-status data-message={payUnavailable} hidden />
+            )}
             <a class="text-link" href={localePath(locale, offer.href)}>
               {offer.h}
             </a>

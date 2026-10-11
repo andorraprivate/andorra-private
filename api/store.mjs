@@ -1,7 +1,7 @@
 import { scoreLead } from "../src/lib/plan.mjs";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const LEAD_OFFERS = new Set(["guide", "plan", "concierge", "general"]);
+const LEAD_OFFERS = new Set(["guide", "plan", "partner", "general"]);
 const MAX_PLAN = 20_000;
 
 let schemaReady = null;
@@ -66,7 +66,11 @@ export function validateSubmission(body, kind) {
     };
   }
 
-  if (source.offer === "call" || source.offer === "consultation") {
+  if (
+    source.offer === "call" ||
+    source.offer === "consultation" ||
+    source.offer === "concierge"
+  ) {
     return { ok: false, status: 400, error: "offer" };
   }
   const offer = LEAD_OFFERS.has(source.offer) ? source.offer : "general";
